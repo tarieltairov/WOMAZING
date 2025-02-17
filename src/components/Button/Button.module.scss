@@ -9,6 +9,10 @@
     color: #fff;
 }
 
+.filled:hover{
+    background-color: #509498;
+}
+
 .outlined {
     border: 1px solid var(--birch);
     color: var(--birch);
