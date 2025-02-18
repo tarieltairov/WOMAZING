@@ -1,0 +1,50 @@
+.callback-m-section{
+    width: 100%;
+    height: 100vh;
+    background: rgba(110, 156, 159, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .callback-m-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 491px;
+        max-height: 503px;
+        padding: 70px;
+        position: relative;
+        border: 1px solid black;
+        row-gap: 35px;
+        background: #fff;
+
+        .close-icon{
+            position: absolute;
+            top: 32px;
+            right: 32px;
+        }
+
+        h2{
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #000;
+        }
+
+        input{
+            width: 350px;
+            height: 40px;
+            padding: 0 286px 16px 0;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #868686;
+            border: none;
+            border-bottom: 1px solid #000;
+        }
+    }
+}
