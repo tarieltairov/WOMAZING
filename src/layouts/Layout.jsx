@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { CallbackModal } from "../components/CallbackModal/CallbackModal";
+import { CallbackModal } from "../components/CallbackModal";
+
 
 const Layout = () => {
   return (
