@@ -5,7 +5,6 @@ function Main() {
       <section>new collection</section>
       <section>important for us</section>
       <section>team</section>
-      
     </>
   );
 }
