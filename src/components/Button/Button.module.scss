@@ -1,0 +1,25 @@
+.btn {
+    padding: 22px 50px;
+    height: 68px;
+    border: none;
+}
+
+.filled {
+    background-color: var(--birch);
+    color: #fff;
+}
+
+.filled:hover{
+    background-color: #509498;
+}
+
+.outlined {
+    border: 1px solid var(--birch);
+    color: var(--birch);
+}
+
+.outlined:hover {
+    background: var(--birch);
+    color: #fff;
+    transition: 300ms;
+}
