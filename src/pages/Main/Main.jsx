@@ -1,8 +1,9 @@
+import { Hero } from "../../components/Hero";
 
 function Main() {
   return (
     <>
-      <section>hero</section>
+      <Hero />
       <section>new collection</section>
       <section>important for us</section>
       <section>team</section>

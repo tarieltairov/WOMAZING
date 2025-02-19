@@ -1,0 +1,73 @@
+button{
+	border: none;
+	cursor: pointer;
+}
+.hero{
+	display: flex;
+	align-items: center;
+	padding: 0 230px;
+	position: relative;
+	padding-bottom: 130px;
+	justify-content: space-between;
+}
+
+.left{
+	max-width: 563px;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	.title{
+		font-weight: 500;
+		font-size: 55px;
+	}
+	
+	.desc{
+		font-size: 20px;
+		letter-spacing: 0.02em;
+		line-height: 140%;
+		padding-right: 163px;
+	}
+	.arrow{
+		padding: 19.5px 26px;
+		background: rgba(110, 156, 159, 0.1);
+	}
+	.sliderBtns{
+		display: flex;
+		gap: 12px;
+		align-self: center;
+		margin-top: 112px;
+		button{
+			width: 30px;
+			height: 4px;
+			background: #d1d1d1;
+		}
+		.active{
+			background: black;
+		}
+	}
+}
+
+.images{
+
+	position: relative;
+		.first{
+			position: absolute;
+			right: -100px;
+			top: 123px;
+		}
+		.second{
+			position: absolute;
+			left: -130px;
+			bottom: -60px;
+		}
+}
+
+.right{
+	background: #f1eadc;
+	width: 705px;
+	height:100% ;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+}
