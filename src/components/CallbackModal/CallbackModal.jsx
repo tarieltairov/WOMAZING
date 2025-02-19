@@ -11,7 +11,7 @@ export const CallbackModal = () => {
                 <input type="text" placeholder="Имя"/>
                 <input type="email" placeholder="E-mail"/>
                 <input type="tel" placeholder="Телефон"/>
-                <Button children={"Заказать звонок"} className={"callback-m-button"} />
+                <Button children={"Заказать звонок"} className={"callback-m-button"}/>
             </div>
         </section>
     )
