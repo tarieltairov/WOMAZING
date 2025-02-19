@@ -47,7 +47,6 @@ export const Team = () => {
             <div
               className={{
                 ...styles.SliderContainer,
-                opacity: isAnimating ? 0.5 : 1,
               }}
             >
               <img
