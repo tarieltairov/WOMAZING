@@ -1,6 +1,7 @@
 import React from "react";
 import "./Cart.scss";
 import productImage from "../../assets/images/product.png";
+import { Button } from "../../components/Button";
 
 const Cart = () => {
   console.log("Cart component is rendering!");
@@ -44,24 +45,28 @@ const Cart = () => {
 
       <div className="cart__coupon">
         <div className="cart__coupon_input">
-          <input type="text" placeholder="Введите промокод" />
-          <button className="button__coupon">Применить купон</button>
+          <input
+            className="cart__promocode"
+            type="text"
+            placeholder="Введите промокод"
+          />
+          <Button variant={"outlined"}>Применить купон</Button>
         </div>
-        <button className="update__cart">Обновить корзину</button>
+        <Button variant={"outlined"}>Обновить корзину</Button>
       </div>
 
       <div className="cart__total">
         <div className="cart_total-itoge">
-          <div>
-            <p>Подытог:</p>
+          <div className="cart_total-itoge__subtotal">
+            <p className="cart_itoge_p">Подытог:</p>
             <p>$129</p>
           </div>
-          <div>
+          <div className="cart_total-itoge__delivery">
             <p>Итого:</p>
             <p>$129</p>
           </div>
         </div>
-        <button className="checkout__button">Оформить заказ</button>
+        <Button>Оформить заказ</Button>
       </div>
     </div>
   );

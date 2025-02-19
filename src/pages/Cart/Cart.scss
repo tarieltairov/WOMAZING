@@ -21,16 +21,16 @@
 }
 
 nav a {
-    text-decoration: none;
-    color: #000;
-    line-height: 110%;
+  text-decoration: none;
+  color: #000;
+  line-height: 110%;
 }
 
-nav a:hover {
-    color: #909090;
-  }
+// nav a:hover {
+//   color: #909090;
+// }
 .nouneym {
-    padding: 0px 13px 0px 13px;
+  padding: 0px 13px 0px 13px;
 }
 
 .cart__header_title {
@@ -102,4 +102,51 @@ nav a:hover {
   margin-bottom: 130px;
   justify-content: end;
   align-items: end;
+}
+
+.cart__promocode {
+  width: 245px;
+  height: 46px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-right: 17px;
+  margin-bottom: 27px;
+  outline: none;
+}
+
+.cart__coupon_input input {
+  padding-bottom: 27px;
+}
+
+.cart_total-itoge__delivery {
+  width: 287px;
+  height: 68px;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f1eadc;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+}
+
+.cart_total-itoge__subtotal {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 28px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+
+.cart_itoge_p {
+  margin-right: 20px;
 }
