@@ -32,23 +32,19 @@ export const Team = () => {
   };
 
   return (
-    <section className={styles.Team}>
-      <div className={styles.TeamContainer}>
-        <h2 className={styles.TeamTitle}>Команда мечты Womazing</h2>
+    <section className={styles.team}>
+      <div className={styles.teamContainer}>
+        <h2 className={styles.teamTitle}>Команда мечты Womazing</h2>
 
-        <div className={styles.TeamBody}>
-          <div className={styles.Slider}>
+        <div className={styles.teamBody}>
+          <div className={styles.slider}>
             <img
-              className={styles.SliderLeft}
+              className={styles.sliderLeft}
               src={leftArrow}
               onClick={prevSlide}
               alt="left-arrow-icon"
             />
-            <div
-              className={{
-                ...styles.SliderContainer,
-              }}
-            >
+            <div className={styles.sliderContainer}>
               <img
                 src={images[currentIndex]}
                 alt="slide"
@@ -59,18 +55,18 @@ export const Team = () => {
               />
             </div>
             <img
-              className={styles.SliderRight}
+              className={styles.sliderRight}
               src={rightArrow}
               onClick={nextSlide}
               alt="right-arrow-icon"
             />
           </div>
 
-          <div className={styles.TeamText}>
-            <h2 className={styles.TeamTextTitle}>Для каждой</h2>
-            <p className={styles.TeamTextSubtitle}>
+          <div className={styles.teamText}>
+            <h2 className={styles.teamTextTitle}>Для каждой</h2>
+            <p className={styles.teamTextSubtitle}>
               Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.
-              <span className={styles.TeamTextSeparator}></span>
+              <span className={styles.teamTextSeparator}></span>
               Womazing ищет эти мелочи и создает прекрасные вещи, которые
               выгодно подчеркивают достоинства каждой девушки.
             </p>
