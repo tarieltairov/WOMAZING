@@ -1,2 +1,14 @@
 @import "./reset.scss";
 @import "./variables.scss";
+
+.body, html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // padding: 51px 245px;
+    min-height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    
+}
+* {
+    transition: all 0.5s ease;
+}
