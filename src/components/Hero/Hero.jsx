@@ -3,7 +3,6 @@ import MainImage from "../../assets/images/hero_main.jpg";
 import Image1 from "../../assets/images/hero-image.png";
 import Image2 from "../../assets/images/hero_third.jpg";
 import ArrowImage from "../../assets/icons/arrow_down.svg";
-console.log(window.innerWidth);
 export const Hero = () => {
   return (
     <section className={styles.hero}>
@@ -19,10 +18,10 @@ export const Hero = () => {
           </button>
           <button>Открыть магазин</button>
         </div>
-        <div className={styles["slider-btns"]}>
-          <button></button>
-          <button className={styles.active}></button>
-          <button></button>
+        <div className={styles.sliderBtns}>
+          <button />
+          <button className={styles.active} />
+          <button />
         </div>
       </div>
       <div className={styles.images}>
