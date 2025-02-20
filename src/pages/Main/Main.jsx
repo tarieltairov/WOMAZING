@@ -1,12 +1,10 @@
-import { NewCollection } from "../../components/Template/NewCollection";
+import { NewCollection } from "../../components/NewCollection";
 
 function Main() {
   return (
     <>
       <section>hero</section>
-      <section>
       <NewCollection/>
-      </section>
       <section>important for us</section>
       <section>team</section>
     </>
