@@ -6,42 +6,36 @@ import LogoNav from "../LogoNav/LogoNav";
 import PhoneIcon from "./PhoneIcon";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
+import { AppContainer } from "../../layouts/AppContainer";
 
 export function Header() {
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [cartCount, setCartCount] = useState(3);
 
   return (
-    <div className={styles.wrapper}>
-      <LogoNav />
+    <AppContainer>
+      <div className={styles.wrapper}>
+        <LogoNav />
 
-      <div className={styles.contactContainer}>
-        <div className={styles.phoneIconContainer}>
-          <PhoneIcon className={styles.phoneIcon} />
-        </div>
+        <div className={styles.contactContainer}>
+          <div className={styles.phoneIconContainer}>
+            <PhoneIcon className={styles.phoneIcon} />
+          </div>
 
-        <img
-          src={phonenumber}
-          alt="phone-img"
-          className={styles.phoneNumberImg}
-        />
-        <div
-          className={styles.cartContainer}
-          onClick={() => navigate(ROUTER_PATHS.cart)}
-        >
-          <img src={cart} alt="cart-img" className={styles.cartIcon} />
-          {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
-        </div>
-      </div>
-      {isModalOpen && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <p>Форма заказа обратного звонка</p>
-            <button onClick={() => setIsModalOpen(false)}>Закрыть</button>
+          <img
+            src={phonenumber}
+            alt="phone-img"
+            className={styles.phoneNumberImg}
+          />
+          <div
+            className={styles.cartContainer}
+            onClick={() => navigate(ROUTER_PATHS.cart)}
+          >
+            <img src={cart} alt="cart-img" className={styles.cartIcon} />
+            {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    </AppContainer>
   );
 }
