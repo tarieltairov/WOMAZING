@@ -1,0 +1,31 @@
+.important {
+    margin: 0 ;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+  font-weight: 500;
+  padding-left: 110px;
+  margin-bottom: 40px;
+}
+
+.all_content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.first_img {
+  padding-bottom: 37px;
+}
+
+h3 {
+  padding-bottom: 24px;
+}
+
+.desc{
+  white-space: pre-wrap;
+  
+}
