@@ -1,12 +1,16 @@
+import { Hero } from "../../components/Hero/Hero";
 import { Important } from "../../components/important";
+import { NewCollection } from "../../components/NewCollection/NewCollection";
+import { Team } from "../../components/Team/Team";
+
 
 function Main() {
   return (
     <>
-      <section>hero</section>
-      <section>new collection</section>
+      <Hero />
+      <NewCollection />
       <Important />
-      <section>team</section>
+      <Team />
     </>
   );
 }

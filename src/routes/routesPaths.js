@@ -3,4 +3,5 @@ export const ROUTER_PATHS = {
   shop: "/shop",
   brand: "/brand",
   contacts: "/contacts",
+  cart: "/cart",
 };
