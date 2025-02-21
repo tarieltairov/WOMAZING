@@ -1,0 +1,35 @@
+  .logoNavContainer,.logoContainer,.logoContainer,
+  .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .logoNavContainer{
+      gap: 146px;
+      margin-right: 170px;
+    }
+
+  .menu li a,.phoneNumberImg{
+    cursor: pointer;
+  }
+.logoContainer{
+  gap: 11px;
+}
+.menu {
+  gap: 45px;
+  list-style: none;
+}
+.menu li a{
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000;
+  text-decoration: none;
+}
+.menu .active{
+  color:var(--birch);
+  font-weight: 700;
+}
+
