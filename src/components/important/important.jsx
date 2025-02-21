@@ -37,5 +37,3 @@ export function Important() {
   </section>
   )
 }
-
-// export default Important;
