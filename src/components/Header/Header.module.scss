@@ -1,55 +1,59 @@
-.wrapper {
-  max-width: 1110px;
-  margin: 0 auto;
+.header {
+  position: absolute;
+  top: 51px;
+  z-index: 100;
 }
-.wrapper,.contactContainer,
-  .cartBadge,.phoneIconContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .menu li a,.phoneNumberImg,.cartIcon{
-    cursor: pointer;
-  }
+
 .wrapper {
-  justify-content: center;  
-  width: 1110px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 28px;
 }
 
-.phoneNumberImg{
-  margin-left: 7px;
-  margin-right: 67px;
+.contactContainer,
+.cartBadge,
+.phoneIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu li a,
+.phoneNumberImg,
+.cartIcon {
+  cursor: pointer;
 }
 
-.phoneIcon{
+.phoneIcon {
   fill: var(--birch);
-}
-.phoneIcon:hover{
-  fill: white;
-}
-.phoneIconContainer{
-    width: 27px;
-    height: 27px;
-    background-color: transparent;
-}
-.phoneIconContainer:hover{
-  background-color: var(--birch);
-
+  &:hover {
+    fill: white;
   }
-.cartContainer{
+}
+
+.phoneIconContainer {
+  width: 27px;
+  height: 27px;
+  background-color: transparent;
+  &:hover {
+    background-color: var(--birch);
+  }
+}
+
+.cartContainer {
   position: relative;
   display: inline-block;
 }
-.cartBadge{
-  position: absolute;
-    top: -5px;
-    right: -15px;
-    background-color:#998E78;
-    color: white;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    font-size: 9px
 
+.cartBadge {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  background-color: #998e78;
+  color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 9px;
 }
