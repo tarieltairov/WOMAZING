@@ -5,8 +5,7 @@ button{
 .hero{
 	display: flex;
 	align-items: center;
-	padding: 0 230px;
-	padding-bottom: 130px;
+	padding: 130px 230px;
 	justify-content: space-between;
 }
 
@@ -24,7 +23,11 @@ button{
 		font-size: 20px;
 		letter-spacing: 0.02em;
 		line-height: 140%;
-		padding-right: 163px;
+		padding-right: 33%;
+	}
+	.btnsWrap{
+		display: flex;
+		align-items: center;
 	}
 	.arrow{
 		padding: 19.5px 26px;
@@ -38,10 +41,10 @@ button{
 		button{
 			width: 30px;
 			height: 4px;
-			background: #d1d1d1;
+			background: var(--softGray);
 		}
 		.active{
-			background: black;
+			background: var(--black);
 		}
 	}
 }
@@ -62,7 +65,7 @@ button{
 }
 
 .right{
-	background: #f1eadc;
+	background: var(--beigeCream);
 	width: 705px;
 	min-height: 826px;
 	position: absolute;

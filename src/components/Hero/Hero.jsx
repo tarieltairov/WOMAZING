@@ -3,6 +3,7 @@ import MainImage from "../../assets/images/hero_main.jpg";
 import Image1 from "../../assets/images/hero-image.png";
 import Image2 from "../../assets/images/hero_third.jpg";
 import ArrowImage from "../../assets/icons/arrow_down.svg";
+import { Button } from "../Button/Button";
 export const Hero = () => {
   return (
     <section className={styles.hero}>
@@ -12,11 +13,11 @@ export const Hero = () => {
           Утонченные сочетания и бархатные оттенки - вот то, что вы искали в
           этом сезоне. Время исследовать.
         </p>
-        <div>
+        <div className={styles.btnsWrap}>
           <button className={styles.arrow}>
             <img src={ArrowImage} alt="arrow-img" />
           </button>
-          <button>Открыть магазин</button>
+          <Button>Открыть магазин</Button>
         </div>
         <div className={styles.sliderBtns}>
           <button />
