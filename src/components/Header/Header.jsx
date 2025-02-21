@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import phonenumber from "../../assets/icons/phone.svg";
 import cart from "../../assets/icons/cart.svg";
 import styles from "./Header.module.scss";
-import LogoNav from "../LogoNav/LogoNav";
 import PhoneIcon from "./PhoneIcon";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
 import { AppContainer } from "../../layouts/AppContainer";
+import { LogoNav } from "../LogoNav";
 
 export function Header() {
   const navigate = useNavigate();
