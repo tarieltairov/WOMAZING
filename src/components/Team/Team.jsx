@@ -33,45 +33,43 @@ export const Team = () => {
 
   return (
     <section className={styles.team}>
-      <div className={styles.teamContainer}>
-        <h2 className={styles.teamTitle}>Команда мечты Womazing</h2>
+      <h2 className={styles.teamTitle}>Команда мечты Womazing</h2>
 
-        <div className={styles.teamBody}>
-          <div className={styles.slider}>
+      <div className={styles.teamBody}>
+        <div className={styles.slider}>
+          <img
+            className={styles.sliderLeft}
+            src={leftArrow}
+            onClick={prevSlide}
+            alt="left-arrow-icon"
+          />
+          <div className={styles.sliderContainer}>
             <img
-              className={styles.sliderLeft}
-              src={leftArrow}
-              onClick={prevSlide}
-              alt="left-arrow-icon"
-            />
-            <div className={styles.sliderContainer}>
-              <img
-                src={images[currentIndex]}
-                alt="slide"
-                style={{
-                  transform: `translateX(${isAnimating ? "-10px" : "0px"})`,
-                  transition: "opacity 0.5s ease, transform 0.5s ease",
-                }}
-              />
-            </div>
-            <img
-              className={styles.sliderRight}
-              src={rightArrow}
-              onClick={nextSlide}
-              alt="right-arrow-icon"
+              src={images[currentIndex]}
+              alt="slide"
+              style={{
+                transform: `translateX(${isAnimating ? "-10px" : "0px"})`,
+                transition: "opacity 0.5s ease, transform 0.5s ease",
+              }}
             />
           </div>
+          <img
+            className={styles.sliderRight}
+            src={rightArrow}
+            onClick={nextSlide}
+            alt="right-arrow-icon"
+          />
+        </div>
 
-          <div className={styles.teamText}>
-            <h2 className={styles.teamTextTitle}>Для каждой</h2>
-            <p className={styles.teamTextSubtitle}>
-              Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.
-              <span className={styles.teamTextSeparator}></span>
-              Womazing ищет эти мелочи и создает прекрасные вещи, которые
-              выгодно подчеркивают достоинства каждой девушки.
-            </p>
-            <button>Подробнее о бренде</button>
+        <div className={styles.teamText}>
+          <h2 className={styles.teamTextTitle}>Для каждой</h2>
+          <div className={styles.teamTextSubtitle}>
+            Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.
+            <div className={styles.teamTextSeparator}></div>
+            Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно
+            подчеркивают достоинства каждой девушки.
           </div>
+          <button>Подробнее о бренде</button>
         </div>
       </div>
     </section>
