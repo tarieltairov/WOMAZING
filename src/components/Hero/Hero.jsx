@@ -9,7 +9,7 @@ export const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.left}>
         <h1 className={styles.title}>Новые поступления в этом сезоне</h1>
-        <p className={styles.desc}>
+        <p className={styles.description}>
           Утонченные сочетания и бархатные оттенки - вот то, что вы искали в
           этом сезоне. Время исследовать.
         </p>
