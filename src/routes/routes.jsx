@@ -9,8 +9,8 @@ export const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        // path: ROUTER_PATHS.main,
-        // element: <Main />,
+        path: ROUTER_PATHS.main,
+        element: <Main />,
       },
       {
         path: ROUTER_PATHS.shop,
