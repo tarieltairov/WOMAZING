@@ -39,18 +39,18 @@ export function Footer() {
         <div>
           <div className={styles.icons}>
             <a href="https://www.instagram.com/">
-              <img src={Image1} alt="instagram-icom" />{" "}
+              <img src={Image1} alt="instagram-icom" />
             </a>
             <a href="https://www.facebook.com/">
               <img src={Image2} alt="Facebook" />
             </a>
             <a href="https://x.com/">
-              <img src={Image3} alt="twiter " />
+              <img src={Image3} alt="twiter" />
             </a>
           </div>
 
           <div className={styles.iconVisa}>
-            <img src={Image4} alt="" />
+            <img src={Image4} alt="visa" />
           </div>
         </div>
       </div>
