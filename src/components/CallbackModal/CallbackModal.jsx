@@ -50,11 +50,11 @@ export const CallbackModal = ({isModalOpen, onClose}) => {
                 ) : (
                 <>
                     <img className={styles.close__icon} src={closeIcon} alt="close-icon" onClick={onClose}/>
-                <h2>Заказать обратный звонок</h2>
-                <input type="text" placeholder="Имя" className={`${isValid ? styles.noValidInp : ""}`} value={name} onChange={(e) => setName(e.target.value)} onKeyDown={handleKeyDown}/>
-                <input type="email" placeholder="E-mail" className={`${isValid ? styles.noValidInp : ""}`} value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={handleKeyDown}/>
-                <input type="tel" placeholder="Телефон" className={`${isValid ? styles.noValidInp : ""}`} value={phone} onChange={(e) => setPhone(e.target.value)} onKeyDown={handleKeyDown}/>
-                <Button onClick={handleSubmit} children={"Заказать звонок"} className={`${styles.button}`} variant={"filled"}/>
+                    <h2>Заказать обратный звонок</h2>
+                    <input type="text" placeholder="Имя" className={`${isValid ? styles.noValidInp : ""}`} value={name} onChange={(e) => setName(e.target.value)} onKeyDown={handleKeyDown}/>
+                    <input type="email" placeholder="E-mail" className={`${isValid ? styles.noValidInp : ""}`} value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={handleKeyDown}/>
+                    <input type="tel" placeholder="Телефон" className={`${isValid ? styles.noValidInp : ""}`} value={phone} onChange={(e) => setPhone(e.target.value)} onKeyDown={handleKeyDown}/>
+                    <Button onClick={handleSubmit} children={"Заказать звонок"} className={`${styles.button}`} variant={"filled"}/>
                 </>
                 )}
             </div>
