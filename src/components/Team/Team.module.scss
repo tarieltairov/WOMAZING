@@ -1,0 +1,81 @@
+.team {
+	margin-top: 130px;
+
+	&Container {
+		width: 100%;
+		max-width: 1110px;
+		margin: 0 auto;
+	}
+	&Title {
+		font-weight: 500;
+		font-size: 40px;
+		line-height: 110%;
+		letter-spacing: 0.02em;
+		color: #000;
+	}
+
+	&Body {
+		margin-top: 92px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.slider {
+			display: flex;
+			align-items: center;
+			position: relative;
+			max-width: 729px;
+
+			&Container {
+				width: "100%";
+				transition: "opacity 0.5s ease";
+
+				img {
+					width: "100%";
+				}
+			}
+
+			&Left {
+				cursor: pointer;
+				position: absolute;
+				left: -50px;
+			}
+			&Right {
+				cursor: pointer;
+				position: absolute;
+				right: -50px;
+			}
+		}
+	}
+
+	&Text {
+		max-width: 255px;
+		font-weight: 500;
+		line-height: 140%;
+		color: #000;
+		&Title {
+			font-size: 25px;
+		}
+		&Subtitle {
+			font-size: 17px;
+			margin: 28px 0;
+		}
+		&Separator {
+			margin: 29px 0;
+		}
+		button {
+			cursor: pointer;
+			outline: none;
+			border: none;
+			color: #6e9c9f;
+			font-size: 17px;
+			letter-spacing: 0.02em;
+			background-color: transparent;
+			padding-bottom: 5px;
+
+			&:hover {
+				border-bottom: 1px solid #cededf;
+			}
+		}
+	}
+}

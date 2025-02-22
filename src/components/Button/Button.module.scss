@@ -2,6 +2,7 @@
     padding: 22px 50px;
     height: 68px;
     border: none;
+    cursor: pointer;
 }
 
 .filled {
@@ -16,6 +17,7 @@
 .outlined {
     border: 1px solid var(--birch);
     color: var(--birch);
+    background-color: #fff;
 }
 
 .outlined:hover {
