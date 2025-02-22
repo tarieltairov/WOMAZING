@@ -7,8 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
 import { AppContainer } from "../../layouts/AppContainer";
 import { LogoNav } from "../LogoNav";
+import { CallbackModal } from "../CallbackModal";
 
 export function Header() {
+
+  const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(3);
 
@@ -18,8 +21,8 @@ export function Header() {
         <LogoNav />
 
         <div className={styles.contactContainer}>
-          <div className={styles.phoneIconContainer}>
-            <PhoneIcon className={styles.phoneIcon} />
+          <div className={styles.phoneIconContainer} onClick={() => setModalOpen(true)}>
+            <PhoneIcon className={styles.phoneIcon}/>
           </div>
 
           <img
@@ -36,6 +39,7 @@ export function Header() {
           </div>
         </div>
       </div>
+      <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </AppContainer>
   );
 }
