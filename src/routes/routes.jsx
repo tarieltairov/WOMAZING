@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { ROUTER_PATHS } from "./routesPaths";
 import Layout from "../layouts/Layout";
 import Main from "../pages/Main/Main";
-import Cart from "../pages/Cart/Cart"
+import Cart from "../pages/Cart/Cart";
 
 export const routes = createBrowserRouter([
   {
@@ -10,8 +10,8 @@ export const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        // path: ROUTER_PATHS.main,
-        // element: <Main />,
+        path: ROUTER_PATHS.main,
+        element: <Main />,
       },
       {
         path: ROUTER_PATHS.shop,

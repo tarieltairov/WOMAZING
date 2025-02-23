@@ -1,9 +1,9 @@
 import styles from "./Footer.module.scss";
-import Image1 from "../../assets/icons/instagram (1) 1.svg";
-import Image2 from "../../assets/icons/Vector.svg";
-import Image3 from "../../assets/icons/Group.svg";
-import Image4 from "../../assets/icons/visa-mastercard 1.svg";
-import LogoNav from "../LogoNav/LogoNav";
+import Image1 from "../../assets/icons/instagram.svg";
+import Image2 from "../../assets/icons/Facebook.svg";
+import Image3 from "../../assets/icons/twiter.svg";
+import Image4 from "../../assets/icons/visa-mastercard.svg";
+import { LogoNav } from "../LogoNav";
 
 export function Footer() {
   return (
@@ -39,13 +39,19 @@ export function Footer() {
 
         <div>
           <div className={styles.icons}>
-            <img src={Image1} alt="instagram-icom" />
-            <img src={Image2} alt="f" />
-            <img src={Image3} alt="twiter " />
+            <a href="https://www.instagram.com/">
+              <img src={Image1} alt="instagram-icom" />
+            </a>
+            <a href="https://www.facebook.com/">
+              <img src={Image2} alt="Facebook" />
+            </a>
+            <a href="https://x.com/">
+              <img src={Image3} alt="twiter" />
+            </a>
           </div>
 
           <div className={styles.iconVisa}>
-            <img src={Image4} alt="" />
+            <img src={Image4} alt="visa" />
           </div>
         </div>
       </div>

@@ -12,21 +12,21 @@ const menuItems = [
   { name: "Контакты", path: ROUTER_PATHS.contacts },
 ];
 
-const LogoNav = () => {
-  
+export const LogoNav = () => {
   return (
-    <div className={styles.logoNavContainer}>
-      <Link className={styles.logoContainer} to={ROUTER_PATHS.main}>
+    <div className={styles.root}>
+      <Link className={styles.logo} to={ROUTER_PATHS.main}>
         <img src={logo} alt="logo" />
         <img src={Womazing} alt="Womazing" />
       </Link>
+
       <nav>
-        <ul className={styles.menu}>
+        <ul className={styles.navigation}>
           {menuItems.map((item, index) => (
             <li key={index}>
               <NavLink
                 to={item.path}
-                className={({ isActive }) => (isActive ? styles.active : "")}
+                className={({ isActive }) => (isActive ? styles.o : "")}
               >
                 {item.name}
               </NavLink>
@@ -37,5 +37,3 @@ const LogoNav = () => {
     </div>
   );
 };
-
-export default LogoNav;
