@@ -12,13 +12,13 @@ export function Header() {
   const [cartCount, setCartCount] = useState(3);
 
   return (
-    <AppContainer className={styles.header}>
-      <div className={styles.wrapper}>
+    <AppContainer>
+      <header className={styles.header}>
         <LogoNav />
 
-        <div className={styles.contactContainer}>
+        <div className={styles.contact}>
           <div className={styles.phoneWrapper}>
-            <div className={styles.phoneContainer}>
+            <div className={styles.phone}>
               <PhoneIcon className={styles.phoneIcon} />
             </div>
             <div className={styles.tell}>
@@ -35,7 +35,7 @@ export function Header() {
             {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
-      </div>
+      </header>
     </AppContainer>
   );
 }

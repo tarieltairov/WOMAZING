@@ -17,7 +17,7 @@ export const LogoNav = () => {
     <div className={styles.root}>
       <Link className={styles.logo} to={ROUTER_PATHS.main}>
         <img src={logo} alt="logo" />
-        <img src={Womazing} alt="Womazing" />
+        <div className={styles.logoTitle}>Womazing</div>
       </Link>
 
       <nav>

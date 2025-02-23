@@ -1,40 +1,23 @@
 .header {
-  width: 100%;
-  position: absolute;
-  top: 51px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 100;
-}
-
-.wrapper {
+  padding-top: 5vh;
+  max-width: 1110px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 28px;
+  gap: 18%;
 
 }
-nav {
-  .menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    li {
-      padding: 0;
-    }
-  }
-}
 
-.contactContainer{
-  width: 30%;
+.contact{
+  width: 35%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
 
-  .phoneWrapper {
+  .phoneWrapper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +32,6 @@ nav {
   
 }
 
-.menu li a,
 .phoneNumber,
 .cartIcon {
   cursor: pointer;
@@ -62,13 +44,12 @@ nav {
   }
 }
 
-.phoneContainer {
+.phone{
   width: 27px;
   height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
   &:hover {
     background-color: var(--birch);
   }
@@ -92,4 +73,9 @@ nav {
   height: 15px;
   border-radius: 50%;
   font-size: 9px;
+}
+@media (max-width: 768px) {
+  header {
+    max-width: 100%;
+  }
 }
