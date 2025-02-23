@@ -12,7 +12,7 @@ export function Header() {
   const [cartCount, setCartCount] = useState(3);
 
   return (
-    <AppContainer >
+    <AppContainer className={styles.header}>
       <div className={styles.wrapper}>
         <LogoNav />
 
