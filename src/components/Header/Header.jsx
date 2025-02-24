@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import phonenumber from "../../assets/icons/phone.svg";
 import cart from "../../assets/icons/cart.svg";
 import styles from "./Header.module.scss";
 import PhoneIcon from "./PhoneIcon";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
 import { AppContainer } from "../../layouts/AppContainer";
 import { LogoNav } from "../LogoNav";
@@ -16,20 +15,21 @@ export function Header() {
   const [cartCount, setCartCount] = useState(3);
 
   return (
-    <AppContainer className={styles.header}>
-      <div className={styles.wrapper}>
+    <AppContainer>
+      <header className={styles.header}>
         <LogoNav />
 
-        <div className={styles.contactContainer}>
-          <div className={styles.phoneIconContainer} onClick={() => setModalOpen(true)}>
-            <PhoneIcon className={styles.phoneIcon}/>
+        <div className={styles.contact}>
+          <div className={styles.phoneWrapper}>
+            <div className={styles.phone}>
+              <PhoneIcon className={styles.phoneIcon} />
+            </div>
+            <div className={styles.tell}>
+              <a href="tel:+74958235412" className={styles.a}>
+                +7 (495) 823-54-12
+              </a>
+            </div>
           </div>
-
-          <img
-            src={phonenumber}
-            alt="phone-img"
-            className={styles.phoneNumberImg}
-          />
           <div
             className={styles.cartContainer}
             onClick={() => navigate(ROUTER_PATHS.cart)}
@@ -38,8 +38,12 @@ export function Header() {
             {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
+<<<<<<< HEAD
       </div>
       <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+=======
+      </header>
+>>>>>>> 15c2a56d36af7d5ec57cc418abbef41390b1bb15
     </AppContainer>
   );
 }

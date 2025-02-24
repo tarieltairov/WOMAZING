@@ -1,37 +1,44 @@
-.logoNavContainer,
-.logoContainer,
-.logoContainer,
-.menu {
+.root {
+  max-width: 686px;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.logoNavContainer {
-  gap: 146px;
-  // margin-right: 170px;
-}
+  gap: 20%;
 
-.menu li a,
-.phoneNumberImg {
-  cursor: pointer;
+  .logo {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    text-decoration: none;
+    
+  }
+  .logoTitle{
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+
+  }
+  
+    }
+  
+  .navigation {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    cursor: pointer;
+    li {
+      text-wrap: nowrap;
+      padding: 0;
+
+  }
+  
 }
-.logoContainer {
-  gap: 11px;
-}
-.menu {
-  gap: 45px;
-  list-style: none;
-}
-.menu li a {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 140%;
-  letter-spacing: 0.02em;
-  color: #000;
-  text-decoration: none;
-}
-.menu .active {
+.o{
   color: var(--birch);
-  font-weight: 700;
 }
