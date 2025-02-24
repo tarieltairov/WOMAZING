@@ -6,8 +6,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
 import { AppContainer } from "../../layouts/AppContainer";
 import { LogoNav } from "../LogoNav";
+import { CallbackModal } from "../CallbackModal";
 
 export function Header() {
+
+  const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(3);
 
@@ -35,7 +38,12 @@ export function Header() {
             {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
+<<<<<<< HEAD
+      </div>
+      <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+=======
       </header>
+>>>>>>> 15c2a56d36af7d5ec57cc418abbef41390b1bb15
     </AppContainer>
   );
 }

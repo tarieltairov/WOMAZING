@@ -1,4 +1,4 @@
-const PhoneIcon = ({className}) => {
+const PhoneIcon = ({className, }) => {
     return (
       <svg
         className={className}
