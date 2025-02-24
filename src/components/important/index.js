@@ -1,1 +1,1 @@
-export { Important } from "./Important";
+export { Important } from './Important'
