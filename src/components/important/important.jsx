@@ -1,7 +1,7 @@
 import Quality from "../../assets/icons/Frame 16.svg";
 import Speed from "../../assets/icons/Frame 16 (1).svg";
 import Responsibility from "../../assets/icons/Frame 16 (2).svg";
-import styles from "./Important.module.scss";
+import styles from "./important.module.scss";
 
 export function Important() {
   const values = [
