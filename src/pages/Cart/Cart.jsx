@@ -1,7 +1,6 @@
-import React from "react";
 import "./Cart.scss";
-import productImage from "../../assets/images/product.png";
 import { Button } from "../../components/Button";
+
 
 const Cart = () => {
   console.log("Cart component is rendering!");
@@ -29,18 +28,7 @@ const Cart = () => {
 
         <hr />
 
-        <div className="cart__main_product">
-          <div className="image__product">
-            <button className="botton__product_delete">X</button>
-            <img src={productImage} alt="img-result" />
-            <h3>Футболка USA</h3>
-          </div>
-          <div className="product__price">
-            <span>$129</span>
-            <input type="number" className="product-qty" value={1} min={1} />
-            <span>$129</span>
-          </div>
-        </div>
+
       </div>
 
       <div className="cart__coupon">
