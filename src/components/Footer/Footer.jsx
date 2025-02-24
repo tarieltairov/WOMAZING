@@ -3,13 +3,15 @@ import Image1 from "../../assets/icons/instagram.svg";
 import Image2 from "../../assets/icons/Facebook.svg";
 import Image3 from "../../assets/icons/twiter.svg";
 import Image4 from "../../assets/icons/visa-mastercard.svg";
+import LogoNav from "../LogoNav/LogoNav";
+import { AppContainer } from "../../layouts/AppContainer";
 
 export function Footer() {
   return (
     <footer className={styles.FooterContainer}>
+      <AppContainer>
       <div className={styles.container}>
-        <div>придет от Розы </div>
-
+<LogoNav/>
         <div className={styles.containerEmail}>
           <div className={styles.tell}>
             <p>+7 (495) 823-54-12</p>
@@ -54,6 +56,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      </AppContainer>
     </footer>
   );
 }
