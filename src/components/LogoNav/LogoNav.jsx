@@ -12,7 +12,7 @@ const menuItems = [
   { name: "Контакты", path: ROUTER_PATHS.contacts },
 ];
 
-const LogoNav = () => {
+export const LogoNav = () => {
   return (
     <div className={styles.logoNavContainer}>
       <Link className={styles.logoContainer} to={ROUTER_PATHS.main}>
@@ -36,5 +36,3 @@ const LogoNav = () => {
     </div>
   );
 };
-
-export default LogoNav;

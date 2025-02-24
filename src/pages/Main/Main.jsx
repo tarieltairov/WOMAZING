@@ -7,14 +7,14 @@ import styles from "./Main.module.scss";
 
 function Main() {
   return (
-    <AppContainer>
-      <main className={styles.page}>
-        <Hero />
+    <main className={styles.page}>
+      <Hero />
+      <AppContainer className={styles.sectionsWithoutHero}>
         <NewCollection />
         <Important />
         <Team />
-      </main>
-    </AppContainer>
+      </AppContainer>
+    </main>
   );
 }
 

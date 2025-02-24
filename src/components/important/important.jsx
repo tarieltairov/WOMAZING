@@ -23,17 +23,19 @@ export function Important() {
   ];
   // --------------------------------------------------------------------------
   return (
-    <section className={styles.important}>
-      <h2>Что для нас важно</h2>
-      <div className={styles.all_content}>
-        {values.map(({ img, title, text }, index) => (
-          <div key={index}>
-            <img className={styles.first_img} src={img} alt={title} />
-            <h3>{title}</h3>
-            <p className={styles.desc}>{text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className={styles.content}>
+      <section className={styles.important}>
+        <h2 className={styles.vajno}>Что для нас важно</h2>
+        <div className={styles.all_content}>
+          {values.map(({ img, title, text }, index) => (
+            <div key={index}>
+              <img className={styles.first_img} src={img} alt={title} />
+              <h3 className={styles.title}>{title}</h3>
+              <p className={styles.desc}>{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
