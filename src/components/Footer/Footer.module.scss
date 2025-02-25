@@ -3,19 +3,18 @@
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  padding-left: 297px;
 }
 
 .icons {
   display: flex;
   gap: 12px;
-  padding-left: 558px;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-self: center;
+  width: 100%;
 }
 
 .FooterContainer {
@@ -45,7 +44,8 @@ li {
 .containerInfo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .iconVisa {
