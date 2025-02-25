@@ -38,12 +38,7 @@ export function Header() {
             {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
-<<<<<<< HEAD
-      </div>
-      <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
-=======
       </header>
->>>>>>> 15c2a56d36af7d5ec57cc418abbef41390b1bb15
     </AppContainer>
   );
 }
