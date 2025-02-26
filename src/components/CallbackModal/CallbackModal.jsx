@@ -54,7 +54,7 @@ export const CallbackModal = ({isModalOpen, onClose}) => {
                     <input type="text" placeholder="Имя" className={`${isValid ? styles.noValidInp : ""}`} value={name} onChange={(e) => setName(e.target.value)} onKeyDown={handleKeyDown}/>
                     <input type="email" placeholder="E-mail" className={`${isValid ? styles.noValidInp : ""}`} value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={handleKeyDown}/>
                     <input type="tel" placeholder="Телефон" className={`${isValid ? styles.noValidInp : ""}`} value={phone} onChange={(e) => setPhone(e.target.value)} onKeyDown={handleKeyDown}/>
-                    <Button onClick={handleSubmit} children={"Заказать звонок"} className={`${styles.button}`} variant={"filled"}/>
+                    <Button onClick={handleSubmit} className={`${styles.button}`} variant={"filled"}>Заказать звонок</Button>
                 </>
                 )}
             </div>

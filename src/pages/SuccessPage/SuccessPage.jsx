@@ -30,7 +30,7 @@ export const SuccessPage = () => {
                         <p>Мы свяжемся с вами в ближайшее время!</p>
                     </div>
                 </div>
-                <Button onClick={() => navigate(ROUTER_PATHS.main)} className={styles.success__button} children={"Перейти на главную"} variant={"outlined"}/>
+                <Button onClick={() => navigate(ROUTER_PATHS.main)} className={styles.success__button} variant={"outlined"}>Перейти на главную</Button>
             </div>
         </section>
         </AppContainer>
