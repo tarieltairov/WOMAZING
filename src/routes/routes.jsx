@@ -3,8 +3,8 @@ import { ROUTER_PATHS } from "./routesPaths";
 import Layout from "../layouts/Layout";
 import Main from "../pages/Main/Main";
 import Cart from "../pages/Cart/Cart";
-import { SuccessPage } from "../pages/SuccessPage";
 import { Checkout } from "../pages/Checkout";
+import { SuccessPage } from "../pages/SuccessPage";
 import Contacts from "../pages/Contacts/Contacts";
 import { Brand } from "../pages/Brand";
 
@@ -27,11 +27,19 @@ export const routes = createBrowserRouter([
       },
       {
         path: ROUTER_PATHS.contacts,
-        element: <Contacts/>,
+        element: <Contacts />,
       },
       {
         path: ROUTER_PATHS.cart,
         element: <Cart />,
+      },
+      {
+        path: ROUTER_PATHS.checkout,
+        element: <Checkout />,
+      },
+      {
+        path: ROUTER_PATHS.success,
+        element: <SuccessPage />,
       },
     ],
   },

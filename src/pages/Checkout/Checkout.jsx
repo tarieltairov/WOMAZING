@@ -8,6 +8,20 @@ export const Checkout = () => {
       <div className={styles.checkout}>
         <div className={styles.checkoutLeft}>
           <div className={styles.checkoutForm}>
+            <h2>Данные получателя</h2>
+            <form className={styles.addressForm}>
+              <div className={styles.inputGroup}>
+                <input type="text" placeholder="Имя" />
+              </div>
+              <div className={styles.inputGroup}>
+                <input type="email" placeholder="E-mail" />
+              </div>
+              <div className={styles.inputGroup}>
+                <input type="tel" placeholder="Телефон" />
+              </div>
+            </form>
+          </div>
+          <div className={styles.checkoutForm}>
             <h2>Адрес получателя</h2>
             <form className={styles.addressForm}>
               <div className={styles.inputGroup}>
