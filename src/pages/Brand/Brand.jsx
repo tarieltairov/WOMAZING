@@ -13,7 +13,7 @@ export function Brand () {
                 </div>
 
                 <div className={brandStyles.magic}>
-                    <div className={brandStyles.magic_text}>
+                    <div className={brandStyles.text}>
                         <h2>Магия в деталях</h2>
 
                         <p> 
