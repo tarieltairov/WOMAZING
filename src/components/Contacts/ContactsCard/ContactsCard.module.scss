@@ -1,0 +1,52 @@
+.contactCard {
+  padding-top: 190px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    &__contact {
+      font-size: 51px;
+    }
+    &__paragraph {
+      font-size: 17px;
+      word-spacing: 13px;
+      .grayWord {
+        color: var(--light-grey);
+      }
+    }
+  }
+  .map {
+    border: 0;
+    width: 1109px;
+    height: 476px;
+    margin-top: 214px;
+  }
+  .description {
+    display: flex;
+    max-width: 943px;
+    justify-content: space-between;
+    margin-top: 130px;
+    &__child {
+      display: flex;
+      flex-direction: column;
+      gap: 19px;
+      p {
+        font-size: 17px;
+      }
+      .link {
+        font-size: 20px;
+        color: var(--black);
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          color: var(--birch-transparent);
+          transition: color 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}
