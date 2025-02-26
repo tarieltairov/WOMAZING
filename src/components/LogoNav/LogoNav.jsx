@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
-import Womazing from "../../assets/icons/Womazing.svg";
 import styles from "./LogoNav.module.scss";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
 
@@ -15,10 +14,10 @@ const menuItems = [
 export const LogoNav = () => {
   return (
     <div className={styles.root}>
-      <Link className={styles.logo} to={ROUTER_PATHS.main}>
+      <div className={styles.logo}>
         <img src={logo} alt="logo" />
         <div className={styles.logoTitle}>Womazing</div>
-      </Link>
+      </div>
 
       <nav>
         <ul className={styles.navigation}>

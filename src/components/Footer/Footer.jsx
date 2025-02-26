@@ -3,7 +3,7 @@ import Image1 from "../../assets/icons/instagram.svg";
 import Image2 from "../../assets/icons/Facebook.svg";
 import Image3 from "../../assets/icons/twiter.svg";
 import Image4 from "../../assets/icons/visa-mastercard.svg";
-import LogoNav from "../LogoNav/LogoNav";
+import { LogoNav } from "../LogoNav/LogoNav";
 import { AppContainer } from "../../layouts/AppContainer";
 
 export function Footer() {

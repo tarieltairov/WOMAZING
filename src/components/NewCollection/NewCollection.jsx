@@ -4,6 +4,7 @@ import productPhoto2 from "../../assets/images/ProductPhoto(1).png";
 import productPhoto3 from "../../assets/images/ProductPhoto(2)..png";
 import Arrow from "../../assets/icons/ArrowToTheRight.png";
 import { Button } from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -31,12 +32,14 @@ const products = [
 ];
 
 export function NewCollection() {
+  const navigate = useNavigate()
+
   return (
     <section className={styles.secondSection}>
       <h2>Новая коллекция</h2>
       <div className={styles.imageSection}>
         {products.map(({ id, image, alt, name, price, oldPrice }) => (
-          <div key={id} className={styles.imageSection__firstChild}>
+          <div onClick={() => navigate(`/product/${id}`)} key={id} className={styles.imageSection__firstChild}>
             <div className={styles.imageWrapper}>
               <img src={image} alt={alt} className={styles.productPhoto} />
               <button className={styles.hoverButton}>
