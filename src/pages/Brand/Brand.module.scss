@@ -1,0 +1,47 @@
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+
+    .idea {
+        height: 547px;
+        margin-top: 594px;
+        border: 2px solid black;
+    }
+
+    .magic {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 123px;
+
+        .magic_text {
+            width: 542px;
+            height: 393px;            
+
+            h2 {
+                margin-bottom: 46px;
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000;
+            }
+
+            p{
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000;
+            }
+        }
+    }
+
+    .shop_btn {
+        max-width: 260px;
+        align-self: center;
+    }
+}
