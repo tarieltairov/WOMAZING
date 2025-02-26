@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 130px;
+    max-width: 1029px;
 
     .idea {
         height: 547px;
@@ -11,11 +12,10 @@
 
     .magic {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         gap: 123px;
 
-        .magic_text {
+        .text {
             width: 542px;
             height: 393px;            
 
@@ -26,7 +26,10 @@
                 font-size: 25px;
                 line-height: 140%;
                 letter-spacing: 0.02em;
-                color: #000;
+            }
+
+            .first_shop {
+                margin-bottom: 23px;
             }
 
             p{
@@ -35,7 +38,6 @@
                 font-size: 17px;
                 line-height: 140%;
                 letter-spacing: 0.02em;
-                color: #000;
             }
         }
     }
