@@ -8,8 +8,9 @@ import { LogoNav } from "../LogoNav";
 
 export function Footer() {
   return (
+    // <AppContainer>
+
     <footer className={styles.FooterContainer}>
-      <AppContainer>
         <div className={styles.container}>
           <LogoNav />
 
@@ -25,7 +26,7 @@ export function Footer() {
 
         <div className={styles.containerInfo}>
           <div className={styles.politic}>
-            <div>
+            <div className={styles.divP}>
               <p>© Все права защищены</p>
               <p>Политика конфиденциальности</p>
               <p>Публичная оферта</p>
@@ -57,7 +58,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </AppContainer>
     </footer>
+    // </AppContainer>
+
   );
 }
