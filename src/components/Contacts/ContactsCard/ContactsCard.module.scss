@@ -2,6 +2,8 @@
   padding-top: 190px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+
   .heading {
     display: flex;
     flex-direction: column;
@@ -42,7 +44,7 @@
         cursor: pointer;
         &:hover {
           color: var(--birch-transparent);
-          transition: 0.3s;
+          transition: color 0.3s ease-in-out;
         }
       }
     }

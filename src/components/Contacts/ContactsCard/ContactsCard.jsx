@@ -1,5 +1,19 @@
 import styles from "./ContactsCard.module.scss";
 
+const contacts = [
+  { label: "Телефон", value: "+7 (495) 823-54-12", href: "tel:+74958235412" },
+  {
+    label: "E-mail",
+    value: "info@sitename.com",
+    href: "mailto:info@sitename.com",
+  },
+  {
+    label: "Адрес",
+    value: "г. Москва, 3-я улица Строителей, 25",
+    href: "https://maps.app.goo.gl/DG7kFgezsWHMz6Ws9",
+  },
+];
+
 export function ContactsCard() {
   return (
     <section className={styles.contactCard}>
@@ -19,22 +33,14 @@ export function ContactsCard() {
       />
 
       <div className={styles.description}>
-        <div className={styles.description__child}>
-          <p>Телефон</p>
-          <a href="tel:+74958235412" className={styles.link}>
-            +7 (495) 823-54-12
-          </a>
-        </div>
-        <div className={styles.description__child}>
-          <p>E-mail</p>
-          <a href="mailto:info@sitename.com" className={styles.link}>
-            info@sitename.com
-          </a>
-        </div>
-        <div className={styles.description__child}>
-          <p>Адрес</p>
-          <a href="https://maps.app.goo.gl/DG7kFgezsWHMz6Ws9" target="blank" className={styles.link}>г. Москва, 3-я улица Строителей, 25</a>
-        </div>
+        {contacts.map((contact, index) => (
+          <div key={index} className={styles.description__child}>
+            <p>{contact.label}</p>
+            <a href={contact.href} className={styles.link}>
+              {contact.value}
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );
