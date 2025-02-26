@@ -4,6 +4,7 @@ import productPhoto2 from "../../assets/images/ProductPhoto(1).png";
 import productPhoto3 from "../../assets/images/ProductPhoto(2)..png";
 import Arrow from "../../assets/icons/ArrowToTheRight.png";
 import { Button } from "../Button/Button";
+import { Card } from "../Card";
 
 const products = [
   {
@@ -36,21 +37,15 @@ export function NewCollection() {
       <h2>Новая коллекция</h2>
       <div className={styles.imageSection}>
         {products.map(({ id, image, alt, name, price, oldPrice }) => (
-          <div key={id} className={styles.imageSection__firstChild}>
-            <div className={styles.imageWrapper}>
-              <img src={image} alt={alt} className={styles.productPhoto} />
-              <button className={styles.hoverButton}>
-                <img src={Arrow} alt="ArrowToTheRight" />
-              </button>
-            </div>
-            <h4>{name}</h4>
-            <p className={styles.price}>
-              {oldPrice && (
-                <span className={styles.price__crossedOut}>${oldPrice}</span>
-              )}
-              ${price}
-            </p>
-          </div>
+          <Card
+            key={id}
+            image={image}
+            alt={alt}
+            Arrow={Arrow}
+            name={name}
+            price={price}
+            oldPrice={oldPrice}
+          />
         ))}
       </div>
 
