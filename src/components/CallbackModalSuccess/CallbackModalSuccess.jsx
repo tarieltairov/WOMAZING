@@ -11,7 +11,7 @@ export const CallbackModalSuccess = ({onClose, setModal}) => {
         <section className={styles.callbackModalSuccess}>
             <div className={styles.container}>
                 <h2>Отлично! Мы скоро вам перезвоним.</h2>
-                <Button onClick={setClose} children={"Закрыть"} className={styles.button} variant={"outlined"}/>
+                <Button onClick={setClose} className={styles.button} variant={"outlined"}>Закрыть</Button>
             </div>
         </section>
     )
