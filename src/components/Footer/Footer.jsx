@@ -3,12 +3,10 @@ import Image1 from "../../assets/icons/instagram.svg";
 import Image2 from "../../assets/icons/Facebook.svg";
 import Image3 from "../../assets/icons/twiter.svg";
 import Image4 from "../../assets/icons/visa-mastercard.svg";
-import { AppContainer } from "../../layouts/AppContainer";
 import { LogoNav } from "../LogoNav";
 
 export function Footer() {
   return (
-    // <AppContainer>
 
     <footer className={styles.FooterContainer}>
         <div className={styles.container}>
@@ -59,7 +57,6 @@ export function Footer() {
           </div>
         </div>
     </footer>
-    // </AppContainer>
 
   );
 }

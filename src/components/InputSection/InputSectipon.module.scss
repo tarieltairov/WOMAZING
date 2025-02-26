@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 h3{
     font-size: 25px;
@@ -70,13 +66,15 @@ font-size: 17px;
     width: 437px;
     font-size: 17px;
     color: #000;
+    text-align: center;
+    border: none;
+    padding-top: 30px;
 }
 
 .inputSection{
     display: flex;
     align-self: start;
     justify-content: flex-start;
-    // margin-left: 245px;
     padding-top: 130px;
 }
 

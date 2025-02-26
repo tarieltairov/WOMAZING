@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./InputSectipon.module.scss";
-// import { AppContainer } from "../../layouts/AppContainer";
 
 
 
@@ -53,7 +52,7 @@ export function InputSection(){
 <textarea name="" id="" cols="30" rows="10" placeholder="Сообщение"  value={message} onChange={handleMessageChange}></textarea>
 <div className={styles.continerBtn}>
 <button className={styles.btn1}  onClick={handleSubmit}>Отправить</button>
-{isSent && (<button className={styles.btn2}>Сообщение успешно отправлено</button>)}
+{isSent && (<div className={styles.btn2}>Сообщение успешно отправлено</div>)}
 </div>
 </form>
 
