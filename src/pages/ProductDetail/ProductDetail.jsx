@@ -57,7 +57,7 @@ export const ProductDetail = ({ cart, setCart }) => {
           <nav className={styles.navigate}>
             <Link to="/">Главная</Link>
             <span> — </span>
-            <Link to="/product/id">Свитшоты</Link>
+            <Link to="">Свитшоты</Link>
             <span> — </span>
             <span className={styles.desc}>Свитшот Sweet Shot</span>
           </nav>

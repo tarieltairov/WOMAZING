@@ -5,8 +5,8 @@ import PhoneIcon from "./PhoneIcon";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
 import { AppContainer } from "../../layouts/AppContainer";
-import { LogoNav } from "../LogoNav";
 import { CallbackModal } from "../CallbackModal";
+import { LogoNav } from "../LogoNav";
 
 export function Header() {
   const [isModalOpen, setModalOpen] = useState(false);

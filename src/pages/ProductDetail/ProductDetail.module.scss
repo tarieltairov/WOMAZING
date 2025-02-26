@@ -5,7 +5,7 @@
   min-height: 100vh;
   padding-top: 10vh;
   gap: 70px;
-  // height: 1000px;
+
 
   max-width: 1100px;
   width: 100%;
@@ -45,7 +45,6 @@ font-weight: 500;
 }
 
 .product__image {
-  // max-width: 1000px;
   img {
     width: 450px;
     height: 729;
@@ -124,6 +123,12 @@ color: var(--medium-gray);
 .product__quantity{
   display: flex;
   gap: 10px;
+
+  button{
+    width: 100px;
+    height: 68px;
+  }
+
   .btn{
  padding: 20px 45px;
   height: 68px;
@@ -135,11 +140,6 @@ color: var(--medium-gray);
   }
 
 }
-
-  button {
-    width: 100px;
-    height: 68px;
-  }
 
 .errorMessage {
   color: red;
