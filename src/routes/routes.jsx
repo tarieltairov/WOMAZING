@@ -3,6 +3,7 @@ import { ROUTER_PATHS } from "./routesPaths";
 import Layout from "../layouts/Layout";
 import Main from "../pages/Main/Main";
 import Cart from "../pages/Cart/Cart";
+import { Checkout } from "../pages/Checkout";
 import { Shop } from "../pages/Shop";
 import { SuccessPage } from "../pages/SuccessPage";
 import Contacts from "../pages/Contacts/Contacts";
@@ -32,6 +33,10 @@ export const routes = createBrowserRouter([
       {
         path: ROUTER_PATHS.cart,
         element: <Cart />,
+      },
+      {
+        path: ROUTER_PATHS.checkout,
+        element: <Checkout />,
       },
       {
         path: ROUTER_PATHS.success,
