@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout";
 import Main from "../pages/Main/Main";
 import Cart from "../pages/Cart/Cart";
 import { Checkout } from "../pages/Checkout";
+import { Shop } from "../pages/Shop";
 import { SuccessPage } from "../pages/SuccessPage";
 import Contacts from "../pages/Contacts/Contacts";
 import { Brand } from "../pages/Brand";
@@ -19,7 +20,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: ROUTER_PATHS.shop,
-        element: <p>shop</p>,
+        element: <Shop />,
       },
       {
         path: ROUTER_PATHS.brand,
