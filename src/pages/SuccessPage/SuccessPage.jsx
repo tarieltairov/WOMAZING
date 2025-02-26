@@ -3,6 +3,7 @@ import styles from "./SuccessPage.module.scss";
 import fileCheckIcon from "../../assets/icons/fileCheck.svg"
 import { useNavigate } from "react-router-dom";
 import { AppContainer } from "../../layouts/AppContainer";
+import { ROUTER_PATHS } from "../../routes/routesPaths"
 
 export const SuccessPage = () => {
 
@@ -14,11 +15,11 @@ export const SuccessPage = () => {
             <div className={styles.success__top}>
                 <h1>Заказ получен</h1>
                 <div className={styles.success__navigations}>
-                    <a href="./">Главная</a>
+                    <a href={ROUTER_PATHS.main}>Главная</a>
                     <span>—</span>
-                    <a href="./checkout">Оформление заказа</a>
+                    <a href={ROUTER_PATHS.checkout}>Оформление заказа</a>
                     <span>—</span>
-                    <a href="/success" className={styles.success__nav__txt}>Заказ получен</a>
+                    <a href={ROUTER_PATHS.success} className={styles.success__nav__txt}>Заказ получен</a>
                 </div>
             </div>
             <div className={styles.success__bottom}>
@@ -29,7 +30,7 @@ export const SuccessPage = () => {
                         <p>Мы свяжемся с вами в ближайшее время!</p>
                     </div>
                 </div>
-                <Button onClick={() => navigate("/")} className={styles.success__button} children={"Перейти на главную"} variant={"outlined"}/>
+                <Button onClick={() => navigate(ROUTER_PATHS.main)} className={styles.success__button} children={"Перейти на главную"} variant={"outlined"}/>
             </div>
         </section>
         </AppContainer>
