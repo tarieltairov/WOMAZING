@@ -1,5 +1,6 @@
-import styles from "../NewCollection/NewCollection.module.scss";
-export const Card = ({ image, alt, Arrow, name, oldPrice, price }) => {
+import styles from "./Card.module.scss";
+export const Card = ({ Arrow, product }) => {
+  const { image, alt, name, oldPrice, price } = product;
   return (
     <div className={styles.imageSection__firstChild}>
       <div className={styles.imageWrapper}>

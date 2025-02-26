@@ -75,23 +75,17 @@ export const Store = () => {
         <Tab>Толстовки</Tab>
       </div>
       <div className={styles.products}>
-        <p className={styles.countInfo}>Показано: 9 из 12 товаров</p>
+        <p className={styles.countInfo}>
+          Показано: {currentItems.length} из 12 товаров
+        </p>
         <div className={styles.catalog}>
           {currentItems.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                image={item.image}
-                alt={item.alt}
-                Arrow={Arrow}
-                name={item.name}
-                price={item.price}
-                oldPrice={item.oldPrice}
-              />
-            );
+            return <Card key={item.id} Arrow={Arrow} product={item} />;
           })}
         </div>
-        <p className={styles.countInfo}>Показано: 9 из 12 товаров</p>
+        <p className={styles.countInfo}>
+          Показано: {currentItems.length} из 12 товаров
+        </p>
         <div className={styles.pagination}>
           {currentPage > 1 && (
             <img

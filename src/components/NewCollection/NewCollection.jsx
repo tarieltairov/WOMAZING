@@ -36,16 +36,8 @@ export function NewCollection() {
     <section className={styles.secondSection}>
       <h2>Новая коллекция</h2>
       <div className={styles.imageSection}>
-        {products.map(({ id, image, alt, name, price, oldPrice }) => (
-          <Card
-            key={id}
-            image={image}
-            alt={alt}
-            Arrow={Arrow}
-            name={name}
-            price={price}
-            oldPrice={oldPrice}
-          />
+        {products.map((product) => (
+          <Card key={product.id} Arrow={Arrow} product={product} />
         ))}
       </div>
 
