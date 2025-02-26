@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout";
 import Main from "../pages/Main/Main";
 import Cart from "../pages/Cart/Cart";
 import { SuccessPage } from "../pages/SuccessPage";
+import Contacts from "../pages/Contacts/Contacts";
 
 export const routes = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: ROUTER_PATHS.contacts,
-        element: <p>contacts</p>,
+        element: <Contacts/>,
       },
       {
         path: ROUTER_PATHS.cart,
