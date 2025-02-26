@@ -2,7 +2,6 @@ import React from "react";
 import "./Cart.scss";
 import productImage from "../../assets/images/product.png";
 import { Button } from "../../components/Button";
-import { redirect } from "react-router-dom";
 
 const Cart = () => {
   console.log("Cart component is rendering!");
