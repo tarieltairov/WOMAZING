@@ -33,7 +33,7 @@ export function Footer() {
             <ul className={styles.ul}>
               <li>Пальто</li>
               <li>Свитшоты</li>
-              <li>Кардиганы</li>
+              <li>Кардиганы</li> 
               <li>Толстовки</li>
             </ul>
           </div>
