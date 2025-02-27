@@ -36,6 +36,45 @@ export const Checkout = () => {
             </form>
           </div>
         </div>
+
+        {/* ---------------------------------- */}
+        <div className={styles.checkoutRight}>
+          <div className={styles.order_cart_box}>
+            <div className={styles.order_cart}>
+              <h3 className={styles.your}>Ваш заказ</h3>
+              <p className={styles.product}>
+                Товар <span>Всего</span>
+              </p>
+            </div>
+            <div className={styles.items}>
+              <div className={styles.order_item}>
+                <span className={styles.item_name}>Футболка USA</span>
+                <span>$129</span>
+              </div>
+              <div className={styles.order_item}>
+                <span className={styles.item_name}>Подытог</span>
+                <span>$129</span>
+              </div>
+              <div className={styles.order_total}>
+                <span className={styles.item_name}>Итого</span>
+                <span>$129</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.payment_box}>
+            <div className={styles.way}>
+              <h3 className={styles.payment}>Способы оплаты</h3>
+            </div>
+            <div className={styles.checkbox_container}>
+              <label>
+                <input type="checkbox" />{" "}
+                <span className={styles.checkmark}></span>
+              Оплата наличными
+              </label>
+            </div>
+            <button className={styles.paypal}>Разместить заказ</button>
+          </div>
+        </div>
       </div>
     </AppContainer>
   );

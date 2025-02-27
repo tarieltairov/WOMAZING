@@ -1,52 +1,200 @@
 .checkout {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-	&Form {
-		margin-bottom: 81px;
-		max-width: 350px;
-		line-height: 140%;
+  &Form {
+    margin-bottom: 81px;
+    max-width: 350px;
+    line-height: 140%;
 
-		h2 {
-			font-weight: 500;
-			font-size: 25px;
-			letter-spacing: 0.02em;
-			color: var(--black);
-			margin-bottom: 42px;
-		}
+    h2 {
+      font-weight: 500;
+      font-size: 25px;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      margin-bottom: 42px;
+    }
 
-		.addressForm {
-			.inputGroup {
-				margin-bottom: 35px;
+    .addressForm {
+      .inputGroup {
+        margin-bottom: 35px;
 
-				input {
-					width: 100%;
-					padding: 0 0 16px 0;
-					border: none;
-					border-bottom: 1px solid var(--black);
-					background-color: transparent;
-					outline: none;
-					font-weight: 500;
-					font-size: 17px;
-					letter-spacing: 0.02em;
+        input {
+          width: 100%;
+          padding: 0 0 16px 0;
+          border: none;
+          border-bottom: 1px solid var(--black);
+          background-color: transparent;
+          outline: none;
+          font-weight: 500;
+          font-size: 17px;
+          letter-spacing: 0.02em;
 
-					&::placeholder {
-						color: var(--medium-gray);
-					}
-				}
+          &::placeholder {
+            color: var(--medium-gray);
+          }
+        }
 
-				textarea {
-					width: 100%;
-					padding: 0 0 110px 0;
-					border: none;
-					border-bottom: 1px solid var(--black);
-					background-color: transparent;
-					outline: none;
-					font-weight: 500;
-					font-size: 17px;
-					letter-spacing: 0.02em;
-				}
-			}
-		}
-	}
+        textarea {
+          width: 100%;
+          padding: 0 0 110px 0;
+          border: none;
+          border-bottom: 1px solid var(--black);
+          background-color: transparent;
+          outline: none;
+          font-weight: 500;
+          font-size: 17px;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+  }
 }
+
+// -------------------------------------
+.order_cart {
+  width: 100%;
+  max-width: 350px;
+  margin-top: 20px;
+
+  .your {
+    margin-bottom: 47px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    padding: 0;
+    color: #000;
+  }
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.order_item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+  padding: 30px 0 0;
+}
+
+.order_total {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  width: 284px;
+  max-height: 57px;
+  padding: 18px;
+  font-weight: bold;
+  background: #f1eadc;
+  span {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000;
+  }
+}
+
+.order_cart_box {
+  span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000;
+  }
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.item_name {
+  margin-right: 73px;
+  gap: 30px;
+}
+
+.all_content {
+  display: flex;
+  padding: 214px 0 0 245px;
+  column-gap: 295px;
+}
+
+.payment_box {
+  padding-top: 159px;
+}
+.way {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+
+.payment {
+  padding-bottom: 47px;
+}
+
+.paypal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: cadetblue;
+  margin-top: 69px;
+  padding: 22px 50px;
+  width: 246px;
+  height: 68px;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+
+.checkbox_container {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.checkbox_container input {
+  display: none;
+}
+
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid black;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+
+.checkbox_container input:checked + .checkmark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
