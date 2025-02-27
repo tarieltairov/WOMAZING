@@ -1,0 +1,52 @@
+.checkout {
+	display: flex;
+	justify-content: space-between;
+
+	&Form {
+		margin-bottom: 81px;
+		max-width: 350px;
+		line-height: 140%;
+
+		h2 {
+			font-weight: 500;
+			font-size: 25px;
+			letter-spacing: 0.02em;
+			color: var(--black);
+			margin-bottom: 42px;
+		}
+
+		.addressForm {
+			.inputGroup {
+				margin-bottom: 35px;
+
+				input {
+					width: 100%;
+					padding: 0 0 16px 0;
+					border: none;
+					border-bottom: 1px solid var(--black);
+					background-color: transparent;
+					outline: none;
+					font-weight: 500;
+					font-size: 17px;
+					letter-spacing: 0.02em;
+
+					&::placeholder {
+						color: var(--medium-gray);
+					}
+				}
+
+				textarea {
+					width: 100%;
+					padding: 0 0 110px 0;
+					border: none;
+					border-bottom: 1px solid var(--black);
+					background-color: transparent;
+					outline: none;
+					font-weight: 500;
+					font-size: 17px;
+					letter-spacing: 0.02em;
+				}
+			}
+		}
+	}
+}
