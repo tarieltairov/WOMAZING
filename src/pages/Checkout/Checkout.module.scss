@@ -1,7 +1,29 @@
 .checkout {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 214px;
+  padding-top: 190px;
+
+  &Nav {
+	margin-bottom: 214px;
+	.title {
+		font-size: 55px;
+		margin-bottom: 26px;
+		font-weight: 500;
+	 }
+	 
+	 .locations {
+		font-size: 17px;
+		display: flex;
+		gap: 13px;
+		& span:last-child {
+		  color: var(--neutralGray);
+		}
+	 }
+  }
+
+  &Inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: first baseline;
+  }
 
   &Form {
     margin-bottom: 81px;
