@@ -1,8 +1,9 @@
 .containerEmail {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
   width: 100%;
+  padding-left: 70px;
 }
 
 .icons {
@@ -13,8 +14,9 @@
 .container {
   display: flex;
   align-items: center;
-  justify-self: center;
   width: 100%;
+  justify-content: space-evenly;
+  padding-left: 170px;
 }
 
 .FooterContainer {
@@ -43,7 +45,7 @@ li {
 .containerInfo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -58,4 +60,11 @@ li {
   display: block;
   padding-top: 9px;
   color: black;
+  margin-right: 40px;
+}
+
+
+
+ .divP{
+   margin-left: -110px;
 }

@@ -1,9 +1,9 @@
-import { Hero } from '../../components/Hero/Hero';
-import { Important } from '../../components/Important/Important';
-import { NewCollection } from '../../components/NewCollection/NewCollection';
-import { Team } from '../../components/Team/Team';
-import { AppContainer } from '../../layouts/AppContainer/AppContainer';
-import styles from './Main.module.scss';
+import { Hero } from "../../components/Hero/Hero";
+import { Important } from "../../components/Important/Important";
+import { NewCollection } from "../../components/NewCollection/NewCollection";
+import { Team } from "../../components/Team/Team";
+import { AppContainer } from "../../layouts/AppContainer/AppContainer";
+import styles from "./Main.module.scss";
 
 function Main() {
   return (
