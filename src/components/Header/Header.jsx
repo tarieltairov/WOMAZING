@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-import cart from "../../assets/icons/cart.svg";
-import styles from "./Header.module.scss";
-import PhoneIcon from "./PhoneIcon";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { ROUTER_PATHS } from "../../routes/routesPaths";
-import { AppContainer } from "../../layouts/AppContainer";
-import { LogoNav } from "../LogoNav";
-import { CallbackModal } from "../CallbackModal";
+import React, { useState } from 'react';
+import cart from '../../assets/icons/cart.svg';
+import styles from './Header.module.scss';
+import PhoneIcon from './PhoneIcon';
+import { useNavigate } from 'react-router-dom';
+import { ROUTER_PATHS } from '../../routes/routesPaths';
+import { AppContainer } from '../../layouts/AppContainer';
+import { CallbackModal } from '../CallbackModal';
+import { LogoNav } from '../LogoNav';
 
-export function Header() {
-
+export function Header({ cartCount }) {
   const [isModalOpen, setModalOpen] = useState(false);
+
   const navigate = useNavigate();
-  const [cartCount, setCartCount] = useState(3);
 
   return (
     <AppContainer>
@@ -21,7 +20,7 @@ export function Header() {
 
         <div className={styles.contact}>
           <div className={styles.phoneWrapper}>
-            <div className={styles.phone}>
+            <div className={styles.phone} onClick={() => setModalOpen(true)}>
               <PhoneIcon className={styles.phoneIcon} />
             </div>
             <div className={styles.tell}>
@@ -30,20 +29,65 @@ export function Header() {
               </a>
             </div>
           </div>
-          <div
-            className={styles.cartContainer}
-            onClick={() => navigate(ROUTER_PATHS.cart)}
-          >
+          <div className={styles.cartContainer} onClick={() => navigate(ROUTER_PATHS.cart)}>
             <img src={cart} alt="cart-img" className={styles.cartIcon} />
             {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
-<<<<<<< HEAD
-      </div>
-      <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
-=======
       </header>
->>>>>>> 15c2a56d36af7d5ec57cc418abbef41390b1bb15
+      <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </AppContainer>
   );
 }
+
+// import React, { useState } from 'react';
+// import cart from '../../assets/icons/cart.svg';
+// import styles from './Header.module.scss';
+// import PhoneIcon from './PhoneIcon';
+// import { useNavigate } from 'react-router-dom';
+// import { ROUTER_PATHS } from '../../routes/routesPaths';
+// import { AppContainer } from '../../layouts/AppContainer';
+// import { CallbackModal } from '../CallbackModal';
+// import { LogoNav } from '../LogoNav';
+// import PropTypes from 'prop-types';
+
+// export function Header({ cartCount, setCartCount }) {
+//   const [isModalOpen, setModalOpen] = useState(false);
+//   const navigate = useNavigate();
+
+//   const handleCartClick = () => {
+//     setCartCount((prevCount) => prevCount + 1);
+//     navigate(ROUTER_PATHS.cart);
+//   };
+
+//   return (
+//     <AppContainer>
+//       <header className={styles.header}>
+//         <LogoNav />
+
+//         <div className={styles.contact}>
+//           <div className={styles.phoneWrapper}>
+//             <div className={styles.phone} onClick={() => setModalOpen(true)}>
+//               <PhoneIcon className={styles.phoneIcon} />
+//             </div>
+//             <div className={styles.tell}>
+//               <a href="tel:+74958235412" className={styles.a}>
+//                 +7 (495) 823-54-12
+//               </a>
+//             </div>
+//           </div>
+//           <div className={styles.cartContainer} onClick={handleCartClick}>
+//             <img src={cart} alt="cart-img" className={styles.cartIcon} />
+//             {cartCount > 0 && <span className={styles.cartBadge}>{cartCount}</span>}
+//           </div>
+//         </div>
+//       </header>
+//       <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+//     </AppContainer>
+//   );
+// }
+
+// Header.propTypes = {
+//   cartCount: PropTypes.number.isRequired,
+//   setCartCount: PropTypes.func.isRequired,
+// };

@@ -1,21 +1,22 @@
 .containerEmail {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
   width: 100%;
-  padding-left: 297px;
+  padding-left: 70px;
 }
 
 .icons {
   display: flex;
   gap: 12px;
-  padding-left: 558px;
 }
 
 .container {
   display: flex;
   align-items: center;
-  justify-self: center;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-left: 170px;
 }
 
 .FooterContainer {
@@ -24,7 +25,6 @@
   background-color: #f1eadc;
   padding-top: 104px;
   margin-top: 130px;
-
 }
 
 .politic {
@@ -45,7 +45,8 @@ li {
 .containerInfo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .iconVisa {
@@ -54,9 +55,16 @@ li {
   justify-content: flex-end;
   padding-top: 30px;
 }
-  
+
 .a {
   display: block;
   padding-top: 9px;
   color: black;
+  margin-right: 40px;
+}
+
+
+
+ .divP{
+   margin-left: -110px;
 }

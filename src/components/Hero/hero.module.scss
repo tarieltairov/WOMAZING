@@ -1,75 +1,74 @@
-button{
-	border: none;
-	cursor: pointer;
+button {
+  border: none;
+  cursor: pointer;
 }
-.hero{
-	display: flex;
-	align-items: center;
-	padding: 130px 230px;
-	justify-content: space-between;
-}
-
-.left{
-	max-width: 563px;
-	display: flex;
-	flex-direction: column;
-	gap: 50px;
-	.title{
-		font-weight: 500;
-		font-size: 55px;
-	}
-	
-	.description{
-		font-size: 20px;
-		letter-spacing: 0.02em;
-		line-height: 140%;
-		padding-right: 33%;
-	}
-	.btnsWrap{
-		display: flex;
-		align-items: center;
-	}
-	.arrow{
-		padding: 19.5px 26px;
-		background: rgba(110, 156, 159, 0.1);
-	}
-	.sliderBtns{
-		display: flex;
-		gap: 12px;
-		align-self: center;
-		margin-top: 112px;
-		button{
-			width: 30px;
-			height: 4px;
-			background: var(--softGray);
-		}
-		.active{
-			background: var(--black);
-		}
-	}
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 130px 230px;
+  justify-content: space-between;
 }
 
-.images{
+.left {
+  max-width: 563px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  .title {
+    font-weight: 500;
+    font-size: 55px;
+  }
 
-	position: relative;
-		.first{
-			position: absolute;
-			right: -100px;
-			top: 123px;
-		}
-		.second{
-			position: absolute;
-			left: -130px;
-			bottom: -60px;
-		}
+  .description {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    line-height: 140%;
+    padding-right: 33%;
+  }
+  .btnsWrap {
+    display: flex;
+    align-items: center;
+  }
+  .arrow {
+    padding: 19.5px 26px;
+    background: rgba(110, 156, 159, 0.1);
+  }
+  .sliderBtns {
+    display: flex;
+    gap: 12px;
+    align-self: center;
+    margin-top: 112px;
+    button {
+      width: 30px;
+      height: 4px;
+      background: var(--softGray);
+    }
+    .active {
+      background: var(--black);
+    }
+  }
 }
 
-.right{
-	background: var(--beigeCream);
-	width: 705px;
-	min-height: 826px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: -1;
+.images {
+  position: relative;
+  .first {
+    position: absolute;
+    right: -100px;
+    top: 123px;
+  }
+  .second {
+    position: absolute;
+    left: -130px;
+    bottom: -60px;
+  }
+}
+
+.right {
+  background: var(--beigeCream);
+  width: 705px;
+  min-height: 826px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }

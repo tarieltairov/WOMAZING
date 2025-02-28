@@ -1,1 +1,1 @@
-export {Hero} from './Hero.jsx';
+export { Hero } from './Hero.jsx';

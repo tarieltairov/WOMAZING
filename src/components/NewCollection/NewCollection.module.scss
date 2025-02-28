@@ -77,7 +77,6 @@ h2 {
   }
 
   &:hover {
-
     .productPhoto,
     .productPhoto2,
     .productPhoto3 {
@@ -90,7 +89,7 @@ h2 {
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;

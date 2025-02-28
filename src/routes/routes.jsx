@@ -1,12 +1,19 @@
-import { createBrowserRouter } from "react-router-dom";
-import { ROUTER_PATHS } from "./routesPaths";
-import Layout from "../layouts/Layout";
-import Main from "../pages/Main/Main";
-import Cart from "../pages/Cart/Cart";
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+import { ROUTER_PATHS } from './routesPaths';
+import Layout from '../layouts/Layout';
+import Main from '../pages/Main/Main';
+import Cart from '../pages/Cart/Cart';
+import { Checkout } from '../pages/Checkout';
+import { Shop } from '../pages/Shop';
+import { SuccessPage } from '../pages/SuccessPage';
+import Contacts from '../pages/Contacts/Contacts';
+import { Brand } from '../pages/Brand';
+import { ProductDetail } from '../pages/ProductDetail';
 
 export const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
@@ -15,19 +22,31 @@ export const routes = createBrowserRouter([
       },
       {
         path: ROUTER_PATHS.shop,
-        element: <p>shop</p>,
+        element: <Shop />,
       },
       {
         path: ROUTER_PATHS.brand,
-        element: <p>brand</p>,
+        element: <Brand />,
       },
       {
         path: ROUTER_PATHS.contacts,
-        element: <p>contacts</p>,
+        element: <Contacts />,
       },
       {
         path: ROUTER_PATHS.cart,
         element: <Cart />,
+      },
+      {
+        path: ROUTER_PATHS.product,
+        element: <ProductDetail />,
+      },
+      {
+        path: ROUTER_PATHS.checkout,
+        element: <Checkout />,
+      },
+      {
+        path: ROUTER_PATHS.SuccessPage,
+        element: <SuccessPage />,
       },
     ],
   },
