@@ -1,35 +1,35 @@
-import { Tab } from '../Tab';
-import { Card } from '../Card';
-import styles from './Store.module.scss';
-import productPhoto from '../../assets/images/ProductPhoto.png';
-import productPhoto2 from '../../assets/images/ProductPhoto(1).png';
-import productPhoto3 from '../../assets/images/ProductPhoto(2)..png';
-import Arrow from '../../assets/icons/ArrowToTheRight.png';
-import ArrowRight from '../../assets/icons/arrow_right.svg';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import styles from "./Store.module.scss";
+import productPhoto from "../../../../assets/images/ProductPhoto.png";
+import productPhoto2 from "../../../../assets/images/ProductPhoto(1).png";
+import productPhoto3 from "../../../../assets/images/ProductPhoto(2)..png";
+import Arrow from "../../../../assets/icons/ArrowToTheRight.png";
+import ArrowRight from "../../../../assets/icons/arrow_right.svg";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Tab } from "../../../../common/ui/Tab";
+import { Card } from "../../../../common/components/Card";
 const allProducts = [];
 export const products = [
   {
     id: 1,
     image: productPhoto,
-    alt: 'Футболка USA',
-    name: 'Футболка USA',
+    alt: "Футболка USA",
+    name: "Футболка USA",
     price: 129,
     oldPrice: 229,
   },
   {
     id: 2,
     image: productPhoto2,
-    alt: 'Купальник Glow',
-    name: 'Купальник Glow',
+    alt: "Купальник Glow",
+    name: "Купальник Glow",
     price: 129,
   },
   {
     id: 3,
     image: productPhoto3,
-    alt: 'Свитшот Sweet Shot',
-    name: 'Свитшот Sweet Shot',
+    alt: "Свитшот Sweet Shot",
+    name: "Свитшот Sweet Shot",
     price: 129,
   },
 ];
@@ -53,10 +53,12 @@ export const Store = () => {
         <button
           key={i}
           onClick={() => setCurrentPage(i)}
-          className={`${styles.paginationBtn} ${i === currentPage ? styles.active : ''}`}
+          className={`${styles.paginationBtn} ${
+            i === currentPage ? styles.active : ""
+          }`}
         >
           {i}
-        </button>,
+        </button>
       );
     }
     return btns;
@@ -77,7 +79,9 @@ export const Store = () => {
         <Tab>Толстовки</Tab>
       </div>
       <div className={styles.products}>
-        <p className={styles.countInfo}>Показано: {currentItems.length} из 12 товаров</p>
+        <p className={styles.countInfo}>
+          Показано: {currentItems.length} из 12 товаров
+        </p>
         {/* <div className={styles.catalog}>
           {currentItems.map((item) => {
             return <Card key={item.id} Arrow={Arrow} product={item} />;
@@ -86,14 +90,19 @@ export const Store = () => {
         <div className={styles.catalog}>
           {currentItems.map((item) => {
             return (
-              <div key={item.id} onClick={() => navigate(`/product/${item.id}`)}>
+              <div
+                key={item.id}
+                onClick={() => navigate(`/product/${item.id}`)}
+              >
                 <Card Arrow={Arrow} product={item} />
               </div>
             );
           })}
         </div>
 
-        <p className={styles.countInfo}>Показано: {currentItems.length} из 12 товаров</p>
+        <p className={styles.countInfo}>
+          Показано: {currentItems.length} из 12 товаров
+        </p>
         <div className={styles.pagination}>
           {currentPage > 1 && (
             <img

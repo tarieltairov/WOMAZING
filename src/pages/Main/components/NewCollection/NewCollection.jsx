@@ -3,7 +3,7 @@ import productPhoto from "../../../../assets/images/ProductPhoto.png";
 import productPhoto2 from "../../../../assets/images/ProductPhoto(1).png";
 import productPhoto3 from "../../../../assets/images/ProductPhoto(2)..png";
 import Arrow from "../../../../assets/icons/ArrowToTheRight.png";
-import { Button } from "../../../../components/Button/Button";
+import { Button } from "../../../../common/ui/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 const products = [

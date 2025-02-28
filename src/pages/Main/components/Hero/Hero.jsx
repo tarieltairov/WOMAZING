@@ -3,7 +3,7 @@ import MainImage from "../../../../assets/images/hero_main.jpg";
 import Image1 from "../../../../assets/images/hero-image.png";
 import Image2 from "../../../../assets/images/hero_third.jpg";
 import ArrowImage from "../../../../assets/icons/arrow_down.svg";
-import { Button } from "../../../../components/Button/Button";
+import { Button } from "../../../../common/ui/Button/Button";
 
 export const Hero = () => {
   return (

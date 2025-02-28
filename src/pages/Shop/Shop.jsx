@@ -1,5 +1,5 @@
-import { Store } from '../../components/Store';
-import { AppContainer } from '../../layouts/AppContainer';
+import { AppContainer } from "../../layouts/AppContainer";
+import { Store } from "./components/Store/Store";
 export const Shop = () => {
   return (
     <main>
