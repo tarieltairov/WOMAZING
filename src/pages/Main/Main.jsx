@@ -1,5 +1,5 @@
 import { Hero } from "../../components/Hero/Hero";
-import { Important } from "../../components/Important";
+import { Important } from "../../components/Important/Important";
 import { NewCollection } from "../../components/NewCollection/NewCollection";
 import { Team } from "../../components/Team/Team";
 import { AppContainer } from "../../layouts/AppContainer/AppContainer";

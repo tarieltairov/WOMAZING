@@ -1,16 +1,16 @@
-import styles from "./ContactsCard.module.scss";
+import styles from './ContactsCard.module.scss';
 
 const contacts = [
-  { label: "Телефон", value: "+7 (495) 823-54-12", href: "tel:+74958235412" },
+  { label: 'Телефон', value: '+7 (495) 823-54-12', href: 'tel:+74958235412' },
   {
-    label: "E-mail",
-    value: "info@sitename.com",
-    href: "mailto:info@sitename.com",
+    label: 'E-mail',
+    value: 'info@sitename.com',
+    href: 'mailto:info@sitename.com',
   },
   {
-    label: "Адрес",
-    value: "г. Москва, 3-я улица Строителей, 25",
-    href: "https://maps.app.goo.gl/DG7kFgezsWHMz6Ws9",
+    label: 'Адрес',
+    value: 'г. Москва, 3-я улица Строителей, 25',
+    href: 'https://maps.app.goo.gl/DG7kFgezsWHMz6Ws9',
   },
 ];
 
