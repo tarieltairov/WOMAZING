@@ -1,6 +1,7 @@
 .cart-container {
   max-width: 1100px;
   margin: 0 auto;
+  margin-top: 190px;
 }
 
 .cart__name_cart {
@@ -34,7 +35,6 @@ nav a {
   flex-direction: column;
   gap: 26px;
   padding-bottom: 84px;
-  margin-top: 190px;
 }
 
 .cart__main_result {
@@ -49,42 +49,6 @@ nav a {
   justify-content: space-between;
   gap: 139px;
 }
-
-// .cart__main_product {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin-right: 99px;
-//   margin-top: 49px;
-// }
-
-// .image__product {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   gap: 24px;
-// }
-
-// .botton__product_delete {
-//   border: none;
-//   background-color: white;
-//   cursor: pointer;
-// }
-
-// .product__price {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   gap: 175px;
-// }
-
-// .product-qty {
-//   text-align: center;
-//   width: 46px;
-//   height: 46px;
-//   margin-left: -35px;
-//   padding-left: 15px;
-// }
 
 .cart__coupon {
   display: flex;

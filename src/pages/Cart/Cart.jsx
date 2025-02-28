@@ -25,10 +25,7 @@ const Cart = () => {
             <span className="cart_result">Всего</span>
           </div>
         </div>
-
         <hr />
-
-
       </div>
 
       <div className="cart__coupon">

@@ -5,9 +5,22 @@
   max-width: 1029px;
 
   .idea {
-    height: 547px;
-    margin-top: 594px;
-    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    gap: 123px;
+
+    .idea__text {
+      width: 542px;
+      height: 393px;
+    }
+
+    p {
+      font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+    }
   }
 
   .magic {
