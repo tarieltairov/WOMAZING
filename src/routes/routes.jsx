@@ -1,19 +1,19 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import { ROUTER_PATHS } from './routesPaths';
-import Layout from '../layouts/Layout';
-import Main from '../pages/Main/Main';
-import Cart from '../pages/Cart/Cart';
-import { Checkout } from '../pages/Checkout';
-import { Shop } from '../pages/Shop';
-import { SuccessPage } from '../pages/SuccessPage';
-import Contacts from '../pages/Contacts/Contacts';
-import { Brand } from '../pages/Brand';
-import { ProductDetail } from '../pages/ProductDetail';
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import { ROUTER_PATHS } from "./routesPaths";
+import Layout from "../layouts/Layout";
+import Main from "../pages/Main/Main";
+import Cart from "../pages/Cart/Cart";
+import { Checkout } from "../pages/Checkout";
+import { Shop } from "../pages/Shop";
+import { SuccessPage } from "../pages/SuccessPage";
+import Contacts from "../pages/Contacts/Contacts";
+import { Brand } from "../pages/Brand";
+import { ProductDetail } from "../pages/ProductDetail";
 
 export const routes = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
@@ -45,7 +45,7 @@ export const routes = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: ROUTER_PATHS.SuccessPage,
+        path: ROUTER_PATHS.success,
         element: <SuccessPage />,
       },
     ],

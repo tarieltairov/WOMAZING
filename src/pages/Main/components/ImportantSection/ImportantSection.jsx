@@ -1,23 +1,23 @@
-import Quality from '../../assets/icons/Frame 16.svg';
-import Speed from '../../assets/icons/Frame 16 (1).svg';
-import Responsibility from '../../assets/icons/Frame 16 (2).svg';
-import styles from './ImportantSection.module.scss';
+import Quality from "../../../../assets/icons/Frame 16.svg";
+import Speed from "../../../../assets/icons/Frame 16 (1).svg";
+import Responsibility from "../../../../assets/icons/Frame 16 (2).svg";
+import styles from "./ImportantSection.module.scss";
 
 export function ImportantSection() {
   const values = [
     {
       img: Quality,
-      title: 'Качество',
+      title: "Качество",
       text: `Наши профессионалы работают на \nлучшем оборудовании для пошива \nодежды беспрецедентного \nкачества.`,
     },
     {
       img: Speed,
-      title: 'Скорость',
+      title: "Скорость",
       text: `Благодаря отлаженной системе в \nWomazing мы можем отшивать до \n20-ти единиц продукции в наших \nсобственных цехах.`,
     },
     {
       img: Responsibility,
-      title: 'Ответственность',
+      title: "Ответственность",
       text: `Мы заботимся о людях и планете \nБезотходное производство и \nкомфортные условия труда — все \nэто Womazing.`,
     },
   ];

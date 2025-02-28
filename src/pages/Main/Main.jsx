@@ -1,10 +1,9 @@
-import { Hero } from "../../components/Hero";
-import { ImportantSection } from "../../components/ImportantSection";
-import { NewCollection } from "../../components/NewCollection";
-import { Team } from "../../components/Team";
-import { AppContainer } from "../../layouts/AppContainer";
+import { Hero } from "./components/Hero/Hero";
+import { ImportantSection } from "./components/ImportantSection";
+import { NewCollection } from "./components/NewCollection/NewCollection";
+import { Team } from "./components/Team/Team";
 import styles from "./Main.module.scss";
-
+import { AppContainer } from "../../layouts/AppContainer/AppContainer";
 function Main() {
   return (
     <main className={styles.page}>

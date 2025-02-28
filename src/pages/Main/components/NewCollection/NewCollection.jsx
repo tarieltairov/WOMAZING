@@ -1,32 +1,32 @@
-import styles from './NewCollection.module.scss';
-import productPhoto from '../../assets/images/ProductPhoto.png';
-import productPhoto2 from '../../assets/images/ProductPhoto(1).png';
-import productPhoto3 from '../../assets/images/ProductPhoto(2)..png';
-import Arrow from '../../assets/icons/ArrowToTheRight.png';
-import { Button } from '../Button/Button';
-import { useNavigate } from 'react-router-dom';
+import styles from "./NewCollection.module.scss";
+import productPhoto from "../../../../assets/images/ProductPhoto.png";
+import productPhoto2 from "../../../../assets/images/ProductPhoto(1).png";
+import productPhoto3 from "../../../../assets/images/ProductPhoto(2)..png";
+import Arrow from "../../../../assets/icons/ArrowToTheRight.png";
+import { Button } from "../../../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
     id: 1,
     image: productPhoto,
-    alt: 'Футболка USA',
-    name: 'Футболка USA',
+    alt: "Футболка USA",
+    name: "Футболка USA",
     price: 129,
     oldPrice: 229,
   },
   {
     id: 2,
     image: productPhoto2,
-    alt: 'Купальник Glow',
-    name: 'Купальник Glow',
+    alt: "Купальник Glow",
+    name: "Купальник Glow",
     price: 129,
   },
   {
     id: 3,
     image: productPhoto3,
-    alt: 'Свитшот Sweet Shot',
-    name: 'Свитшот Sweet Shot',
+    alt: "Свитшот Sweet Shot",
+    name: "Свитшот Sweet Shot",
     price: 129,
   },
 ];
@@ -52,7 +52,10 @@ export function NewCollection() {
             </div>
             <h4>{name}</h4>
             <p className={styles.price}>
-              {oldPrice && <span className={styles.price__crossedOut}>${oldPrice}</span>}${price}
+              {oldPrice && (
+                <span className={styles.price__crossedOut}>${oldPrice}</span>
+              )}
+              ${price}
             </p>
           </div>
         ))}
