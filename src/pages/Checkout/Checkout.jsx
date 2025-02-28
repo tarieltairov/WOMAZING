@@ -1,11 +1,21 @@
-import React from 'react';
-import styles from './Checkout.module.scss';
-import { AppContainer } from '../../layouts/AppContainer';
+import React from "react";
+import styles from "./Checkout.module.scss";
+import { AppContainer } from "../../layouts/AppContainer";
 
 export const Checkout = () => {
   return (
     <AppContainer>
       <div className={styles.checkout}>
+      <div className={styles.checkoutNav}>
+        <h1 className={styles.title}>Оформление заказа</h1>
+        <p className={styles.locations}>
+          <span>Главная</span>
+          <span>—</span>
+          <span>Оформление заказа</span>
+        </p>
+      </div>
+
+      <div className={styles.checkoutInner}>
         <div className={styles.checkoutLeft}>
           <div className={styles.checkoutForm}>
             <h2>Данные получателя</h2>
@@ -83,12 +93,13 @@ export const Checkout = () => {
               <label>
                 <input type="checkbox" />{" "}
                 <span className={styles.checkmark}></span>
-              Оплата наличными
+                Оплата наличными
               </label>
             </div>
             <button className={styles.paypal}>Разместить заказ</button>
           </div>
         </div>
+      </div>
       </div>
     </AppContainer>
   );
