@@ -1,4 +1,4 @@
-import styles from "./Card.module.scss";
+import styles from './Card.module.scss';
 export const Card = ({ Arrow, product }) => {
   const { image, alt, name, oldPrice, price } = product;
   return (
@@ -11,10 +11,7 @@ export const Card = ({ Arrow, product }) => {
       </div>
       <h4>{name}</h4>
       <p className={styles.price}>
-        {oldPrice && (
-          <span className={styles.price__crossedOut}>${oldPrice}</span>
-        )}
-        ${price}
+        {oldPrice && <span className={styles.price__crossedOut}>${oldPrice}</span>}${price}
       </p>
     </div>
   );

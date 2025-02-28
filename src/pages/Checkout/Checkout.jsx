@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./Checkout.module.scss";
-import { AppContainer } from "../../layouts/AppContainer";
+import React from 'react';
+import styles from './Checkout.module.scss';
+import { AppContainer } from '../../layouts/AppContainer';
 
 export const Checkout = () => {
   return (

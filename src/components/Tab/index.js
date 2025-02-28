@@ -1,1 +1,1 @@
-export {Tab} from './Tab.jsx';
+export { Tab } from './Tab.jsx';
