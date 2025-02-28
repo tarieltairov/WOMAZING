@@ -4,6 +4,42 @@
   gap: 130px;
   max-width: 1029px;
 
+  .brand__header {
+    margin-top: 190px;
+
+    .brand__header_title {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      padding-bottom: 84px;
+    }
+
+    .brand__name_brand {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 55px;
+      line-height: 110%;
+      letter-spacing: 0.02em;
+      color: #000;
+    }
+
+    .brand__nav {
+      display: flex;
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+    }
+
+    .brand__nouneym {
+      padding: 0px 13px 0px 13px;
+    }
+
+    .idea__p_gray {
+      color: #909090;
+    }
+  }
+
   .idea {
     display: flex;
     align-items: center;
@@ -14,12 +50,25 @@
       height: 393px;
     }
 
+    .idea__first_shop {
+      margin-bottom: 23px;
+    }
+
     p {
       font-family: var(--font-family);
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 140%;
-        letter-spacing: 0.02em;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+    }
+
+    .idea_h2 {
+      margin-bottom: 46px;
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
     }
   }
 

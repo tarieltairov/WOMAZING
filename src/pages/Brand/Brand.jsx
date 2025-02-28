@@ -12,10 +12,21 @@ export function Brand() {
   return (
     <AppContainer>
       <section className={brandStyles.brand}>
+        <div className={brandStyles.brand__header}>
+          <div className={brandStyles.brand__header_title}>
+            <h1 className={brandStyles.brand__name_brand}>О бренде</h1>
+            <div className={brandStyles.brand__nav}>
+              <p>Главная</p>
+              <span className={brandStyles.brand__nouneym}>-</span>
+              <p className={brandStyles.idea__p_gray}>О бренде</p>
+            </div>
+          </div>
+        </div>
+
         <div className={brandStyles.idea}>
           <img src={ideaWomen} alt="idea-woman" />
           <div className={brandStyles.idea__text}>
-            <h2>Идея и женщина</h2>
+            <h2 className={brandStyles.idea_h2}>Идея и женщина</h2>
 
             <p className={brandStyles.idea__first_shop}>
               Womazing была основана в 2010-ом и стала одной из самых успешных
