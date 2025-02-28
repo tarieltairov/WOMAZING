@@ -1,11 +1,21 @@
-import React from 'react';
-import styles from './Checkout.module.scss';
-import { AppContainer } from '../../layouts/AppContainer';
+import React from "react";
+import styles from "./Checkout.module.scss";
+import { AppContainer } from "../../layouts/AppContainer";
 
 export const Checkout = () => {
   return (
     <AppContainer>
       <div className={styles.checkout}>
+      <div className={styles.checkoutNav}>
+        <h1 className={styles.title}>Оформление заказа</h1>
+        <p className={styles.locations}>
+          <span>Главная</span>
+          <span>—</span>
+          <span>Оформление заказа</span>
+        </p>
+      </div>
+
+      <div className={styles.checkoutInner}>
         <div className={styles.checkoutLeft}>
           <div className={styles.checkoutForm}>
             <h2>Данные получателя</h2>
@@ -50,6 +60,46 @@ export const Checkout = () => {
             </form>
           </div>
         </div>
+
+        {/* ---------------------------------- */}
+        <div className={styles.checkoutRight}>
+          <div className={styles.order_cart_box}>
+            <div className={styles.order_cart}>
+              <h3 className={styles.your}>Ваш заказ</h3>
+              <p className={styles.product}>
+                Товар <span>Всего</span>
+              </p>
+            </div>
+            <div className={styles.items}>
+              <div className={styles.order_item}>
+                <span className={styles.item_name}>Футболка USA</span>
+                <span>$129</span>
+              </div>
+              <div className={styles.order_item}>
+                <span className={styles.item_name}>Подытог</span>
+                <span>$129</span>
+              </div>
+              <div className={styles.order_total}>
+                <span className={styles.item_name}>Итого</span>
+                <span>$129</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.payment_box}>
+            <div className={styles.way}>
+              <h3 className={styles.payment}>Способы оплаты</h3>
+            </div>
+            <div className={styles.checkbox_container}>
+              <label>
+                <input type="checkbox" />{" "}
+                <span className={styles.checkmark}></span>
+                Оплата наличными
+              </label>
+            </div>
+            <button className={styles.paypal}>Разместить заказ</button>
+          </div>
+        </div>
+      </div>
       </div>
     </AppContainer>
   );

@@ -1,10 +1,10 @@
-import { Button } from "../../components/Button";
 import magicWoman from "../../assets/images/Frame 34.png";
-import ideaWomen from "../../assets/images/Idea-women.png";
 import brandStyles from "./Brand.module.scss";
 import { AppContainer } from "../../layouts/AppContainer";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routes/routesPaths";
+import { Button } from "../../common/ui/Button/Button";
+import ideaWomen from "../../assets/images/Idea-women.png";
 
 export function Brand() {
   const navigate = useNavigate();

@@ -1,17 +1,16 @@
-import { Hero } from "../../components/Hero/Hero";
-import { Important } from "../../components/Important/Important";
-import { NewCollection } from "../../components/NewCollection/NewCollection";
-import { Team } from "../../components/Team/Team";
-import { AppContainer } from "../../layouts/AppContainer/AppContainer";
+import { Hero } from "./components/Hero/Hero";
+import { ImportantSection } from "./components/ImportantSection";
+import { NewCollection } from "./components/NewCollection/NewCollection";
+import { Team } from "./components/Team/Team";
 import styles from "./Main.module.scss";
-
+import { AppContainer } from "../../layouts/AppContainer/AppContainer";
 function Main() {
   return (
     <main className={styles.page}>
       <Hero />
       <AppContainer className={styles.sectionsWithoutHero}>
         <NewCollection />
-        <Important />
+        <ImportantSection />
         <Team />
       </AppContainer>
     </main>

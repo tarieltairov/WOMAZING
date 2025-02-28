@@ -1,11 +1,11 @@
-import styles from './Team.module.scss';
+import styles from "./Team.module.scss";
 
-import leftArrow from '../../assets/icons/Team/left-arrow-icon.svg';
-import rightArrow from '../../assets/icons/Team/right-arrow-icon.svg';
-import TeamImage1 from '../../assets/images/Team/TeamImage1.jpg';
-import TeamImage2 from '../../assets/images/Team/TeamImage2.jpg';
-import TeamImage3 from '../../assets/images/Team/TeamImage3.jpg';
-import { useState } from 'react';
+import leftArrow from "../../../../assets/icons/Team/left-arrow-icon.svg";
+import rightArrow from "../../../../assets/icons/Team/right-arrow-icon.svg";
+import TeamImage1 from "../../../../assets/images/Team/TeamImage1.jpg";
+import TeamImage2 from "../../../../assets/images/Team/TeamImage2.jpg";
+import TeamImage3 from "../../../../assets/images/Team/TeamImage3.jpg";
+import { useState } from "react";
 
 const images = [TeamImage1, TeamImage2, TeamImage3];
 
@@ -24,7 +24,9 @@ export const Team = () => {
   const prevSlide = () => {
     setIsAnimating(true);
     setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
       setIsAnimating(false);
     }, 500);
   };
@@ -46,8 +48,8 @@ export const Team = () => {
               src={images[currentIndex]}
               alt="slide"
               style={{
-                transform: `translateX(${isAnimating ? '-10px' : '0px'})`,
-                transition: 'opacity 0.5s ease, transform 0.5s ease',
+                transform: `translateX(${isAnimating ? "-10px" : "0px"})`,
+                transition: "opacity 0.5s ease, transform 0.5s ease",
               }}
             />
           </div>
@@ -64,8 +66,8 @@ export const Team = () => {
           <div className={styles.teamTextSubtitle}>
             Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.
             <div className={styles.teamTextSeparator}></div>
-            Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают
-            достоинства каждой девушки.
+            Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно
+            подчеркивают достоинства каждой девушки.
           </div>
           <button>Подробнее о бренде</button>
         </div>

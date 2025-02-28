@@ -1,9 +1,9 @@
-import React from 'react';
-import './Cart.scss';
-import { Button } from '../../components/Button';
+import React from "react";
+import "./Cart.scss";
+import { Button } from "../../common/ui/Button/Button";
 
 const Cart = () => {
-  console.log('Cart component is rendering!');
+  console.log("Cart component is rendering!");
   return (
     <div className="cart-container">
       <div className="cart__header">
@@ -30,10 +30,14 @@ const Cart = () => {
 
       <div className="cart__coupon">
         <div className="cart__coupon_input">
-          <input className="cart__promocode" type="text" placeholder="Введите промокод" />
-          <Button variant={'outlined'}>Применить купон</Button>
+          <input
+            className="cart__promocode"
+            type="text"
+            placeholder="Введите промокод"
+          />
+          <Button variant={"outlined"}>Применить купон</Button>
         </div>
-        <Button variant={'outlined'}>Обновить корзину</Button>
+        <Button variant={"outlined"}>Обновить корзину</Button>
       </div>
 
       <div className="cart__total">

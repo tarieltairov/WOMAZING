@@ -1,12 +1,12 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import styles from './ProductDetail.module.scss';
-import { Button } from '../../components/Button/Button';
-import { AppContainer } from '../../layouts/AppContainer';
-import { products } from '../../components/Store/Store';
-import { Card } from './../../components/Card/Card';
-import Arrow from '../../assets/icons/ArrowToTheRight.png';
-import React from 'react';
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import styles from "./ProductDetail.module.scss";
+import { AppContainer } from "../../layouts/AppContainer";
+import Arrow from "../../assets/icons/ArrowToTheRight.png";
+import React from "react";
+import { Button } from "../../common/ui/Button/Button";
+import { products } from "../Shop/components/Store/Store";
+import { Card } from "../../common/components/Card";
 
 export const ProductDetail = () => {
   const [cart, setCart] = useState([]);
@@ -16,7 +16,7 @@ export const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const card = products.find((product) => product.id === Number(id));
 
@@ -30,7 +30,7 @@ export const ProductDetail = () => {
 
   const addToCart = () => {
     if (isDisabled) {
-      setErrorMessage('Пожалуйста, выберите размер и цвет.');
+      setErrorMessage("Пожалуйста, выберите размер и цвет.");
       return;
     }
 
@@ -42,14 +42,14 @@ export const ProductDetail = () => {
     };
 
     setCart((prevCart) => [...prevCart, item]);
-    setErrorMessage('');
-    alert('Товар добавлен в корзину!');
-    navigate('/cart');
+    setErrorMessage("");
+    alert("Товар добавлен в корзину!");
+    navigate("/cart");
   };
 
   const productOption = {
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    colors: ['#927876', '#D4D4D4', '#FD9696', '#FDC796'],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["#927876", "#D4D4D4", "#FD9696", "#FDC796"],
   };
 
   return (
@@ -73,7 +73,9 @@ export const ProductDetail = () => {
           <div className={styles.product__info}>
             <div className={styles.priceWrap}>
               <span className={styles.newPrice}>{card.price}$</span>
-              {card.oldPrice && <span className={styles.oldPrice}>{card.oldPrice}</span>}
+              {card.oldPrice && (
+                <span className={styles.oldPrice}>{card.oldPrice}</span>
+              )}
             </div>
 
             <div className={styles.product__sizes}>
@@ -82,7 +84,9 @@ export const ProductDetail = () => {
                 {productOption.sizes.map((size) => (
                   <button
                     key={size}
-                    className={`${styles.sizeButton} ${selectedSize === size ? styles.active : ''}`}
+                    className={`${styles.sizeButton} ${
+                      selectedSize === size ? styles.active : ""
+                    }`}
                     onClick={() => setSelectedSize(size)}
                   >
                     {size}
@@ -97,7 +101,9 @@ export const ProductDetail = () => {
                 {productOption.colors.map((color) => (
                   <div
                     key={color}
-                    className={`${styles.colorButton} ${selectedColor === color ? styles.active : ''}`}
+                    className={`${styles.colorButton} ${
+                      selectedColor === color ? styles.active : ""
+                    }`}
                     style={{ backgroundColor: color }}
                     onClick={() => setSelectedColor(color)}
                   />
@@ -106,7 +112,9 @@ export const ProductDetail = () => {
             </div>
 
             <div className={styles.product__quantity}>
-              <button onClick={() => setQuantity((prev) => prev + 1)}>{quantity}</button>
+              <button onClick={() => setQuantity((prev) => prev + 1)}>
+                {quantity}
+              </button>
               <Button
                 onClick={() => {
                   addToCart();
@@ -117,7 +125,9 @@ export const ProductDetail = () => {
               </Button>
             </div>
 
-            {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+            {errorMessage && (
+              <p className={styles.errorMessage}>{errorMessage}</p>
+            )}
           </div>
         </div>
 

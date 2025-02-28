@@ -1,5 +1,5 @@
-import { Button } from '../Button';
-import styles from './CallbackModalSuccess.module.scss';
+import { Button } from "../../ui/Button/Button";
+import styles from "./CallbackModalSuccess.module.scss";
 
 export const CallbackModalSuccess = ({ onClose, setModal }) => {
   const setClose = () => {
@@ -11,7 +11,11 @@ export const CallbackModalSuccess = ({ onClose, setModal }) => {
     <section className={styles.callbackModalSuccess}>
       <div className={styles.container}>
         <h2>Отлично! Мы скоро вам перезвоним.</h2>
-        <Button onClick={setClose} className={styles.button} variant={'outlined'}>
+        <Button
+          onClick={setClose}
+          className={styles.button}
+          variant={"outlined"}
+        >
           Закрыть
         </Button>
       </div>

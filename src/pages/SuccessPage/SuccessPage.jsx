@@ -1,9 +1,9 @@
-import { Button } from '../../components/Button';
-import styles from './SuccessPage.module.scss';
-import fileCheckIcon from '../../assets/icons/fileCheck.svg';
-import { useNavigate } from 'react-router-dom';
-import { AppContainer } from '../../layouts/AppContainer';
-import { ROUTER_PATHS } from '../../routes/routesPaths';
+import styles from "./SuccessPage.module.scss";
+import fileCheckIcon from "../../assets/icons/fileCheck.svg";
+import { useNavigate } from "react-router-dom";
+import { AppContainer } from "../../layouts/AppContainer";
+import { ROUTER_PATHS } from "../../routes/routesPaths";
+import { Button } from "../../common/ui/Button/Button";
 
 export const SuccessPage = () => {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export const SuccessPage = () => {
           <Button
             onClick={() => navigate(ROUTER_PATHS.main)}
             className={styles.success__button}
-            variant={'outlined'}
+            variant={"outlined"}
           >
             Перейти на главную
           </Button>

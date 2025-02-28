@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import cart from '../../assets/icons/cart.svg';
-import styles from './Header.module.scss';
-import PhoneIcon from './PhoneIcon';
-import { useNavigate } from 'react-router-dom';
-import { ROUTER_PATHS } from '../../routes/routesPaths';
-import { AppContainer } from '../../layouts/AppContainer';
-import { CallbackModal } from '../CallbackModal';
-import { LogoNav } from '../LogoNav';
+import React, { useState } from "react";
+import cart from "../../../assets/icons/cart.svg";
+import styles from "./Header.module.scss";
+import PhoneIcon from "./PhoneIcon";
+import { useNavigate } from "react-router-dom";
+import { ROUTER_PATHS } from "../../../routes/routesPaths";
+import { AppContainer } from "../../../layouts/AppContainer";
+import { CallbackModal } from "../CallbackModal";
+import { LogoNav } from "../LogoNav";
 
 export function Header({ cartCount }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -29,13 +29,19 @@ export function Header({ cartCount }) {
               </a>
             </div>
           </div>
-          <div className={styles.cartContainer} onClick={() => navigate(ROUTER_PATHS.cart)}>
+          <div
+            className={styles.cartContainer}
+            onClick={() => navigate(ROUTER_PATHS.cart)}
+          >
             <img src={cart} alt="cart-img" className={styles.cartIcon} />
             {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
           </div>
         </div>
       </header>
-      <CallbackModal isModalOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <CallbackModal
+        isModalOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </AppContainer>
   );
 }

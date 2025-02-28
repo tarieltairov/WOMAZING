@@ -1,13 +1,14 @@
-import styles from './CallbackModal.module.scss';
-import closeIcon from '../../assets/icons/close.svg';
-import { Button } from '../Button';
-import { useEffect, useState } from 'react';
-import { CallbackModalSuccess } from '../CallbackModalSuccess';
+import { Button } from "../../ui/Button/Button";
+import styles from "./CallbackModal.module.scss";
+import closeIcon from "../../../assets/icons/close.svg";
+// import { Button } from '../Button';
+import { useEffect, useState } from "react";
+import { CallbackModalSuccess } from "../CallbackModalSuccess";
 
 export const CallbackModal = ({ isModalOpen, onClose }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
   const [isValid, setIsValid] = useState(false);
 
@@ -15,11 +16,11 @@ export const CallbackModal = ({ isModalOpen, onClose }) => {
   const isValidPhone = (phone) => /^\+?\d{10,15}$/.test(phone);
 
   const handleSubmit = () => {
-    if (name.trim() !== '' && isValidEmail(email) && isValidPhone(phone)) {
+    if (name.trim() !== "" && isValidEmail(email) && isValidPhone(phone)) {
       setSuccessModalOpen(true);
-      setName('');
-      setEmail('');
-      setPhone('');
+      setName("");
+      setEmail("");
+      setPhone("");
     } else {
       setIsValid(true);
       setTimeout(() => setIsValid(false), 2000);
@@ -27,16 +28,16 @@ export const CallbackModal = ({ isModalOpen, onClose }) => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSubmit();
     }
   };
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [isModalOpen]);
 
@@ -45,7 +46,10 @@ export const CallbackModal = ({ isModalOpen, onClose }) => {
     <section className={styles.callbackModal}>
       <div className={styles.container}>
         {isSuccessModalOpen ? (
-          <CallbackModalSuccess onClose={onClose} setModal={setSuccessModalOpen} />
+          <CallbackModalSuccess
+            onClose={onClose}
+            setModal={setSuccessModalOpen}
+          />
         ) : (
           <>
             <img
@@ -58,7 +62,7 @@ export const CallbackModal = ({ isModalOpen, onClose }) => {
             <input
               type="text"
               placeholder="Имя"
-              className={`${isValid ? styles.noValidInp : ''}`}
+              className={`${isValid ? styles.noValidInp : ""}`}
               value={name}
               onChange={(e) => setName(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -66,7 +70,7 @@ export const CallbackModal = ({ isModalOpen, onClose }) => {
             <input
               type="email"
               placeholder="E-mail"
-              className={`${isValid ? styles.noValidInp : ''}`}
+              className={`${isValid ? styles.noValidInp : ""}`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -74,12 +78,16 @@ export const CallbackModal = ({ isModalOpen, onClose }) => {
             <input
               type="tel"
               placeholder="Телефон"
-              className={`${isValid ? styles.noValidInp : ''}`}
+              className={`${isValid ? styles.noValidInp : ""}`}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               onKeyDown={handleKeyDown}
             />
-            <Button onClick={handleSubmit} className={`${styles.button}`} variant={'filled'}>
+            <Button
+              onClick={handleSubmit}
+              className={`${styles.button}`}
+              variant={"filled"}
+            >
               Заказать звонок
             </Button>
           </>
