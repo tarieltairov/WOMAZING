@@ -35,13 +35,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^10.0.2",
-    "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "prettier": "^3.5.2"
-  }
+  "devDependencies": {}
 }
