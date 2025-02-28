@@ -1,1 +1,1 @@
-export { NewCollection } from "./NewCollection";
+export { NewCollection } from './NewCollection';

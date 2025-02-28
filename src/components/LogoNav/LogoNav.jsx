@@ -1,14 +1,14 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import logo from "../../assets/icons/logo.svg";
-import styles from "./LogoNav.module.scss";
-import { ROUTER_PATHS } from "../../routes/routesPaths";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from '../../assets/icons/logo.svg';
+import styles from './LogoNav.module.scss';
+import { ROUTER_PATHS } from '../../routes/routesPaths';
 
 const menuItems = [
-  { name: "Главная", path: ROUTER_PATHS.main },
-  { name: "Магазин", path: ROUTER_PATHS.shop },
-  { name: "О бренде", path: ROUTER_PATHS.brand },
-  { name: "Контакты", path: ROUTER_PATHS.contacts },
+  { name: 'Главная', path: ROUTER_PATHS.main },
+  { name: 'Магазин', path: ROUTER_PATHS.shop },
+  { name: 'О бренде', path: ROUTER_PATHS.brand },
+  { name: 'Контакты', path: ROUTER_PATHS.contacts },
 ];
 
 export const LogoNav = () => {
@@ -23,10 +23,7 @@ export const LogoNav = () => {
         <ul className={styles.navigation}>
           {menuItems.map((item, index) => (
             <li key={index}>
-              <NavLink
-                to={item.path}
-                className={({ isActive }) => (isActive ? styles.o : "")}
-              >
+              <NavLink to={item.path} className={({ isActive }) => (isActive ? styles.o : '')}>
                 {item.name}
               </NavLink>
             </li>

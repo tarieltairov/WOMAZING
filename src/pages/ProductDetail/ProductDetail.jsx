@@ -1,27 +1,28 @@
-import { useParams } from "react-router-dom";
-import { useState } from "react";
-import styles from "./ProductDetail.module.scss";
-import { Button } from "../../components/Button/Button";
-import { AppContainer } from "../../layouts/AppContainer";
-import { Link } from "react-router-dom";
-import Image from '../../assets/images/ProductPhoto(1).png'
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import styles from './ProductDetail.module.scss';
+import { Button } from '../../components/Button/Button';
+import { AppContainer } from '../../layouts/AppContainer';
+import { products } from '../../components/Store/Store';
+import { Card } from './../../components/Card/Card';
+import Arrow from '../../assets/icons/ArrowToTheRight.png';
+import React from 'react';
 
-export const ProductDetail = ({ cart, setCart }) => {
+export const ProductDetail = () => {
+  const [cart, setCart] = useState([]);
+  // const { setCart } = useCart(); // Уберите cart, если он не нужен
+  const navigate = useNavigate();
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const product = {
-    id: 1,
-    image: Image,
-    title: "T Shirt",
-    price: "200$",
-    newPrice: "120$",
-  };
+  const card = products.find((product) => product.id === Number(id));
 
-  if (!product) {
+  console.log(cart);
+
+  if (!card) {
     return <h2>Товар не найден</h2>;
   }
 
@@ -29,48 +30,50 @@ export const ProductDetail = ({ cart, setCart }) => {
 
   const addToCart = () => {
     if (isDisabled) {
-      setErrorMessage("Пожалуйста, выберите размер и цвет.");
+      setErrorMessage('Пожалуйста, выберите размер и цвет.');
       return;
     }
 
     const item = {
-      ...product,
+      ...card,
       selectedSize,
       selectedColor,
       quantity,
     };
+
     setCart((prevCart) => [...prevCart, item]);
-    setErrorMessage("");
-    alert("Товар добавлен в корзину!");
+    setErrorMessage('');
+    alert('Товар добавлен в корзину!');
+    navigate('/cart');
   };
 
   const productOption = {
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["#927876", "#D4D4D4", "#FD9696", "#FDC796"],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: ['#927876', '#D4D4D4', '#FD9696', '#FDC796'],
   };
 
   return (
     <AppContainer>
       <div className={styles.productPage}>
         <div className={styles.titleNav}>
-          <h1 className={styles.product__title}>{product.title}</h1>
+          <h1 className={styles.product__title}>{card.name}</h1>
           <nav className={styles.navigate}>
             <Link to="/">Главная</Link>
             <span> — </span>
             <Link to="">Свитшоты</Link>
             <span> — </span>
-            <span className={styles.desc}>Свитшот Sweet Shot</span>
+            <span className={styles.desc}>{card.name}</span>
           </nav>
         </div>
 
         <div className={styles.product}>
           <div className={styles.product__image}>
-            <img src={product.image} alt={product.title} />
+            <img src={card.image} alt={card.alt} />
           </div>
           <div className={styles.product__info}>
             <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>{product.newPrice}</span>
-              <span className={styles.oldPrice}>$450</span>
+              <span className={styles.newPrice}>{card.price}$</span>
+              {card.oldPrice && <span className={styles.oldPrice}>{card.oldPrice}</span>}
             </div>
 
             <div className={styles.product__sizes}>
@@ -79,9 +82,7 @@ export const ProductDetail = ({ cart, setCart }) => {
                 {productOption.sizes.map((size) => (
                   <button
                     key={size}
-                    className={`${styles.sizeButton} ${
-                      selectedSize === size ? styles.active : ""
-                    }`}
+                    className={`${styles.sizeButton} ${selectedSize === size ? styles.active : ''}`}
                     onClick={() => setSelectedSize(size)}
                   >
                     {size}
@@ -96,9 +97,7 @@ export const ProductDetail = ({ cart, setCart }) => {
                 {productOption.colors.map((color) => (
                   <div
                     key={color}
-                    className={`${styles.colorButton} ${
-                      selectedColor === color ? styles.active : ""
-                    }`}
+                    className={`${styles.colorButton} ${selectedColor === color ? styles.active : ''}`}
                     style={{ backgroundColor: color }}
                     onClick={() => setSelectedColor(color)}
                   />
@@ -107,27 +106,32 @@ export const ProductDetail = ({ cart, setCart }) => {
             </div>
 
             <div className={styles.product__quantity}>
-              <button>1</button>
-              <Button onClick={addToCart} className={styles.btn}>
+              <button onClick={() => setQuantity((prev) => prev + 1)}>{quantity}</button>
+              <Button
+                onClick={() => {
+                  addToCart();
+                }}
+                className={styles.btn}
+              >
                 Добавить в корзину
               </Button>
             </div>
 
-            {errorMessage && (
-              <p className={styles.errorMessage}>{errorMessage}</p>
-            )}
+            {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
           </div>
         </div>
 
         <div className={styles.relateWrap}>
           <h2 className={styles.relateTitle}>Связанные товары</h2>
           <div className={styles.relate}>
-            <div className={styles.product__image}>
-              <img src={product.image} alt={product.title} />
-            </div>
-            <div className={styles.product__image}>
-              <img src={product.image} alt={product.title} />
-            </div>
+            {products.map((relatedProduct) => (
+              <div
+                key={relatedProduct.id}
+                onClick={() => navigate(`/product/${relatedProduct.id}`)}
+              >
+                <Card Arrow={Arrow} product={relatedProduct} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
