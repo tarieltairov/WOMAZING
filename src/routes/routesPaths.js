@@ -5,4 +5,5 @@ export const ROUTER_PATHS = {
   contacts: "/contacts",
   cart: "/cart",
   checkout: "/checkout",
+  success: "/success",
 };
