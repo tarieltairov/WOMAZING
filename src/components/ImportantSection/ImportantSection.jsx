@@ -1,9 +1,9 @@
 import Quality from '../../assets/icons/Frame 16.svg';
 import Speed from '../../assets/icons/Frame 16 (1).svg';
 import Responsibility from '../../assets/icons/Frame 16 (2).svg';
-import styles from './Important.module.scss';
+import styles from './ImportantSection.module.scss';
 
-export function Important() {
+export function ImportantSection() {
   const values = [
     {
       img: Quality,
@@ -23,17 +23,19 @@ export function Important() {
   ];
   // --------------------------------------------------------------------------
   return (
-    <section className={styles.important}>
-      <h2>Что для нас важно</h2>
-      <div className={styles.all_content}>
-        {values.map(({ img, title, text }, index) => (
-          <div key={index}>
-            <img className={styles.first_img} src={img} alt={title} />
-            <h3>{title}</h3>
-            <p className={styles.desc}>{text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className={styles.content}>
+      <section className={styles.important}>
+        <h2 className={styles.vajno}>Что для нас важно</h2>
+        <div className={styles.all_content}>
+          {values.map(({ img, title, text }, index) => (
+            <div key={index}>
+              <img className={styles.first_img} src={img} alt={title} />
+              <h3 className={styles.title}>{title}</h3>
+              <p className={styles.desc}>{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
