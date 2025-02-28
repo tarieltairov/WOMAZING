@@ -1,1 +1,1 @@
-export {CallbackModal} from "./CallbackModal"
+export { CallbackModal } from './CallbackModal';

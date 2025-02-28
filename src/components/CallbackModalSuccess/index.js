@@ -1,1 +1,1 @@
-export { CallbackModalSuccess } from "./CallbackModalSuccess"
+export { CallbackModalSuccess } from './CallbackModalSuccess';

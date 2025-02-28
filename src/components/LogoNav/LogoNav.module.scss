@@ -11,34 +11,29 @@
     gap: 11px;
     align-items: center;
     text-decoration: none;
-    
   }
-  .logoTitle{
-      font-weight: 500;
-      font-size: 16px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--black);
-
+  .logoTitle {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--black);
   }
-  
-    }
-  
-  .navigation {
-    max-width: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 35px;
-    cursor: pointer;
-    li {
-      text-wrap: nowrap;
-      padding: 0;
-
-  }
-  
 }
-.o{
+
+.navigation {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  cursor: pointer;
+  li {
+    text-wrap: nowrap;
+    padding: 0;
+  }
+}
+.o {
   color: var(--birch);
 }

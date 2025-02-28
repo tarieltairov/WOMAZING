@@ -1,27 +1,27 @@
 .btn {
-    padding: 22px 50px;
-    height: 68px;
-    border: none;
-    cursor: pointer;
+  padding: 22px 50px;
+  height: 68px;
+  border: none;
+  cursor: pointer;
 }
 
 .filled {
-    background-color: var(--birch);
-    color: #fff;
+  background-color: var(--birch);
+  color: #fff;
 }
 
-.filled:hover{
-    background-color: #509498;
+.filled:hover {
+  background-color: #509498;
 }
 
 .outlined {
-    border: 1px solid var(--birch);
-    color: var(--birch);
-    background-color: #fff;
+  border: 1px solid var(--birch);
+  color: var(--birch);
+  background-color: #fff;
 }
 
 .outlined:hover {
-    background: var(--birch);
-    color: #fff;
-    transition: 300ms;
+  background: var(--birch);
+  color: #fff;
+  transition: 300ms;
 }

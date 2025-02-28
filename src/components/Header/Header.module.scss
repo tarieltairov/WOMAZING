@@ -1,5 +1,6 @@
 .header {
   z-index: 100;
+  position: fixed;
   padding-top: 5vh;
   max-width: 1110px;
   width: 100%;
@@ -7,17 +8,15 @@
   justify-content: space-between;
   align-items: center;
   gap: 18%;
-
 }
 
-.contact{
+.contact {
   width: 35%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-
-  .phoneWrapper{
+  .phoneWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +24,10 @@
   }
   .tell {
     .a {
-    text-decoration: none;
-    color: var(--black);
+      text-decoration: none;
+      color: var(--black);
     }
   }
-  
 }
 
 .phoneNumber,
@@ -44,7 +42,7 @@
   }
 }
 
-.phone{
+.phone {
   width: 27px;
   height: 27px;
   display: flex;
@@ -70,7 +68,7 @@
   right: -15px;
   background-color: var(--taupe);
   color: var(--white);
-  width: 15px;                    
+  width: 15px;
   height: 15px;
   border-radius: 50%;
   font-size: 9px;

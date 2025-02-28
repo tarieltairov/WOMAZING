@@ -3,13 +3,12 @@ import Image1 from "../../assets/icons/instagram.svg";
 import Image2 from "../../assets/icons/Facebook.svg";
 import Image3 from "../../assets/icons/twiter.svg";
 import Image4 from "../../assets/icons/visa-mastercard.svg";
-import { AppContainer } from "../../layouts/AppContainer";
 import { LogoNav } from "../LogoNav";
 
 export function Footer() {
   return (
+
     <footer className={styles.FooterContainer}>
-      <AppContainer>
         <div className={styles.container}>
           <LogoNav />
 
@@ -25,7 +24,7 @@ export function Footer() {
 
         <div className={styles.containerInfo}>
           <div className={styles.politic}>
-            <div>
+            <div className={styles.divP}>
               <p>© Все права защищены</p>
               <p>Политика конфиденциальности</p>
               <p>Публичная оферта</p>
@@ -34,7 +33,7 @@ export function Footer() {
             <ul className={styles.ul}>
               <li>Пальто</li>
               <li>Свитшоты</li>
-              <li>Кардиганы</li>
+              <li>Кардиганы</li> 
               <li>Толстовки</li>
             </ul>
           </div>
@@ -57,7 +56,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </AppContainer>
     </footer>
+
   );
 }
