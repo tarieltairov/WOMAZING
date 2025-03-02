@@ -1,0 +1,42 @@
+.callbackModalSuccess {
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--birch-transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+    width: 600px;
+    height: 278px;
+    position: relative;
+    border: 1px solid black;
+    row-gap: 35px;
+    background: #fff;
+
+    h2 {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      color: #000;
+    }
+
+    .button {
+      background: #fff;
+      padding: 22px 50px;
+      font-weight: 400;
+      font-size: 17px;
+      color: var(--birch);
+      cursor: pointer;
+    }
+  }
+}

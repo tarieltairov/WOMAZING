@@ -1,0 +1,17 @@
+import react from '@vitejs/plugin-react'
+import { URL, fileURLToPath } from 'url'
+import { defineConfig } from 'vite'
+import eslint from 'vite-plugin-eslint'
+
+export default defineConfig({
+  plugins: [react(), eslint()],
+  resolve: {
+    alias: {
+      assets: fileURLToPath(new URL('./src/assets', import.meta.url)),
+      components: fileURLToPath(
+        new URL('./src/common/components', import.meta.url),
+      ),
+      ui: fileURLToPath(new URL('./src/common/ui', import.meta.url)),
+    },
+  },
+})
