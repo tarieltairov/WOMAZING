@@ -1,0 +1,68 @@
+.containerEmail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding-left: 70px;
+}
+
+.icons {
+  display: flex;
+  gap: 12px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-left: 170px;
+}
+
+.FooterContainer {
+  width: 100%;
+  height: 363px;
+  background-color: #f1eadc;
+  padding-top: 104px;
+  margin-top: 130px;
+}
+
+.politic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 188px;
+}
+
+ul li {
+  list-style: none;
+}
+
+li {
+  padding-top: 10px;
+}
+
+.containerInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.iconVisa {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 30px;
+}
+
+.a {
+  display: block;
+  padding-top: 9px;
+  color: black;
+  margin-right: 40px;
+}
+
+.divP {
+  margin-left: -110px;
+}
