@@ -1,6 +1,4 @@
 .team {
-  margin-top: 130px;
-
   &Title {
     font-weight: 500;
     font-size: 40px;
@@ -24,7 +22,6 @@
 
       &Container {
         width: 100%;
-        transition: 'opacity 0.5s ease';
 
         img {
           width: 100%;
@@ -71,6 +68,66 @@
 
       &:hover {
         border-bottom: 1px solid #cededf;
+      }
+    }
+  }
+}
+
+@media (max-width: 1210px) {
+  .team {
+    &Title {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    &Body {
+      margin-top: 50px;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    &Text {
+      max-width: 100%;
+
+      &Separator {
+        margin: 13px 0;
+      }
+    }
+
+    .slider {
+      gap: 20px;
+      position: static;
+      &Left {
+        position: static;
+      }
+      &Right {
+        position: static;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    &Title {
+      font-size: 22px;
+    }
+    &Text {
+      button {
+        font-size: 15px;
+      }
+      line-height: 120%;
+      &Title {
+        font-size: 22px;
+      }
+      &Subtitle {
+        font-size: 14px;
+      }
+    }
+    .slider {
+      &Left img,
+      &Right img {
+        width: 25px;
       }
     }
   }
