@@ -85,7 +85,7 @@ export const LogoNav = () => {
               <NavLink
                 to={item.path}
                 className={({ isActive }) => (isActive ? styles.o : '')}
-                onClick={() => setMenuOpen(false)} // Закрываем меню при выборе
+                onClick={() => setMenuOpen(false)}
               >
                 {item.name}
               </NavLink>
