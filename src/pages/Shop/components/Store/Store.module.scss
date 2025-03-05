@@ -83,16 +83,8 @@
 	.products{
 		gap: 35px;
 	}
-	.tabClass{
-		flex: 1;
-	}
 	.title{
 		font-size: 45px;
 	}
 }
 
-@media(max-width:600px){
-	.tabContainer{
-		flex-direction: column;
-	}
-}
