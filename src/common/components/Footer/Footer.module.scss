@@ -66,3 +66,39 @@ li {
 .divP {
   margin-left: -110px;
 }
+
+
+@media(max-width:1050px) and (min-width: 350px) {
+ 
+  .FooterContainer{
+    display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  // padding-left: 170px;
+  flex-direction: column;
+  height: 500px;
+  }
+  .containerInfo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  .politic {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .icon{
+    width: 20px;
+  }
+
+  .FooterContainer {
+    width: 100%;
+    background-color: #f1eadc;
+    padding-top: 30px;
+    margin-top: 130px;
+  }
+}

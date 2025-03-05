@@ -47,18 +47,21 @@ export function Footer() {
               <img
                 src={Image1}
                 alt="instagram-icom"
+                className={styles.icon}
               />
             </a>
             <a href="https://www.facebook.com/">
               <img
                 src={Image2}
                 alt="Facebook"
+                className={styles.icon}
               />
             </a>
             <a href="https://x.com/">
               <img
                 src={Image3}
                 alt="twiter"
+                className={styles.icon}
               />
             </a>
           </div>
