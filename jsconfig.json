@@ -4,7 +4,8 @@
     "paths": {
       "assets/*": ["./assets/*"],
       "components/*": ["./common/components/*"],
-      "ui/*": ["./common/ui/*"]
+      "ui/*": ["./common/ui/*"],
+      "constants/*": ["./constants/*"]
     }
   },
   "exclude": ["node_modules"]
