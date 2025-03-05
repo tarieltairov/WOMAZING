@@ -1,0 +1,19 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	composes:tabContainer from '../../../pages/Shop/components/Store/Store.module.scss';
+}
+.tab {
+	composes:tabClass from '../../../pages/Shop/components/Store/Store.module.scss';
+	border: 1px solid;
+	padding: 19px 65px;
+	font-weight: 500;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.active{
+	background: var(--black);
+	color: var(--white);
+}
