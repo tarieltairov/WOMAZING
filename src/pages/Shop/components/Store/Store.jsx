@@ -10,6 +10,7 @@ import productPhoto3 from '../../../../assets/images/ProductPhoto(2)..png'
 import productPhoto from '../../../../assets/images/ProductPhoto.png'
 import { Card } from '../../../../common/components/Card'
 import { Tab } from '../../../../common/ui/Tab'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './Store.module.scss'
 
@@ -85,11 +86,12 @@ export const Store = () => {
   return (
     <section className={styles.store}>
       <h1 className={styles.title}>Магазин</h1>
-      <p className={styles.locations}>
-        <span>Главная</span>
-        <span>—</span>
-        <span>Магазин</span>
-      </p>
+      <BreadCrumbs
+        crumbs={[
+          { name: 'Главная', path: '/' },
+          { name: 'Магазин', path: '/shop' },
+        ]}
+      />
       <div className={styles.tabsContainer}>
         <TemplateTabFilters
           active={active}

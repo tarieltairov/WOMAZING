@@ -7,6 +7,7 @@ import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
 import { AppContainer } from '../../layouts/AppContainer'
 import { products } from '../Shop/components/Store/Store'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './ProductDetail.module.scss'
 
@@ -59,13 +60,13 @@ export const ProductDetail = () => {
       <div className={styles.productPage}>
         <div className={styles.titleNav}>
           <h1 className={styles.product__title}>{card.name}</h1>
-          <nav className={styles.navigate}>
-            <Link to="/">Главная</Link>
-            <span> — </span>
-            <Link to="">Свитшоты</Link>
-            <span> — </span>
-            <span className={styles.desc}>{card.name}</span>
-          </nav>
+          <BreadCrumbs
+            crumbs={[
+              { name: 'Главная', path: '/' },
+              { name: 'Свитшоты', path: '' },
+              { name: card.name, path: products[1].id },
+            ]}
+          />
         </div>
 
         <div className={styles.product}>

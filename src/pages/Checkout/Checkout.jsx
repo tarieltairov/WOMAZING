@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { AppContainer } from '../../layouts/AppContainer'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './Checkout.module.scss'
 
@@ -10,11 +11,12 @@ export const Checkout = () => {
       <div className={styles.checkout}>
         <div className={styles.checkoutNav}>
           <h1 className={styles.title}>Оформление заказа</h1>
-          <p className={styles.locations}>
-            <span>Главная</span>
-            <span>—</span>
-            <span>Оформление заказа</span>
-          </p>
+          <BreadCrumbs
+            crumbs={[
+              { name: 'Главная', path: '/' },
+              { name: 'Оформление заказа', path: '/checkout' },
+            ]}
+          />
         </div>
 
         <div className={styles.checkoutInner}>

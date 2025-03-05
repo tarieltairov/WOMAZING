@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-function Main() {
-  return (
-    <>
-      <section>hero</section>
-      <section>new collection</section>
-      <section>important for us</section>
-      <section>team</section>
-    </>
-  );
-}
-
-export default Main;
-=======
 import { AppContainer } from '../../layouts/AppContainer/AppContainer'
 
 import styles from './Main.module.scss'
@@ -34,4 +20,3 @@ function Main() {
 }
 
 export default Main
->>>>>>> d5e825246e61db688d50a2dd6e171167300f7ab0

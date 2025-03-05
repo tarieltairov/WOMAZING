@@ -16,6 +16,11 @@
         line-height: 140%;
         letter-spacing: 0.02em;
         color: #909090;
+        text-wrap: nowrap;
+    }
+
+    .breadCrumbs__item{
+        text-wrap: nowrap;
     }
 
     .breadCrumbs__link{

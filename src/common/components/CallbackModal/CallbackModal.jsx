@@ -1,4 +1,3 @@
-// import { Button } from '../Button';
 import { useEffect, useState } from 'react'
 
 import closeIcon from '../../../assets/icons/close.svg'
