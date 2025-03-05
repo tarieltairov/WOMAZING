@@ -1,3 +1,5 @@
+import { TemplateTabFilters } from 'components/TemplateTabFilters/TemplateTabFilters'
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -66,6 +68,20 @@ export const Store = () => {
     }
     return btns
   }
+
+  const storeTabs = [
+    {
+      title: 'все',
+      value: 'all',
+    },
+    {
+      title: 'пальто',
+      value: 'coat',
+    },
+  ]
+
+  const active = 'all'
+
   return (
     <section className={styles.store}>
       <h1 className={styles.title}>Магазин</h1>
@@ -75,6 +91,11 @@ export const Store = () => {
         <span>Магазин</span>
       </p>
       <div className={styles.tabsContainer}>
+        <TemplateTabFilters
+          active={active}
+          items={storeTabs}
+          onChange={(val) => console.log(val)}
+        />
         <Tab active={styles.active}>Все</Tab>
         <Tab>Пальто</Tab>
         <Tab>Свитшоты</Tab>
