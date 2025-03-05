@@ -212,7 +212,7 @@
 }
 
 .checkbox_container input:checked + .checkmark::after {
-  content: '';
+  content: "";
   width: 10px;
   height: 10px;
   background: black;
@@ -266,6 +266,30 @@ form {
         font-size: 17px;
         letter-spacing: 0.02em;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    padding-top: 180px;
+
+    &Nav {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .checkout {
+    padding-top: 140px;
+
+    .title {
+      font-size: 34px;
+    }
+    &Inner {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
