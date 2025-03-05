@@ -5,6 +5,8 @@ import Image2 from 'assets/images/hero_third.jpg'
 
 import { useNavigate } from 'react-router-dom'
 
+import { ROUTER_PATHS } from 'routes/routesPaths'
+
 import { Button } from 'ui/Button'
 
 import styles from './hero.module.scss'
@@ -26,7 +28,9 @@ export const Hero = () => {
               alt="arrow-img"
             />
           </button>
-          <Button onClick={() => navigate('/shop')}>Открыть магазин</Button>
+          <Button onClick={() => navigate(ROUTER_PATHS.shop)}>
+            Открыть магазин
+          </Button>
         </div>
         <div className={styles.sliderBtns}>
           <button />
