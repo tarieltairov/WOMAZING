@@ -5,8 +5,6 @@
 }
 
 .tabsContainer {
-  display: flex;
-  gap: 10px;
   margin-bottom: 92px;
   margin-top: 214px;
 }
@@ -69,3 +67,25 @@
   background: var(--black);
   color: var(--white);
 }
+
+
+@media (max-width:900px){
+	.catalog{
+		grid-template-columns: repeat(2,1fr);
+		align-self: center;
+	}
+}
+
+@media(max-width:767px){
+	.catalog{
+		grid-template-columns: auto;
+		row-gap: 15px;
+	}
+	.products{
+		gap: 35px;
+	}
+	.title{
+		font-size: 45px;
+	}
+}
+
