@@ -5,6 +5,7 @@ import Image2 from 'assets/images/hero_third.jpg'
 
 import { useNavigate } from 'react-router-dom'
 
+// import { ROUTER_PATHS } from '../../../../routes/routesPaths'
 import { ROUTER_PATHS } from 'routes/routesPaths'
 
 import { Button } from 'ui/Button'
