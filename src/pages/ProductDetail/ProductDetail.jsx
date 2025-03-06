@@ -1,12 +1,14 @@
+import { productColors } from 'constant/productColors'
+
 import { useState } from 'react'
 import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
+import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
 import { AppContainer } from '../../layouts/AppContainer'
-import { products } from '../Shop/components/Store/Store'
 import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './ProductDetail.module.scss'
@@ -22,8 +24,6 @@ export const ProductDetail = () => {
   const [errorMessage, setErrorMessage] = useState('')
 
   const card = products.find((product) => product.id === Number(id))
-
-  console.log(cart)
 
   if (!card) {
     return <h2>Товар не найден</h2>
@@ -50,23 +50,28 @@ export const ProductDetail = () => {
     navigate('/cart')
   }
 
-  const productOption = {
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    colors: ['#927876', '#D4D4D4', '#FD9696', '#FDC796'],
-  }
+  const currentProductColors = productColors.filter((item) =>
+    card.colors.find((i) => i === item.id),
+  )
+
+  const currentProductCategory = categories.find(
+    (item) => item.id === card.categoryId,
+  )
 
   return (
     <AppContainer>
       <div className={styles.productPage}>
         <div className={styles.titleNav}>
           <h1 className={styles.product__title}>{card.name}</h1>
-          <BreadCrumbs
-            crumbs={[
-              { name: 'Главная', path: '/' },
-              { name: 'Свитшоты', path: '' },
-              { name: card.name, path: products[1].id },
-            ]}
-          />
+          {currentProductCategory && (
+            <BreadCrumbs
+              crumbs={[
+                { name: 'Главная', path: '/' },
+                { name: currentProductCategory.title, path: '' },
+                { name: card.name, path: `/product/${card.id}` },
+              ]}
+            />
+          )}
         </div>
 
         <div className={styles.product}>
@@ -78,16 +83,18 @@ export const ProductDetail = () => {
           </div>
           <div className={styles.product__info}>
             <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>{card.price}$</span>
-              {card.oldPrice && (
-                <span className={styles.oldPrice}>{card.oldPrice}</span>
+              <span className={styles.newPrice}>
+                {card.discountPrice ?? card.price}$
+              </span>
+              {card.discountPrice && (
+                <span className={styles.oldPrice}>{card.price}</span>
               )}
             </div>
 
             <div className={styles.product__sizes}>
               <p className={styles.p}>Выберите размер</p>
               <div className={styles.sizeOptions}>
-                {productOption.sizes.map((size) => (
+                {card.sizes.map((size) => (
                   <button
                     key={size}
                     className={`${styles.sizeButton} ${
@@ -104,9 +111,9 @@ export const ProductDetail = () => {
             <div className={styles.product__colors}>
               <p className={styles.p}>Выберите цвет</p>
               <div className={styles.colorOptions}>
-                {productOption.colors.map((color) => (
+                {currentProductColors.map(({ color, id }) => (
                   <button
-                    key={color}
+                    key={id}
                     className={`${styles.colorButton} ${
                       selectedColor === color ? styles.active : ''
                     }`}
