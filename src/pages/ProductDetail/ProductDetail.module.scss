@@ -140,8 +140,9 @@
     gap: 10px;
 
     button {
-      width: 100px;
+      width: 70px;
       height: 68px;
+       border: 1px solid gray;
     }
 
     .btn {
@@ -152,6 +153,7 @@
       width: 50%;
       font-size: 15px;
     }
+   
   }
 
   .errorMessage {

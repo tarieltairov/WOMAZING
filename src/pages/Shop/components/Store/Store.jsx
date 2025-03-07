@@ -7,7 +7,6 @@ import { products } from '../../../../../mockData'
 import Arrow from '../../../../assets/icons/ArrowToTheRight.png'
 import ArrowRight from '../../../../assets/icons/arrow_right.svg'
 import { Card } from '../../../../common/components/Card'
-import { Tab } from '../../../../common/ui/Tab'
 import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './Store.module.scss'
