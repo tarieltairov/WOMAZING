@@ -13,6 +13,7 @@ export default defineConfig({
       ),
       ui: fileURLToPath(new URL('./src/common/ui', import.meta.url)),
       constant: fileURLToPath(new URL('./src/constant', import.meta.url)),
+      routes: fileURLToPath(new URL('./src/routes', import.meta.url)),
     },
   },
 })
