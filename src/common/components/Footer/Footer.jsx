@@ -15,14 +15,12 @@ export function Footer() {
         <div className={styles.containerEmail}>
           <div className={styles.tell}>
             <p>+7 (495) 823-54-12</p>
-            <button
+            <a
               className={styles.a}
-              onClick={() =>
-                (window.location.href = 'mailto:hello@womazing.com')
-              }
+              href="mailto:hello@womazing.com"
             >
               hello@womazing.com
-            </button>
+            </a>
           </div>
         </div>
       </div>

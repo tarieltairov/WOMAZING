@@ -1,46 +1,19 @@
+import { TabFilters } from 'components/TabFilters'
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { products } from '../../../../../mockData'
 import Arrow from '../../../../assets/icons/ArrowToTheRight.png'
 import ArrowRight from '../../../../assets/icons/arrow_right.svg'
-import productPhoto2 from '../../../../assets/images/ProductPhoto(1).png'
-import productPhoto3 from '../../../../assets/images/ProductPhoto(2)..png'
-import productPhoto from '../../../../assets/images/ProductPhoto.png'
 import { Card } from '../../../../common/components/Card'
 import { Tab } from '../../../../common/ui/Tab'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './Store.module.scss'
 
-const allProducts = []
-export const products = [
-  {
-    id: 1,
-    image: productPhoto,
-    alt: 'Футболка USA',
-    name: 'Футболка USA',
-    price: 129,
-    oldPrice: 229,
-  },
-  {
-    id: 2,
-    image: productPhoto2,
-    alt: 'Купальник Glow',
-    name: 'Купальник Glow',
-    price: 129,
-  },
-  {
-    id: 3,
-    image: productPhoto3,
-    alt: 'Свитшот Sweet Shot',
-    name: 'Свитшот Sweet Shot',
-    price: 129,
-  },
-]
-for (let i = 0; i < 4; i++) {
-  for (let product of products) {
-    allProducts.push(product)
-  }
-}
+const allProducts = [...products]
+
 export const Store = () => {
   const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState(1)
@@ -66,30 +39,55 @@ export const Store = () => {
     }
     return btns
   }
+
+  const storeTabs = [
+    {
+      title: 'Все',
+      value: 'all',
+    },
+    {
+      title: 'Пальто',
+      value: 'coat',
+    },
+    {
+      title: 'Свитшоты',
+      value: 'sweatshirt',
+    },
+    {
+      title: 'Кардиганы',
+      value: 'cardigan',
+    },
+    {
+      title: 'Толстовки',
+      value: 'smock',
+    },
+  ]
+
+  const [active, setActive] = useState('all')
+
+  function changeActive(tabValue) {
+    setActive(tabValue)
+  }
   return (
     <section className={styles.store}>
       <h1 className={styles.title}>Магазин</h1>
-      <p className={styles.locations}>
-        <span>Главная</span>
-        <span>—</span>
-        <span>Магазин</span>
-      </p>
+      <BreadCrumbs
+        crumbs={[
+          { name: 'Главная', path: '/' },
+          { name: 'Магазин', path: '/shop' },
+        ]}
+      />
       <div className={styles.tabsContainer}>
-        <Tab active={styles.active}>Все</Tab>
-        <Tab>Пальто</Tab>
-        <Tab>Свитшоты</Tab>
-        <Tab>Кардиганы</Tab>
-        <Tab>Толстовки</Tab>
+        <TabFilters
+          active={active}
+          items={storeTabs}
+          changeActive={changeActive}
+        />
       </div>
       <div className={styles.products}>
         <p className={styles.countInfo}>
           Показано: {currentItems.length} из 12 товаров
         </p>
-        {/* <div className={styles.catalog}>
-          {currentItems.map((item) => {
-            return <Card key={item.id} Arrow={Arrow} product={item} />;
-          })}
-        </div> */}
         <div className={styles.catalog}>
           {currentItems.map((item) => {
             return (
