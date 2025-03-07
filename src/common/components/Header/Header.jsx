@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { useCart } from '../../../../cartContext'
 import cart from '../../../assets/icons/cart.svg'
 import { AppContainer } from '../../../layouts/AppContainer'
 import { ROUTER_PATHS } from '../../../routes/routesPaths'
@@ -10,7 +11,8 @@ import { LogoNav } from '../LogoNav'
 import styles from './Header.module.scss'
 import PhoneIcon from './PhoneIcon'
 
-export function Header({ cartCount }) {
+export function Header() {
+  const { items } = useCart()
   const [isModalOpen, setModalOpen] = useState(false)
 
   const navigate = useNavigate()
@@ -46,7 +48,9 @@ export function Header({ cartCount }) {
               alt="cart-img"
               className={styles.cartIcon}
             />
-            {cartCount && <span className={styles.cartBadge}>{cartCount}</span>}
+            {!!items.length && (
+              <span className={styles.cartBadge}>{items.length}</span>
+            )}
           </button>
         </div>
       </header>

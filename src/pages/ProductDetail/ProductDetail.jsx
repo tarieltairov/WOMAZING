@@ -2,8 +2,9 @@ import { productColors } from 'constant/productColors'
 
 import { useState } from 'react'
 import React from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
+import { useCart } from '../../../cartContext'
 import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
@@ -14,7 +15,8 @@ import { BreadCrumbs } from 'ui/BreadCrumbs'
 import styles from './ProductDetail.module.scss'
 
 export const ProductDetail = () => {
-  const [cart, setCart] = useState([])
+  const { items, addItem } = useCart()
+
   const navigate = useNavigate()
   const { id } = useParams()
   const [selectedSize, setSelectedSize] = useState(null)
@@ -40,17 +42,16 @@ export const ProductDetail = () => {
       return
     }
 
-    const item = {
+    const itemForProduct = {
       ...card,
+      quantity,
       selectedSize,
       selectedColor,
-      quantity,
     }
 
-    setCart((prevCart) => [...prevCart, item])
+    addItem(itemForProduct)
     setErrorMessage('')
     alert('Товар добавлен в корзину!')
-    navigate('/cart')
   }
 
   const currentProductColors = productColors.filter((item) =>
