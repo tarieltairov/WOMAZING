@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 import fileCheckIcon from '../../assets/icons/fileCheck.svg'
+import { BreadCrumbs } from '../../common/ui/BreadCrumbs/BreadCrumbs'
 import { Button } from '../../common/ui/Button/Button'
 import { AppContainer } from '../../layouts/AppContainer'
 import { ROUTER_PATHS } from '../../routes/routesPaths'
@@ -15,18 +16,13 @@ export const SuccessPage = () => {
       <section className={styles.success}>
         <div className={styles.success__top}>
           <h1>Заказ получен</h1>
-          <div className={styles.success__navigations}>
-            <a href={ROUTER_PATHS.main}>Главная</a>
-            <span>—</span>
-            <a href={ROUTER_PATHS.checkout}>Оформление заказа</a>
-            <span>—</span>
-            <a
-              href={ROUTER_PATHS.success}
-              className={styles.success__nav__txt}
-            >
-              Заказ получен
-            </a>
-          </div>
+          <BreadCrumbs
+            crumbs={[
+              { name: 'Главная', path: '/' },
+              { name: 'Оформление заказа', path: '/checkout' },
+              { name: 'Заказ получен', path: '/success' },
+            ]}
+          />
         </div>
         <div className={styles.success__bottom}>
           <div className={styles.success__content}>

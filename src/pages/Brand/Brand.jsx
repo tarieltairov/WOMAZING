@@ -5,6 +5,7 @@ import ideaWomen from '../../assets/images/Idea-women.png'
 import { Button } from '../../common/ui/Button/Button'
 import { AppContainer } from '../../layouts/AppContainer'
 import { ROUTER_PATHS } from '../../routes/routesPaths'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import brandStyles from './Brand.module.scss'
 
@@ -17,11 +18,12 @@ export function Brand() {
         <div className={brandStyles.brand__header}>
           <div className={brandStyles.brand__header_title}>
             <h1 className={brandStyles.brand__name_brand}>О бренде</h1>
-            <div className={brandStyles.brand__nav}>
-              <p>Главная</p>
-              <span className={brandStyles.brand__nouneym}>-</span>
-              <p className={brandStyles.idea__p_gray}>О бренде</p>
-            </div>
+            <BreadCrumbs
+              crumbs={[
+                { name: 'Главная', path: '/' },
+                { name: 'О бренде', path: '/brand' },
+              ]}
+            />
           </div>
         </div>
 
