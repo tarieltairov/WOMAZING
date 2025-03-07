@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Button } from '../../common/ui/Button/Button'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import './Cart.scss'
 
@@ -11,11 +12,12 @@ const Cart = () => {
       <div className="cart__header">
         <div className="cart__header_title">
           <h1 className="cart__name_cart">Корзина</h1>
-          <nav className="cart__nav">
-            <a href="/">Главная</a>
-            <span className="nouneym">-</span>
-            <a href="/cart">Корзина</a>
-          </nav>
+          <BreadCrumbs
+            crumbs={[
+              { name: 'Главная', path: '/' },
+              { name: 'Корзина', path: '/cart' },
+            ]}
+          />
         </div>
       </div>
       <div className="cart__main">

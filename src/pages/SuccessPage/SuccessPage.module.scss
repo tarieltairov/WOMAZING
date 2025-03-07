@@ -16,6 +16,7 @@
       line-height: 110%;
       letter-spacing: 0.02em;
       color: #000;
+      text-wrap: nowrap;
     }
 
     .success__nav__txt {
@@ -36,6 +37,8 @@
       display: flex;
       align-items: center;
       column-gap: 13px;
+      text-wrap: nowrap;
+      
     }
   }
 
@@ -62,6 +65,8 @@
           letter-spacing: 0.02em;
           color: #000;
           max-height: 38px;
+          text-wrap: nowrap;
+
         }
         p {
           font-family: var(--font-family);
@@ -70,6 +75,7 @@
           line-height: 140%;
           letter-spacing: 0.02em;
           color: #000;
+          text-wrap: nowrap;
         }
       }
     }

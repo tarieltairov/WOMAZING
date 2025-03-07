@@ -4,11 +4,12 @@ import { useState } from 'react'
 import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
-import { products } from '../../../mockData'
+import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
 import { AppContainer } from '../../layouts/AppContainer'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './ProductDetail.module.scss'
 
@@ -52,18 +53,24 @@ export const ProductDetail = () => {
     card.colors.find((i) => i === item.id),
   )
 
+  const currentProductCategory = categories.find(
+    (item) => item.id === card.categoryId,
+  )
+
   return (
     <AppContainer>
       <div className={styles.productPage}>
         <div className={styles.titleNav}>
           <h1 className={styles.product__title}>{card.name}</h1>
-          <nav className={styles.navigate}>
-            <Link to="/">Главная</Link>
-            <span> — </span>
-            <Link to="">Свитшоты</Link>
-            <span> — </span>
-            <span className={styles.desc}>{card.name}</span>
-          </nav>
+          {currentProductCategory && (
+            <BreadCrumbs
+              crumbs={[
+                { name: 'Главная', path: '/' },
+                { name: currentProductCategory.title, path: '' },
+                { name: card.name, path: `/product/${card.id}` },
+              ]}
+            />
+          )}
         </div>
 
         <div className={styles.product}>
