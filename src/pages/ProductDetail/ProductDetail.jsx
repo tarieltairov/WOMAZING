@@ -14,7 +14,6 @@ import styles from './ProductDetail.module.scss'
 
 export const ProductDetail = () => {
   const [cart, setCart] = useState([])
-  // const { setCart } = useCart(); // Уберите cart, если он не нужен
   const navigate = useNavigate()
   const { id } = useParams()
   const [selectedSize, setSelectedSize] = useState(null)

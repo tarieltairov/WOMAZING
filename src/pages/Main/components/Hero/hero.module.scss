@@ -5,8 +5,8 @@ button {
 .hero {
   display: flex;
   align-items: center;
-  padding: 130px 230px;
   justify-content: space-between;
+  padding: 130px 230px;
 }
 
 .left {
@@ -65,10 +65,105 @@ button {
 
 .right {
   background: var(--beigeCream);
-  width: 705px;
+  width: 45%;
   min-height: 826px;
   position: absolute;
   top: 0;
   right: 0;
   z-index: -1;
+}
+
+
+
+
+@media(max-width:1300px){
+	.hero{
+		padding: 130px 180px;
+	}
+	.left{
+		gap: 40px;
+		.title{
+			font-size: 45px;
+		}
+		.btnsWrap{
+			flex-direction: column-reverse;
+			align-items: start;
+			gap: 10px;
+		}
+		.arrow{
+			padding: 19.5px 95px;
+		}
+		.description{
+			padding-right: 20%;
+		}
+	}
+	
+	.images{
+		.mainImg{
+			width: 384px;
+			height: 602;
+		}
+		.first{
+			width: 147px;
+			height: 147px;
+		}
+		.second{
+			width: 140px;
+			height: 268px;
+			left: -70px;
+			bottom: -40px;
+		}
+	}
+}
+
+@media (max-width:1024px){
+	.hero{
+		padding: 130px 150px 80px 150px;
+		gap: 20px;
+	}
+	.images{
+		.first,.second{
+			display: none;
+		}
+	}
+	.left{
+		gap: 30px;
+		.sliderBtns{
+			display: none;
+		}
+		.description{
+			padding: 0;
+		}
+		.btnsWrap{
+			flex-direction: row;
+			gap: 0;
+		}
+		.arrow{
+			padding: 19.5px 26px;
+		}
+	}
+}
+
+@media (max-width:920px){
+	.hero{
+		padding: 130px 40px 50px 40px;
+		justify-content: center;
+	}
+	.images{
+		display: none;
+	}
+	.right{
+		display: none;
+	}
+}
+
+@media (max-width:580px){
+	.left{
+		.title{
+			font-size: 30px;
+		}
+		.description{
+			font-size: 18px;
+		}
+	}
 }
