@@ -24,6 +24,10 @@ export const ProductDetail = () => {
 
   const card = products.find((product) => product.id === Number(id))
 
+  const relatedProductsByCategory = products.filter(
+    (item) => item.categoryId === card.categoryId,
+  )
+
   if (!card) {
     return <h2>Товар не найден</h2>
   }
@@ -146,7 +150,7 @@ export const ProductDetail = () => {
         <div className={styles.relateWrap}>
           <h2 className={styles.relateTitle}>Связанные товары</h2>
           <div className={styles.relate}>
-            {products.map((relatedProduct) => (
+            {relatedProductsByCategory.map((relatedProduct) => (
               <button
                 key={relatedProduct.id}
                 onClick={() => navigate(`/product/${relatedProduct.id}`)}

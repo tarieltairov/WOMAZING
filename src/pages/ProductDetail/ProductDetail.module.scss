@@ -143,7 +143,7 @@
     button {
       width: 70px;
       height: 68px;
-       border: 1px solid gray;
+      border: 1px solid gray;
     }
 
     .btn {
@@ -154,7 +154,6 @@
       width: 50%;
       font-size: 15px;
     }
-   
   }
 
   .errorMessage {
@@ -175,6 +174,7 @@
 
   .relate {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 
     div {
@@ -182,7 +182,6 @@
       max-width: none;
 
       @media (max-width: 768px) {
-        
         width: 45%;
       }
 
