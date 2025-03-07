@@ -3,46 +3,16 @@ import { TemplateTabFilters } from 'components/TemplateTabFilters/TemplateTabFil
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { products } from '../../../../../mockData'
 import Arrow from '../../../../assets/icons/ArrowToTheRight.png'
 import ArrowRight from '../../../../assets/icons/arrow_right.svg'
-import productPhoto2 from '../../../../assets/images/ProductPhoto(1).png'
-import productPhoto3 from '../../../../assets/images/ProductPhoto(2)..png'
-import productPhoto from '../../../../assets/images/ProductPhoto.png'
 import { Card } from '../../../../common/components/Card'
 import { Tab } from '../../../../common/ui/Tab'
 
 import styles from './Store.module.scss'
 
-const allProducts = []
-export const products = [
-  {
-    id: 1,
-    image: productPhoto,
-    alt: 'Футболка USA',
-    name: 'Футболка USA',
-    price: 129,
-    oldPrice: 229,
-  },
-  {
-    id: 2,
-    image: productPhoto2,
-    alt: 'Купальник Glow',
-    name: 'Купальник Glow',
-    price: 129,
-  },
-  {
-    id: 3,
-    image: productPhoto3,
-    alt: 'Свитшот Sweet Shot',
-    name: 'Свитшот Sweet Shot',
-    price: 129,
-  },
-]
-for (let i = 0; i < 4; i++) {
-  for (let product of products) {
-    allProducts.push(product)
-  }
-}
+const allProducts = [...products]
+
 export const Store = () => {
   const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState(1)
