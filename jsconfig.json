@@ -5,7 +5,8 @@
       "assets/*": ["./assets/*"],
       "components/*": ["./common/components/*"],
       "ui/*": ["./common/ui/*"],
-      "constants/*": ["./constants/*"]
+      "constants/*": ["./constants/*"],
+      "routes/*": ["./routes/*"]
     }
   },
   "exclude": ["node_modules"]
