@@ -185,8 +185,8 @@ export const products = [
   {
     id: 114,
     image:
-      'https://basket-10.wbbasket.ru/vol1479/part147977/147977776/images/c516x688/4.webp',
-    name: 'Купальники',
+      'https://basket-20.wbbasket.ru/vol3425/part342587/342587564/images/c516x688/3.webp',
+    name: 'Купальник Солнечный Вихрь',
     discountPrice: 125,
     price: 225,
     sizes: ['XS', 'M', 'XL'],
@@ -196,8 +196,8 @@ export const products = [
   {
     id: 115,
     image:
-      'https://basket-12.wbbasket.ru/vol1730/part173040/173040887/images/c516x688/7.webp',
-    name: 'Купальники',
+      'https://basket-03.wbbasket.ru/vol311/part31185/31185309/images/c516x688/2.webp',
+    name: 'Купальник Морская Симфония',
     discountPrice: 155,
     price: 255,
     sizes: ['XS', 'S', 'XL', 'M'],
@@ -207,8 +207,8 @@ export const products = [
   {
     id: 160,
     image:
-      'https://basket-10.wbbasket.ru/vol1478/part147870/147870140/images/c516x688/8.webp',
-    name: 'Купальники',
+      'https://basket-13.wbbasket.ru/vol1974/part197409/197409665/images/c516x688/1.webp',
+    name: 'Купальник Тропический Взлет',
     discountPrice: 100,
     price: 200,
     sizes: ['XXL', 'S', 'XL'],
@@ -218,8 +218,8 @@ export const products = [
   {
     id: 161,
     image:
-      'https://basket-19.wbbasket.ru/vol3156/part315683/315683514/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-11.wbbasket.ru/vol1626/part162629/162629351/images/c516x688/1.webp',
+    name: 'Купальник Летний Оазис',
     discountPrice: 90,
     price: 190,
     sizes: ['XS', 'M', 'XL'],
@@ -229,8 +229,8 @@ export const products = [
   {
     id: 116,
     image:
-      'https://basket-05.wbbasket.ru/vol958/part95874/95874708/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-10.wbbasket.ru/vol1478/part147870/147870140/images/c516x688/1.webp',
+    name: 'Купальник Завораживающие Волны',
     price: 215,
     sizes: ['XS', 'S', 'XL', 'XXL'],
     colors: [1, 3, 4],
@@ -240,7 +240,7 @@ export const products = [
     id: 117,
     image:
       'https://basket-10.wbbasket.ru/vol1459/part145973/145973472/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Купальник Коралловый Рассвет',
     discountPrice: 130,
     price: 230,
     sizes: ['XS', 'S', 'XL', 'M'],
@@ -251,7 +251,7 @@ export const products = [
     id: 118,
     image:
       'https://basket-15.wbbasket.ru/vol2271/part227180/227180004/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Купальник Пляжный Шик',
     discountPrice: 140,
     price: 240,
     sizes: ['XS', 'S', 'XL'],
@@ -262,7 +262,7 @@ export const products = [
     id: 119,
     image:
       'https://basket-15.wbbasket.ru/vol2377/part237772/237772154/images/c516x688/2.webp',
-    name: 'Купальники',
+    name: 'Купальник Нежное Прикосновение',
     discountPrice: 170,
     price: 270,
     sizes: ['S', 'XL'],
@@ -273,7 +273,7 @@ export const products = [
     id: 120,
     image:
       'https://basket-12.wbbasket.ru/vol1730/part173039/173039731/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Купальник Сказочный Залив',
     price: 260,
     sizes: ['XS', 'S', 'XL'],
     colors: [1, 3, 4],
@@ -283,7 +283,7 @@ export const products = [
     id: 121,
     image:
       'https://basket-19.wbbasket.ru/vol3072/part307200/307200214/images/c516x688/2.webp',
-    name: 'Купальники',
+    name: 'Купальник  Яркие Струи',
     discountPrice: 135,
     price: 235,
     sizes: ['XS', 'S'],
@@ -294,7 +294,7 @@ export const products = [
     id: 122,
     image:
       'https://basket-12.wbbasket.ru/vol1700/part170070/170070222/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Купальник Утренний Пляж',
     price: 250,
     sizes: ['XS', 'S', 'XL'],
     colors: [1, 3, 4],
@@ -303,8 +303,8 @@ export const products = [
   {
     id: 123,
     image:
-      'https://basket-02.wbbasket.ru/vol271/part27168/27168555/images/c516x688/2.webp',
-    name: 'Купальники',
+      'https://basket-15.wbbasket.ru/vol2405/part240516/240516944/images/c516x688/1.webp',
+    name: 'Купальник Ночная Феерия',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -314,8 +314,8 @@ export const products = [
   {
     id: 124,
     image:
-      'https://basket-15.wbbasket.ru/vol2236/part223615/223615658/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-15.wbbasket.ru/vol2310/part231050/231050592/images/c516x688/1.webp',
+    name: 'Купальник Восточный Дух',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -326,7 +326,7 @@ export const products = [
     id: 125,
     image:
       'https://basket-10.wbbasket.ru/vol1472/part147278/147278695/images/c516x688/2.webp',
-    name: 'Купальники',
+    name: ' Кардиган Тепло Объятий',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -337,7 +337,7 @@ export const products = [
     id: 126,
     image:
       'https://basket-14.wbbasket.ru/vol2107/part210767/210767751/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кардиган Осенний Шарм',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -347,7 +347,7 @@ export const products = [
     id: 127,
     image:
       'https://basket-10.wbbasket.ru/vol1518/part151866/151866819/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кардиган Нежное Уютное',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -358,7 +358,7 @@ export const products = [
     id: 128,
     image:
       'https://basket-14.wbbasket.ru/vol2072/part207269/207269070/images/c516x688/2.webp',
-    name: 'Купальники',
+    name: 'Кардиган Легкость Ветра',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -369,7 +369,7 @@ export const products = [
     id: 129,
     image:
       'https://basket-11.wbbasket.ru/vol1634/part163400/163400590/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кардиган Кашемировая Нежность',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -380,7 +380,7 @@ export const products = [
     id: 130,
     image:
       'https://basket-09.wbbasket.ru/vol1202/part120238/120238278/images/c516x688/2.webp',
-    name: 'Купальники',
+    name: 'Кардиган Сказка Вязаного',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL', 'S'],
@@ -391,7 +391,7 @@ export const products = [
     id: 131,
     image:
       'https://basket-19.wbbasket.ru/vol3268/part326875/326875834/images/c516x688/3.webp',
-    name: 'Купальники',
+    name: 'Кардиган Светлый Окрас',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -402,7 +402,7 @@ export const products = [
     id: 132,
     image:
       'https://basket-19.wbbasket.ru/vol3204/part320448/320448982/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кардиган Теплый Вечер',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -413,7 +413,7 @@ export const products = [
     id: 133,
     image:
       'https://basket-19.wbbasket.ru/vol3204/part320430/320430157/images/c516x688/6.webp',
-    name: 'Купальники',
+    name: 'Кардиган Сияние Уюта',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL', 'M'],
@@ -423,8 +423,8 @@ export const products = [
   {
     id: 134,
     image:
-      'https://basket-14.wbbasket.ru/vol2165/part216533/216533017/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-16.wbbasket.ru/vol2450/part245085/245085300/images/c516x688/1.webp',
+    name: 'Кардиган Гармония Стиля',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -434,7 +434,7 @@ export const products = [
     id: 135,
     image:
       'https://basket-15.wbbasket.ru/vol2291/part229172/229172469/images/c516x688/6.webp',
-    name: 'Купальники',
+    name: 'Кардиган Мягкий Касание',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -445,7 +445,7 @@ export const products = [
     id: 136,
     image:
       'https://basket-14.wbbasket.ru/vol2112/part211239/211239058/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кадиган Шелковая Улыбка',
     discountPrice: 120,
     price: 220,
     sizes: ['XS', 'XL'],
@@ -456,7 +456,7 @@ export const products = [
     id: 137,
     image:
       'https://basket-20.wbbasket.ru/vol3316/part331688/331688924/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кардиган Элегантный Коктейль',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -466,7 +466,7 @@ export const products = [
     id: 138,
     image:
       'https://basket-17.wbbasket.ru/vol2795/part279543/279543247/images/c516x688/1.webp',
-    name: 'Купальники',
+    name: 'Кардиган Ткань Снов',
     price: 220,
     sizes: ['XS', 'XL', 'S'],
     colors: [1, 3, 4],
@@ -475,8 +475,8 @@ export const products = [
   {
     id: 139,
     image:
-      'https://basket-11.wbbasket.ru/vol1622/part162229/162229737/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-19.wbbasket.ru/vol3268/part326875/326875834/images/c516x688/1.webp',
+    name: 'Кардиган Классика Комфорта',
     price: 220,
     sizes: ['XS', 'XXl'],
     colors: [1, 3, 4],
@@ -485,18 +485,18 @@ export const products = [
   {
     id: 140,
     image:
-      'https://basket-19.wbbasket.ru/vol3129/part312928/312928348/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-17.wbbasket.ru/vol2830/part283052/283052286/images/c516x688/1.webp',
+    name: 'Кардиган Уютный Вдох',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
     categoryId: 3,
   },
   {
-    id: 140,
+    id: 159,
     image:
-      'https://basket-19.wbbasket.ru/vol3129/part312928/312928348/images/c516x688/1.webp',
-    name: 'Купальники',
+      'https://basket-12.wbbasket.ru/vol1792/part179222/179222847/images/c516x688/2.webp',
+    name: 'Кардиган Теплота Объятий',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -506,7 +506,7 @@ export const products = [
     id: 141,
     image:
       'https://basket-19.wbbasket.ru/vol3129/part312928/312928348/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Легкость Дня',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -515,8 +515,8 @@ export const products = [
   {
     id: 142,
     image:
-      'https://basket-19.wbbasket.ru/vol3068/part306890/306890105/images/c516x688/1.webp',
-    name: 'Футболки',
+      'https://basket-19.wbbasket.ru/vol3079/part307937/307937941/images/c516x688/1.webp',
+    name: 'Футболка Стильный Пульс',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -526,7 +526,7 @@ export const products = [
     id: 143,
     image:
       'https://basket-19.wbbasket.ru/vol3078/part307888/307888932/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Яркие Моменты',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -536,7 +536,7 @@ export const products = [
     id: 144,
     image:
       'https://basket-15.wbbasket.ru/vol2297/part229730/229730713/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Комфорт в Движении',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -546,7 +546,7 @@ export const products = [
     id: 145,
     image:
       'https://basket-19.wbbasket.ru/vol3081/part308195/308195584/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Трендовый Классик',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -556,7 +556,7 @@ export const products = [
     id: 146,
     image:
       'https://basket-19.wbbasket.ru/vol3173/part317343/317343766/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Уличный Стиль',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -566,7 +566,7 @@ export const products = [
     id: 147,
     image:
       'https://basket-14.wbbasket.ru/vol2129/part212947/212947219/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Солнечный Настрой',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -575,8 +575,8 @@ export const products = [
   {
     id: 148,
     image:
-      'https://basket-10.wbbasket.ru/vol1525/part152506/152506933/images/c516x688/1.webp',
-    name: 'Футболки',
+      'https://basket-15.wbbasket.ru/vol2228/part222816/222816107/images/c516x688/1.webp',
+    name: 'Футболка Свободный Дух',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -586,7 +586,7 @@ export const products = [
     id: 149,
     image:
       'https://basket-12.wbbasket.ru/vol1835/part183531/183531068/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Энергия Лета',
     price: 220,
     sizes: ['XS', 'XL', 'S'],
     colors: [1, 3, 4],
@@ -595,8 +595,8 @@ export const products = [
   {
     id: 150,
     image:
-      'https://basket-13.wbbasket.ru/vol2042/part204241/204241573/images/c516x688/1.webp',
-    name: 'Футболки',
+      'https://basket-10.wbbasket.ru/vol1375/part137586/137586576/images/c516x688/1.webp',
+    name: 'Футболка Нежный Шарм',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -606,7 +606,7 @@ export const products = [
     id: 151,
     image:
       'https://basket-05.wbbasket.ru/vol774/part77499/77499784/images/c516x688/2.webp',
-    name: 'Футболки',
+    name: 'Футболка Модный Базис',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -615,8 +615,8 @@ export const products = [
   {
     id: 152,
     image:
-      'https://basket-17.wbbasket.ru/vol2716/part271632/271632652/images/c516x688/2.webp',
-    name: 'Футболки',
+      'https://basket-14.wbbasket.ru/vol2086/part208688/208688809/images/c516x688/12.webp',
+    name: 'Футболка Стильный Уют',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -626,7 +626,7 @@ export const products = [
     id: 153,
     image:
       'https://basket-04.wbbasket.ru/vol629/part62949/62949164/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Творческий Вдохновитель',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -636,7 +636,7 @@ export const products = [
     id: 154,
     image:
       'https://basket-12.wbbasket.ru/vol1732/part173226/173226050/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Яркий Акцент',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -646,7 +646,7 @@ export const products = [
     id: 155,
     image:
       'https://basket-08.wbbasket.ru/vol1129/part112961/112961573/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Классика Жанра',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -655,8 +655,8 @@ export const products = [
   {
     id: 156,
     image:
-      'https://basket-17.wbbasket.ru/vol2810/part281002/281002631/images/c516x688/1.webp',
-    name: 'Футболки',
+      'https://basket-14.wbbasket.ru/vol2119/part211905/211905925/images/c516x688/1.webp',
+    name: 'Футболка Уличный Стиль',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
@@ -666,7 +666,7 @@ export const products = [
     id: 157,
     image:
       'https://basket-16.wbbasket.ru/vol2450/part245058/245058161/images/c516x688/1.webp',
-    name: 'Футболки',
+    name: 'Футболка Солнечное Настроение',
     price: 220,
     sizes: ['XS', 'XL'],
     colors: [1, 3, 4],
