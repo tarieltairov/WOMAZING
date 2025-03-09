@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Button } from '../Button'
+
 import styles from './Counter.module.scss'
 
 export const Counter = ({ initialValue = 1, min = 0, onChange, addToCart }) => {
@@ -46,10 +48,11 @@ export const Counter = ({ initialValue = 1, min = 0, onChange, addToCart }) => {
           +
         </button>
       </div>
-      <button
+      <Button
         onClick={() => addToCart && addToCart(quantity)}
         className={styles.btn}
-      ></button>
+        children={'Добавить в корзину'}
+      ></Button>
     </div>
   )
 }
