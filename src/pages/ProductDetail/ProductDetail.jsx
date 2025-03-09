@@ -1,6 +1,6 @@
 import { productColors } from 'constant/productColors'
 
-import { useState } from 'react'
+import { Children, useState } from 'react'
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -9,6 +9,7 @@ import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
+import { Counter } from '../../common/ui/Counter/Counter'
 import { AppContainer } from '../../layouts/AppContainer'
 import { BreadCrumbs } from 'ui/BreadCrumbs'
 
@@ -127,21 +128,11 @@ export const ProductDetail = () => {
                 ))}
               </div>
             </div>
-
-            <div className={styles.product__quantity}>
-              <button onClick={() => setQuantity((prev) => prev + 1)}>
-                {quantity}
-              </button>
-              <Button
-                onClick={() => {
-                  addToCart()
-                }}
-                className={styles.btn}
-              >
-                Добавить в корзину
-              </Button>
-            </div>
-
+            <Counter />
+            <Button
+              className={styles.but}
+              children={'Добавить в корзину'}
+            />
             {errorMessage && (
               <p className={styles.errorMessage}>{errorMessage}</p>
             )}
