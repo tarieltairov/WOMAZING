@@ -129,6 +129,10 @@ export const ProductDetail = () => {
               </div>
             </div>
             <Counter addToCart={addToCart} />
+            <Button
+              className={styles.but}
+              children={'Добавить в корзину'}
+            />
             {errorMessage && (
               <p className={styles.errorMessage}>{errorMessage}</p>
             )}

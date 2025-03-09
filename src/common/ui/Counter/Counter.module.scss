@@ -1,6 +1,5 @@
 .product__quantity {
     display: flex;
-    align-items: center;
     gap: 10px;
 
     button {
@@ -14,7 +13,7 @@
       height: 68px;
       border: none;
       cursor: pointer;
-      width: 50%;
+      width: 20%;
       font-size: 15px;
     }
     .inp{
