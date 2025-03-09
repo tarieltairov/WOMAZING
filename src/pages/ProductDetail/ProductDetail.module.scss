@@ -134,14 +134,28 @@
       }
     }
   }
-  .but{
-  height: 68px;
-  margin-top: 0;
-  border: none;
-  cursor: pointer;
+
+  .product__quantity {
+    display: flex;
+    gap: 10px;
+
+    button {
+      width: 70px;
+      height: 68px;
+       border: 1px solid gray;
+    }
+
+    .btn {
+      padding: 20px 45px;
+      height: 68px;
+      border: none;
+      cursor: pointer;
+      width: 50%;
+      font-size: 15px;
+    }
+   
   }
 
-  
   .errorMessage {
     color: red;
     margin: 10px 0;
@@ -160,6 +174,7 @@
 
   .relate {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 
     div {
@@ -167,7 +182,6 @@
       max-width: none;
 
       @media (max-width: 768px) {
-        
         width: 45%;
       }
 

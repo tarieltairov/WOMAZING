@@ -2,8 +2,9 @@ import { productColors } from 'constant/productColors'
 
 import { Children, useState } from 'react'
 import React from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
+import { useCart } from '../../../cartContext'
 import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
@@ -15,7 +16,8 @@ import { BreadCrumbs } from 'ui/BreadCrumbs'
 import styles from './ProductDetail.module.scss'
 
 export const ProductDetail = () => {
-  const [cart, setCart] = useState([])
+  const { items, addItem } = useCart()
+
   const navigate = useNavigate()
   const { id } = useParams()
   const [selectedSize, setSelectedSize] = useState(null)
@@ -24,6 +26,10 @@ export const ProductDetail = () => {
   const [errorMessage, setErrorMessage] = useState('')
 
   const card = products.find((product) => product.id === Number(id))
+
+  const relatedProductsByCategory = products.filter(
+    (item) => item.categoryId === card.categoryId,
+  )
 
   if (!card) {
     return <h2>Товар не найден</h2>
@@ -37,17 +43,16 @@ export const ProductDetail = () => {
       return
     }
 
-    const item = {
+    const itemForProduct = {
       ...card,
+      quantity,
       selectedSize,
       selectedColor,
-      quantity,
     }
 
-    setCart((prevCart) => [...prevCart, item])
+    addItem(itemForProduct)
     setErrorMessage('')
     alert('Товар добавлен в корзину!')
-    navigate('/cart')
   }
 
   const currentProductColors = productColors.filter((item) =>
@@ -137,7 +142,7 @@ export const ProductDetail = () => {
         <div className={styles.relateWrap}>
           <h2 className={styles.relateTitle}>Связанные товары</h2>
           <div className={styles.relate}>
-            {products.map((relatedProduct) => (
+            {relatedProductsByCategory.map((relatedProduct) => (
               <button
                 key={relatedProduct.id}
                 onClick={() => navigate(`/product/${relatedProduct.id}`)}
