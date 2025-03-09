@@ -123,40 +123,6 @@ export const ProductDetail = () => {
                 ))}
               </div>
             </div>
-
-            {/* <div className={styles.product__quantity}>
-              <div>
-                <button
-                  onClick={() => setQuantity((prev) => prev - 1)}
-                  className={''}
-                  disabled={quantity < 1}
-                  style={{
-                    cursor: quantity < 1 ? 'not-allowed' : 'pointer',
-                  }}
-                >
-                  -
-                </button>
-                <input
-                  type="number"
-                  name=""
-                  id=""
-                  value={quantity}
-                  onChange={(e) => setQuantity(+e.target.value)}
-                  className={styles.inp}
-                />
-                <button onClick={() => setQuantity((prev) => prev + 1)}>
-                  +
-                </button>
-              </div>
-              <Button
-                onClick={() => {
-                  addToCart()
-                }}
-                className={styles.btn}
-              >
-                Добавить в корзину
-              </Button>
-            </div> */}
             <Counter />
             <Button
               className={styles.but}
