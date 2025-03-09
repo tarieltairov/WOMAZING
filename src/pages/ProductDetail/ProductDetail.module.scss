@@ -61,7 +61,6 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     gap: 50px;
 
     @media (max-width: 768px) {
@@ -135,28 +134,14 @@
       }
     }
   }
-
-  .product__quantity {
-    display: flex;
-    gap: 10px;
-
-    button {
-      width: 70px;
-      height: 68px;
-       border: 1px solid gray;
-    }
-
-    .btn {
-      padding: 20px 45px;
-      height: 68px;
-      border: none;
-      cursor: pointer;
-      width: 50%;
-      font-size: 15px;
-    }
-   
+  .but{
+  height: 68px;
+  margin-top: 0;
+  border: none;
+  cursor: pointer;
   }
 
+  
   .errorMessage {
     color: red;
     margin: 10px 0;

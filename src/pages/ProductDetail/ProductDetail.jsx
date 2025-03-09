@@ -1,6 +1,6 @@
 import { productColors } from 'constant/productColors'
 
-import { useState } from 'react'
+import { Children, useState } from 'react'
 import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -8,6 +8,7 @@ import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
+import { Counter } from '../../common/ui/Counter/Counter'
 import { AppContainer } from '../../layouts/AppContainer'
 import { BreadCrumbs } from 'ui/BreadCrumbs'
 
@@ -123,10 +124,30 @@ export const ProductDetail = () => {
               </div>
             </div>
 
-            <div className={styles.product__quantity}>
-              <button onClick={() => setQuantity((prev) => prev + 1)}>
-                {quantity}
-              </button>
+            {/* <div className={styles.product__quantity}>
+              <div>
+                <button
+                  onClick={() => setQuantity((prev) => prev - 1)}
+                  className={''}
+                  disabled={quantity < 1}
+                  style={{
+                    cursor: quantity < 1 ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  name=""
+                  id=""
+                  value={quantity}
+                  onChange={(e) => setQuantity(+e.target.value)}
+                  className={styles.inp}
+                />
+                <button onClick={() => setQuantity((prev) => prev + 1)}>
+                  +
+                </button>
+              </div>
               <Button
                 onClick={() => {
                   addToCart()
@@ -135,8 +156,12 @@ export const ProductDetail = () => {
               >
                 Добавить в корзину
               </Button>
-            </div>
-
+            </div> */}
+            <Counter />
+            <Button
+              className={styles.but}
+              children={'Добавить в корзину'}
+            />
             {errorMessage && (
               <p className={styles.errorMessage}>{errorMessage}</p>
             )}

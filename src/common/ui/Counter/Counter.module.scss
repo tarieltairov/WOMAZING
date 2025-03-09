@@ -1,0 +1,28 @@
+.product__quantity {
+    display: flex;
+    gap: 10px;
+
+    button {
+      width: 40px;
+      height: 40px;
+       border: 1px solid gray;
+    }
+
+    .btn {
+      padding: 20px 45px;
+      height: 68px;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+      font-size: 15px;
+    }
+    .inp{
+      border: none;
+      width: 50px;
+      padding-left: 10px;
+      text-align: center;
+
+      
+    }
+   
+  }
