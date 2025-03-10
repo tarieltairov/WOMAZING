@@ -164,21 +164,19 @@
 
 .relateWrap {
   display: flex;
-  flex-direction: column;
-  gap: 50px;
 
   .relateTitle {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+
   }
 
   .relate {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
 
     div {
-      width: 100%;
+      width: 50%;
       max-width: none;
 
       @media (max-width: 768px) {
