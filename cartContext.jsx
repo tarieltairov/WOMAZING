@@ -1,10 +1,10 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 // контекст
 const CartContext = createContext(undefined)
 
 export const CartProvider = ({ children }) => {
-  const [items, setItems] = useState([]) //элементы находящиеся в корзине
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('allProductsInCart')) || []) //элементы находящиеся в корзине
 
   const addItem = (product) => {
     setItems((prev) => {
@@ -23,8 +23,22 @@ export const CartProvider = ({ children }) => {
     setItems((prev) => prev.filter((i) => i.id !== productId))
   }
 
+  const addMoreProduct = (productId, count) => {
+    const updatedItems = items.map(item =>
+        item.id === productId ? { ...item, quantity: count } : item
+    );
+
+    setItems(updatedItems);
+  };
+
+  useEffect(() => {
+    if (items.length) {
+      localStorage.setItem('allProductsInCart', JSON.stringify(items));
+    }
+  }, [items])
+
   return (
-    <CartContext.Provider value={{ items, removeItem, addItem }}>
+    <CartContext.Provider value={{ items, removeItem, addItem, addMoreProduct }}>
       {children}
     </CartContext.Provider>
   )
