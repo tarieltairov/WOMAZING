@@ -14,17 +14,17 @@
     &__paragraph {
       font-size: 17px;
       word-spacing: 13px;
-      .grayWord {
-        color: var(--light-grey);
-      }
     }
   }
   .map {
     border: 0;
-    width: 1109px;
-    height: 476px;
+    width: 100%;
+    max-width: 1109px;
+    height: auto;
+    aspect-ratio: 1109 / 476;
     margin-top: 214px;
   }
+
   .description {
     display: flex;
     max-width: 943px;
@@ -46,6 +46,30 @@
           color: var(--birch-transparent);
           transition: color 0.3s ease-in-out;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .contactCard {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading .heading__contact {
+    font-size: 40px;
+  }
+  .description {
+    flex-direction: column;
+    gap: 20px;
+    .description__child {
+      gap: 5px;
+      font-size: 15px;
+      .link {
+        font-size: 18px;
       }
     }
   }

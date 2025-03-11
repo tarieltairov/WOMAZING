@@ -100,3 +100,30 @@ h2 {
     }
   }
 }
+@media (max-width: 1024px) {
+  .secondSection {
+    padding: 30px;
+  }
+
+  .imageSection {
+    gap: 30px;
+  }
+  
+}
+
+@media (max-width: 800px) {
+  .secondSection {
+    padding: 30px;
+  } 
+
+  .imageSection {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 30px;
+  }
+}
