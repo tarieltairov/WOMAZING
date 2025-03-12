@@ -1,15 +1,29 @@
-import React from 'react'
+import { useState } from 'react'
+
+import { useCart } from '../../../cartContext'
+import { Counter } from 'ui/Counter'
 
 import './Cart'
 import './CartItem.scss'
 
 const CartItem = ({ product }) => {
-  console.log(product)
+  const { addMoreProduct, items, removeItem } = useCart()
+  const [count, setCount] = useState()
+
+  const counterProduct = (value) => {
+    setCount(value)
+    addMoreProduct(product.id, value)
+  }
 
   return (
     <div className="cart__main_product">
       <div className="image__product">
-        <button className="botton__product_delete">X</button>
+        <button
+          onClick={() => removeItem(product.id)}
+          className="botton__product_delete"
+        >
+          X
+        </button>
         <div className="image__product__content">
           <img
             src={product.image}
@@ -19,13 +33,10 @@ const CartItem = ({ product }) => {
         </div>
       </div>
       <div className="product__price">
-        <span>${product.price}</span>
-        <input
-          type="number"
-          className="product-qty"
-          value={product.quantity}
-          min={1}
-          readOnly
+        <span>${product.discountPrice || product.price}</span>
+        <Counter
+          initialValue={product.quantity}
+          onChange={counterProduct}
         />
         <span>${product.price * product.quantity}</span>
       </div>

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { useCart } from '../../../cartContext'
 import { Button } from '../../common/ui/Button/Button'
@@ -14,6 +14,8 @@ const Cart = () => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0)
   }, [items])
 
+  console.log(items)
+
   return (
     <div className="cart-container">
       <div className="cart__header">
@@ -27,23 +29,27 @@ const Cart = () => {
           />
         </div>
       </div>
-      <div className="cart__main">
-        <div className="cart__main_result">
-          <span>Товар</span>
-          <div className="cart_res">
-            <span>Цена</span>
-            <span>Количество</span>
-            <span className="cart_result">Всего</span>
+      {items.length ? (
+        <div className="cart__main">
+          <div className="cart__main_result">
+            <span>Товар</span>
+            <div className="cart_res">
+              <span>Цена</span>
+              <span>Количество</span>
+              <span className="cart_result">Всего</span>
+            </div>
           </div>
+          <hr />
+          {items.map((item, idx) => (
+            <CartItem
+              key={idx}
+              product={item}
+            />
+          ))}
         </div>
-        <hr />
-        {items.map((item, idx) => (
-          <CartItem
-            key={idx}
-            product={item}
-          />
-        ))}
-      </div>
+      ) : (
+        <>Нет товаров в корзине</>
+      )}
 
       <div className="cart__coupon">
         <div className="cart__coupon_input">

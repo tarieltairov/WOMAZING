@@ -16,7 +16,7 @@ import { BreadCrumbs } from 'ui/BreadCrumbs'
 import styles from './ProductDetail.module.scss'
 
 export const ProductDetail = () => {
-  const { addItem } = useCart()
+  const { items, addItem } = useCart()
   const { products, categories } = useSelector((state) => state.global)
   const navigate = useNavigate()
   const { id } = useParams()
@@ -24,16 +24,12 @@ export const ProductDetail = () => {
   const [selectedColor, setSelectedColor] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [errorMessage, setErrorMessage] = useState('')
-
+  const addedToCart = items.find((product) => product.id === Number(id))
   const card = products.find((product) => product.id === Number(id))
 
   const relatedProductsByCategory = products.filter(
     (item) => item.categoryId === card.categoryId,
   )
-
-  if (!card) {
-    return <h2>Товар не найден</h2>
-  }
 
   const isDisabled = !(selectedSize && selectedColor)
 
@@ -63,6 +59,10 @@ export const ProductDetail = () => {
     (item) => item.id === card.categoryId,
   )
 
+  if (!card) {
+    return <h2>Товар не найден</h2>
+  }
+
   return (
     <AppContainer>
       <div className={styles.productPage}>
@@ -86,54 +86,65 @@ export const ProductDetail = () => {
               alt={card.alt}
             />
           </div>
-          <div className={styles.product__info}>
-            <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>
-                {card.discountPrice ?? card.price}$
-              </span>
-              {card.discountPrice && (
-                <span className={styles.oldPrice}>{card.price}</span>
+          {addedToCart ? (
+            <Button>Перейти в корзину</Button>
+          ) : (
+            <div className={styles.product__info}>
+              <div className={styles.priceWrap}>
+                <span className={styles.newPrice}>
+                  {card.discountPrice ?? card.price}$
+                </span>
+                {card.discountPrice && (
+                  <span className={styles.oldPrice}>{card.price}</span>
+                )}
+              </div>
+
+              <div className={styles.product__sizes}>
+                <p className={styles.p}>Выберите размер</p>
+                <div className={styles.sizeOptions}>
+                  {card.sizes.map((size) => (
+                    <button
+                      key={size}
+                      className={`${styles.sizeButton} ${
+                        selectedSize === size ? styles.active : ''
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.product__colors}>
+                <p className={styles.p}>Выберите цвет</p>
+                <div className={styles.colorOptions}>
+                  {currentProductColors.map(({ color, id }) => (
+                    <button
+                      key={id}
+                      className={`${styles.colorButton} ${
+                        selectedColor === color ? styles.active : ''
+                      }`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => setSelectedColor(color)}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <Counter onChange={setQuantity} />
+                <Button
+                  onClick={() => addToCart && addToCart(quantity)}
+                  className={styles.btn}
+                  children={'Добавить в корзину'}
+                ></Button>
+              </div>
+
+              {errorMessage && (
+                <p className={styles.errorMessage}>{errorMessage}</p>
               )}
             </div>
-
-            <div className={styles.product__sizes}>
-              <p className={styles.p}>Выберите размер</p>
-              <div className={styles.sizeOptions}>
-                {card.sizes.map((size) => (
-                  <button
-                    key={size}
-                    className={`${styles.sizeButton} ${
-                      selectedSize === size ? styles.active : ''
-                    }`}
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.product__colors}>
-              <p className={styles.p}>Выберите цвет</p>
-              <div className={styles.colorOptions}>
-                {currentProductColors.map(({ color, id }) => (
-                  <button
-                    key={id}
-                    className={`${styles.colorButton} ${
-                      selectedColor === color ? styles.active : ''
-                    }`}
-                    style={{ backgroundColor: color }}
-                    onClick={() => setSelectedColor(color)}
-                  />
-                ))}
-              </div>
-            </div>
-            <Counter addToCart={addToCart} />
-
-            {errorMessage && (
-              <p className={styles.errorMessage}>{errorMessage}</p>
-            )}
-          </div>
+          )}
         </div>
 
         <div className={styles.relateWrap}>
