@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import logo from '../../../assets/icons/logo.svg'
@@ -14,6 +14,12 @@ const menuItems = [
 ]
 
 export const LogoNav = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen)
+  }
+
   return (
     <div className={styles.root}>
       <div className={styles.logo}>
@@ -25,12 +31,23 @@ export const LogoNav = () => {
       </div>
 
       <nav>
-        <ul className={styles.navigation}>
+        <button
+          className={styles.hamburger}
+          onClick={toggleMenu}
+        >
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+        </button>
+        <ul
+          className={`${styles.navigation} ${isMenuOpen ? styles.active : ''}`}
+        >
           {menuItems.map((item, index) => (
             <li key={index}>
               <NavLink
                 to={item.path}
                 className={({ isActive }) => (isActive ? styles.o : '')}
+                onClick={() => setMenuOpen(false)}
               >
                 {item.name}
               </NavLink>

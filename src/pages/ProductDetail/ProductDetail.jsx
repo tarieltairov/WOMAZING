@@ -1,32 +1,34 @@
 import { productColors } from 'constant/productColors'
 
 import { useState } from 'react'
-import React from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-import { products } from '../../../mockData'
+import { useCart } from '../../../cartContext'
+import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
+import { Counter } from '../../common/ui/Counter/Counter'
 import { AppContainer } from '../../layouts/AppContainer'
+import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './ProductDetail.module.scss'
 
 export const ProductDetail = () => {
-  const [cart, setCart] = useState([])
-  // const { setCart } = useCart(); // Уберите cart, если он не нужен
+  const { items, addItem } = useCart()
+
   const navigate = useNavigate()
   const { id } = useParams()
   const [selectedSize, setSelectedSize] = useState(null)
   const [selectedColor, setSelectedColor] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [errorMessage, setErrorMessage] = useState('')
-
+  const addedToCart = items.find((product) => product.id === Number(id))
   const card = products.find((product) => product.id === Number(id))
 
-  if (!card) {
-    return <h2>Товар не найден</h2>
-  }
+  const relatedProductsByCategory = products.filter(
+    (item) => item.categoryId === card.categoryId,
+  )
 
   const isDisabled = !(selectedSize && selectedColor)
 
@@ -36,35 +38,44 @@ export const ProductDetail = () => {
       return
     }
 
-    const item = {
+    const itemForProduct = {
       ...card,
+      quantity,
       selectedSize,
       selectedColor,
-      quantity,
     }
 
-    setCart((prevCart) => [...prevCart, item])
+    addItem(itemForProduct)
     setErrorMessage('')
     alert('Товар добавлен в корзину!')
-    navigate('/cart')
   }
 
   const currentProductColors = productColors.filter((item) =>
     card.colors.find((i) => i === item.id),
   )
 
+  const currentProductCategory = categories.find(
+    (item) => item.id === card.categoryId,
+  )
+
+  if (!card) {
+    return <h2>Товар не найден</h2>
+  }
+
   return (
     <AppContainer>
       <div className={styles.productPage}>
         <div className={styles.titleNav}>
           <h1 className={styles.product__title}>{card.name}</h1>
-          <nav className={styles.navigate}>
-            <Link to="/">Главная</Link>
-            <span> — </span>
-            <Link to="">Свитшоты</Link>
-            <span> — </span>
-            <span className={styles.desc}>{card.name}</span>
-          </nav>
+          {currentProductCategory && (
+            <BreadCrumbs
+              crumbs={[
+                { name: 'Главная', path: '/' },
+                { name: currentProductCategory.title, path: '' },
+                { name: card.name, path: `/product/${card.id}` },
+              ]}
+            />
+          )}
         </div>
 
         <div className={styles.product}>
@@ -74,73 +85,71 @@ export const ProductDetail = () => {
               alt={card.alt}
             />
           </div>
-          <div className={styles.product__info}>
-            <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>
-                {card.discountPrice ?? card.price}$
-              </span>
-              {card.discountPrice && (
-                <span className={styles.oldPrice}>{card.price}</span>
+          {addedToCart ? (
+            <Button>Перейти в корзину</Button>
+          ) : (
+            <div className={styles.product__info}>
+              <div className={styles.priceWrap}>
+                <span className={styles.newPrice}>
+                  {card.discountPrice ?? card.price}$
+                </span>
+                {card.discountPrice && (
+                  <span className={styles.oldPrice}>{card.price}</span>
+                )}
+              </div>
+
+              <div className={styles.product__sizes}>
+                <p className={styles.p}>Выберите размер</p>
+                <div className={styles.sizeOptions}>
+                  {card.sizes.map((size) => (
+                    <button
+                      key={size}
+                      className={`${styles.sizeButton} ${
+                        selectedSize === size ? styles.active : ''
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.product__colors}>
+                <p className={styles.p}>Выберите цвет</p>
+                <div className={styles.colorOptions}>
+                  {currentProductColors.map(({ color, id }) => (
+                    <button
+                      key={id}
+                      className={`${styles.colorButton} ${
+                        selectedColor === color ? styles.active : ''
+                      }`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => setSelectedColor(color)}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <Counter onChange={setQuantity} />
+                <Button
+                  onClick={() => addToCart && addToCart(quantity)}
+                  className={styles.btn}
+                  children={'Добавить в корзину'}
+                ></Button>
+              </div>
+
+              {errorMessage && (
+                <p className={styles.errorMessage}>{errorMessage}</p>
               )}
             </div>
-
-            <div className={styles.product__sizes}>
-              <p className={styles.p}>Выберите размер</p>
-              <div className={styles.sizeOptions}>
-                {card.sizes.map((size) => (
-                  <button
-                    key={size}
-                    className={`${styles.sizeButton} ${
-                      selectedSize === size ? styles.active : ''
-                    }`}
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.product__colors}>
-              <p className={styles.p}>Выберите цвет</p>
-              <div className={styles.colorOptions}>
-                {currentProductColors.map(({ color, id }) => (
-                  <button
-                    key={id}
-                    className={`${styles.colorButton} ${
-                      selectedColor === color ? styles.active : ''
-                    }`}
-                    style={{ backgroundColor: color }}
-                    onClick={() => setSelectedColor(color)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.product__quantity}>
-              <button onClick={() => setQuantity((prev) => prev + 1)}>
-                {quantity}
-              </button>
-              <Button
-                onClick={() => {
-                  addToCart()
-                }}
-                className={styles.btn}
-              >
-                Добавить в корзину
-              </Button>
-            </div>
-
-            {errorMessage && (
-              <p className={styles.errorMessage}>{errorMessage}</p>
-            )}
-          </div>
+          )}
         </div>
 
         <div className={styles.relateWrap}>
           <h2 className={styles.relateTitle}>Связанные товары</h2>
           <div className={styles.relate}>
-            {products.map((relatedProduct) => (
+            {relatedProductsByCategory.map((relatedProduct) => (
               <button
                 key={relatedProduct.id}
                 onClick={() => navigate(`/product/${relatedProduct.id}`)}

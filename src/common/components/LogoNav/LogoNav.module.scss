@@ -12,6 +12,7 @@
     align-items: center;
     text-decoration: none;
   }
+
   .logoTitle {
     font-weight: 500;
     font-size: 16px;
@@ -29,11 +30,62 @@
   align-items: center;
   gap: 35px;
   cursor: pointer;
+
   li {
     text-wrap: nowrap;
     padding: 0;
   }
 }
+
 .o {
   color: var(--birch);
+}
+
+.hamburger {
+  display: none; 
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--black);
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navigation {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--birch);
+    border-radius: 20px;
+    position: absolute;
+    top: 60px;
+    padding: 10px 0;
+    z-index: 10;
+
+    &.active {
+      display: flex; 
+    }
+
+    gap: 10px; 
+  }
+
+  .hamburger {
+    display: flex; 
+    margin: 0;
+    padding: 0;
+  }
 }
