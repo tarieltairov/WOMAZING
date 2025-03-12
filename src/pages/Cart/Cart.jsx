@@ -1,12 +1,21 @@
-import React from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
+import { useCart } from '../../../cartContext'
 import { Button } from '../../common/ui/Button/Button'
 import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import './Cart.scss'
+import CartItem from './CartItem'
 
 const Cart = () => {
-  console.log('Cart component is rendering!')
+  const { items } = useCart()
+
+  const getTotalCost = useMemo(() => {
+    return items.reduce((total, item) => total + item.price * item.quantity, 0)
+  }, [items])
+
+  console.log(items)
+
   return (
     <div className="cart-container">
       <div className="cart__header">
@@ -20,17 +29,27 @@ const Cart = () => {
           />
         </div>
       </div>
-      <div className="cart__main">
-        <div className="cart__main_result">
-          <span>Товар</span>
-          <div className="cart_res">
-            <span>Цена</span>
-            <span>Количество</span>
-            <span className="cart_result">Всего</span>
+      {items.length ? (
+        <div className="cart__main">
+          <div className="cart__main_result">
+            <span>Товар</span>
+            <div className="cart_res">
+              <span>Цена</span>
+              <span>Количество</span>
+              <span className="cart_result">Всего</span>
+            </div>
           </div>
+          <hr />
+          {items.map((item, idx) => (
+            <CartItem
+              key={idx}
+              product={item}
+            />
+          ))}
         </div>
-        <hr />
-      </div>
+      ) : (
+        <>Нет товаров в корзине</>
+      )}
 
       <div className="cart__coupon">
         <div className="cart__coupon_input">
@@ -41,18 +60,23 @@ const Cart = () => {
           />
           <Button variant={'outlined'}>Применить купон</Button>
         </div>
-        <Button variant={'outlined'}>Обновить корзину</Button>
+        <Button
+          variant={'outlined'}
+          onClick={() => getTotalCost}
+        >
+          Обновить корзину
+        </Button>
       </div>
 
       <div className="cart__total">
         <div className="cart_total-itoge">
           <div className="cart_total-itoge__subtotal">
             <p className="cart_itoge_p">Подытог:</p>
-            <p>$129</p>
+            <p>$ {getTotalCost}</p>
           </div>
           <div className="cart_total-itoge__delivery">
             <p>Итого:</p>
-            <p>$129</p>
+            <p>$ {getTotalCost}</p>
           </div>
         </div>
         <Button>Оформить заказ</Button>
