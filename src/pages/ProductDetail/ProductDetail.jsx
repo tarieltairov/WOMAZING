@@ -1,11 +1,11 @@
 import { productColors } from 'constant/productColors'
 
-import { Children, useState } from 'react'
+import { useState } from 'react'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { useCart } from '../../../cartContext'
-import { categories, products } from '../../../mockData'
 import Arrow from '../../assets/icons/ArrowToTheRight.png'
 import { Card } from '../../common/components/Card'
 import { Button } from '../../common/ui/Button/Button'
@@ -16,8 +16,8 @@ import { BreadCrumbs } from 'ui/BreadCrumbs'
 import styles from './ProductDetail.module.scss'
 
 export const ProductDetail = () => {
-  const { items, addItem } = useCart()
-
+  const { addItem } = useCart()
+  const { products, categories } = useSelector((state) => state.global)
   const navigate = useNavigate()
   const { id } = useParams()
   const [selectedSize, setSelectedSize] = useState(null)

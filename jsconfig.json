@@ -6,7 +6,8 @@
       "components/*": ["./common/components/*"],
       "ui/*": ["./common/ui/*"],
       "constants/*": ["./constants/*"],
-      "routes/*": ["./routes/*"]
+      "routes/*": ["./routes/*"],
+      "store/*": ["./store/*"]
     }
   },
   "exclude": ["node_modules"]

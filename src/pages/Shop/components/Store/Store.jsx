@@ -1,9 +1,9 @@
 import { TabFilters } from 'components/TabFilters'
 
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { products } from '../../../../../mockData'
 import Arrow from '../../../../assets/icons/ArrowToTheRight.png'
 import ArrowRight from '../../../../assets/icons/arrow_right.svg'
 import { Card } from '../../../../common/components/Card'
@@ -11,9 +11,9 @@ import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './Store.module.scss'
 
-const allProducts = [...products]
-
 export const Store = () => {
+  const { products } = useSelector((state) => state.global)
+  const allProducts = [...products]
   const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 9
