@@ -4,7 +4,12 @@ import { Button } from '../Button'
 
 import styles from './Counter.module.scss'
 
-export const Counter = ({ initialValue = 1, min = 0, onChange }) => {
+export const Counter = ({
+  initialValue = 1,
+  min = 0,
+  onChange,
+  onAddToCart,
+}) => {
   const [quantity, setQuantity] = useState(initialValue)
 
   const handleDecrement = () => {
@@ -48,6 +53,10 @@ export const Counter = ({ initialValue = 1, min = 0, onChange }) => {
           +
         </button>
       </div>
+      <button
+        onClick={() => onAddToCart && onAddToCart(quantity)}
+        className={styles.btn}
+      ></button>
     </div>
   )
 }

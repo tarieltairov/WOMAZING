@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 // контекст
 const CartContext = createContext(undefined)
 
+
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('allProductsInCart')) || []) //элементы находящиеся в корзине
 
