@@ -15,6 +15,7 @@ export default defineConfig({
       constant: fileURLToPath(new URL('./src/constant', import.meta.url)),
       routes: fileURLToPath(new URL('./src/routes', import.meta.url)),
       store: fileURLToPath(new URL('./src/store', import.meta.url)),
+      api: fileURLToPath(new URL('./src/api', import.meta.url)),
     },
   },
 })

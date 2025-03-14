@@ -1,7 +1,9 @@
+import { getProducts } from 'api/action'
 import { TabFilters } from 'components/TabFilters'
+import { categories } from 'constant/categories'
 
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import Arrow from '../../../../assets/icons/ArrowToTheRight.png'
@@ -11,16 +13,33 @@ import { BreadCrumbs } from 'ui/BreadCrumbs'
 
 import styles from './Store.module.scss'
 
+const updatedCategoriesForFilter = categories.map((i) => ({
+  title: i.title,
+  value: i.id,
+}))
+
+const storeTabs = [
+  {
+    title: 'Все',
+    value: '',
+  },
+  ...updatedCategoriesForFilter,
+]
+
+const itemsPerPage = 9
+
 export const Store = () => {
-  const { products } = useSelector((state) => state.global)
-  const allProducts = [...products]
+  const dispatch = useDispatch()
+  const { products, loading, error } = useSelector((state) => state.global)
+  const allProducts = products?.length ? [...products] : []
   const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 9
+
   const lastItemIndex = currentPage * itemsPerPage
   const firstItemIndex = lastItemIndex - itemsPerPage
   const currentItems = allProducts.slice(firstItemIndex, lastItemIndex)
   const totalPages = Math.ceil(allProducts.length / itemsPerPage)
+
   function renderPagination() {
     const btns = []
     for (let i = 1; i <= totalPages; i++) {
@@ -39,34 +58,24 @@ export const Store = () => {
     return btns
   }
 
-  const storeTabs = [
-    {
-      title: 'Все',
-      value: 'all',
-    },
-    {
-      title: 'Пальто',
-      value: 'coat',
-    },
-    {
-      title: 'Свитшоты',
-      value: 'sweatshirt',
-    },
-    {
-      title: 'Кардиганы',
-      value: 'cardigan',
-    },
-    {
-      title: 'Толстовки',
-      value: 'smock',
-    },
-  ]
-
-  const [active, setActive] = useState('all')
+  const [active, setActive] = useState('')
 
   function changeActive(tabValue) {
     setActive(tabValue)
+    dispatch(getProducts({ categoryId: tabValue }))
   }
+
+  useEffect(() => {
+    dispatch(getProducts({}))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (error) {
+      alert(error)
+    }
+  }, [error])
+
   return (
     <section className={styles.store}>
       <h1 className={styles.title}>Магазин</h1>
@@ -88,6 +97,7 @@ export const Store = () => {
           Показано: {currentItems.length} из 12 товаров
         </p>
         <div className={styles.catalog}>
+          {loading && <p>loading...</p>}
           {currentItems.map((item) => {
             return (
               <button
