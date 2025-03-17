@@ -7,6 +7,9 @@
 .tabsContainer {
   margin-bottom: 92px;
   margin-top: 214px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .title {
@@ -68,24 +71,22 @@
   color: var(--white);
 }
 
-
-@media (max-width:900px){
-	.catalog{
-		grid-template-columns: repeat(2,1fr);
-		align-self: center;
-	}
+@media (max-width: 900px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+  }
 }
 
-@media(max-width:767px){
-	.catalog{
-		grid-template-columns: auto;
-		row-gap: 15px;
-	}
-	.products{
-		gap: 35px;
-	}
-	.title{
-		font-size: 45px;
-	}
+@media (max-width: 767px) {
+  .catalog {
+    grid-template-columns: auto;
+    row-gap: 15px;
+  }
+  .products {
+    gap: 35px;
+  }
+  .title {
+    font-size: 45px;
+  }
 }
-

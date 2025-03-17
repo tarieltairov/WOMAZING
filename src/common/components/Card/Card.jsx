@@ -10,12 +10,12 @@ export const Card = ({ Arrow, product }) => {
           alt={alt}
           className={styles.productPhoto}
         />
-        <button className={styles.hoverButton}>
+        <div className={styles.hoverButton}>
           <img
             src={Arrow}
             alt="ArrowToTheRight"
           />
-        </button>
+        </div>
       </div>
       <h4>{name}</h4>
       <p className={styles.price}>

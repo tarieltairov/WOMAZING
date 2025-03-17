@@ -3,7 +3,7 @@ import { getProducts } from 'api/action'
 import { categories } from 'constant/categories'
 
 const initialState = {
-  products: [],
+  responseForProducts: {},
   categories: categories,
   loading: false,
   error: null,
@@ -19,7 +19,7 @@ const globalSlice = createSlice({
     })
     builder.addCase(getProducts.fulfilled, (state, { payload }) => {
       state.loading = false
-      state.products = payload
+      state.responseForProducts = payload
     })
     builder.addCase(getProducts.rejected, (state, { payload }) => {
       state.loading = false
