@@ -1,9 +1,10 @@
 import styles from './TabFilters.module.scss'
 
 export function TabFilters({ items = [], active, changeActive }) {
+  console.log(items)
   return (
     <div className={styles.container}>
-      {items.map((item, index) => {
+      {items?.map((item, index) => {
         return (
           <button
             key={index}
