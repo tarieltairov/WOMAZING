@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getCurrentProduct, getProducts } from 'api/action'
+import { getCurrentProduct, getProducts, signIn, signUp } from 'api/action'
 import { categories } from 'constant/categories'
 
 const initialState = {
@@ -10,6 +10,7 @@ const initialState = {
   isCurrentProductLoading: false,
   currentProduct: {},
   currentProductError: null,
+  user: null,
 }
 
 const globalSlice = createSlice({
@@ -41,6 +42,14 @@ const globalSlice = createSlice({
         state.isCurrentProductLoading = false
         state.currentProductError = payload
       })
+
+    builder.addCase(signUp.fulfilled, (state, { payload }) => {
+      state.user = payload
+    })
+
+    builder.addCase(signIn.fulfilled, (state, { payload }) => {
+      state.user = payload
+    })
   },
 })
 

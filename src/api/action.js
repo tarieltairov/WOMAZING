@@ -33,3 +33,46 @@ export const getCurrentProduct = createAsyncThunk(
     }
   },
 )
+
+export const signUp = createAsyncThunk(
+  'global/createUser',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/users`)
+
+      const findedUser = data.find(
+        (item) =>
+          item.email === userData.email && item.password === userData.password,
+      )
+      if (findedUser) {
+        throw new Error('Пользователь уже существует')
+      }
+
+      const resp = await axios.post(`${BASE_URL}/users`, userData)
+      return resp.data
+    } catch (error) {
+      return rejectWithValue(error)
+    }
+  },
+)
+
+export const signIn = createAsyncThunk(
+  'global/signIn',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/users`)
+      const findedUser = data.find(
+        (item) =>
+          item.email === userData.email && item.password === userData.password,
+      )
+
+      if (!findedUser) {
+        throw new Error('Пользователь не найден')
+      }
+
+      return findedUser
+    } catch (error) {
+      return rejectWithValue(error)
+    }
+  },
+)
