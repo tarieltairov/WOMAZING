@@ -1,12 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getProducts } from 'api/action'
+import { getCurrentProduct, getProducts, signIn, signUp } from 'api/action'
 import { categories } from 'constant/categories'
 
 const initialState = {
-  products: [],
+  responseForProducts: {},
   categories: categories,
   loading: false,
   error: null,
+  isCurrentProductLoading: false,
+  currentProduct: {},
+  currentProductError: null,
+  user: null,
 }
 
 const globalSlice = createSlice({
@@ -19,11 +23,32 @@ const globalSlice = createSlice({
     })
     builder.addCase(getProducts.fulfilled, (state, { payload }) => {
       state.loading = false
-      state.products = payload
+      state.responseForProducts = payload
     })
     builder.addCase(getProducts.rejected, (state, { payload }) => {
       state.loading = false
       state.error = payload.message
+    })
+
+    builder
+      .addCase(getCurrentProduct.pending, (state) => {
+        state.isCurrentProductLoading = true
+      })
+      .addCase(getCurrentProduct.fulfilled, (state, { payload }) => {
+        state.isCurrentProductLoading = false
+        state.currentProduct = payload
+      })
+      .addCase(getCurrentProduct.rejected, (state, { payload }) => {
+        state.isCurrentProductLoading = false
+        state.currentProductError = payload
+      })
+
+    builder.addCase(signUp.fulfilled, (state, { payload }) => {
+      state.user = payload
+    })
+
+    builder.addCase(signIn.fulfilled, (state, { payload }) => {
+      state.user = payload
     })
   },
 })

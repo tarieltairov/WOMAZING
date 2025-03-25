@@ -26,23 +26,23 @@ const storeTabs = [
   ...updatedCategoriesForFilter,
 ]
 
-const itemsPerPage = 9
-
 export const Store = () => {
   const dispatch = useDispatch()
-  const { products, loading, error } = useSelector((state) => state.global)
-  const allProducts = products?.length ? [...products] : []
   const navigate = useNavigate()
-  const [currentPage, setCurrentPage] = useState(1)
+  const { responseForProducts, loading, error } = useSelector(
+    (state) => state.global,
+  )
 
-  const lastItemIndex = currentPage * itemsPerPage
-  const firstItemIndex = lastItemIndex - itemsPerPage
-  const currentItems = allProducts.slice(firstItemIndex, lastItemIndex)
-  const totalPages = Math.ceil(allProducts.length / itemsPerPage)
+  const { data, items, pages } = responseForProducts
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [limit, setLimit] = useState(9)
+  const [tabValue, setTabValue] = useState('')
+  const [search, setSearch] = useState('')
 
   function renderPagination() {
     const btns = []
-    for (let i = 1; i <= totalPages; i++) {
+    for (let i = 1; i <= pages; i++) {
       btns.push(
         <button
           key={i}
@@ -58,17 +58,16 @@ export const Store = () => {
     return btns
   }
 
-  const [active, setActive] = useState('')
-
-  function changeActive(tabValue) {
-    setActive(tabValue)
-    dispatch(getProducts({ categoryId: tabValue }))
-  }
-
   useEffect(() => {
-    dispatch(getProducts({}))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    dispatch(
+      getProducts({
+        categoryId: tabValue,
+        page: currentPage,
+        limit,
+        productName: search,
+      }),
+    )
+  }, [tabValue, currentPage, limit, search])
 
   useEffect(() => {
     if (error) {
@@ -86,19 +85,25 @@ export const Store = () => {
         ]}
       />
       <div className={styles.tabsContainer}>
+        <input
+          type="text"
+          placeholder="Введите значение для поиска"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <TabFilters
-          active={active}
+          active={tabValue}
           items={storeTabs}
-          changeActive={changeActive}
+          changeActive={(tab) => setTabValue(tab)}
         />
       </div>
       <div className={styles.products}>
         <p className={styles.countInfo}>
-          Показано: {currentItems.length} из 12 товаров
+          Показано: {limit} из {items} товаров
         </p>
         <div className={styles.catalog}>
           {loading && <p>loading...</p>}
-          {currentItems.map((item) => {
+          {data?.map((item) => {
             return (
               <button
                 key={item.id}
@@ -114,8 +119,13 @@ export const Store = () => {
         </div>
 
         <p className={styles.countInfo}>
-          Показано: {currentItems.length} из 12 товаров
+          Показано: {limit} из {items} товаров
         </p>
+        <input
+          type="number"
+          value={limit}
+          onChange={(e) => setLimit(e.target.value)}
+        />
         <div className={styles.pagination}>
           {currentPage > 1 && (
             <button onClick={() => setCurrentPage((prev) => prev - 1)}>
@@ -127,7 +137,7 @@ export const Store = () => {
             </button>
           )}
           {renderPagination()}
-          {currentPage < totalPages && (
+          {currentPage < pages && (
             <button onClick={() => setCurrentPage((prev) => prev + 1)}>
               <img
                 src={ArrowRight}

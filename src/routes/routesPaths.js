@@ -7,4 +7,5 @@ export const ROUTER_PATHS = {
   checkout: '/checkout',
   success: '/success',
   product: '/product/:id',
+  auth: '/auth',
 }

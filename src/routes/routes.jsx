@@ -2,6 +2,7 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
 import Layout from '../layouts/Layout'
+import { Auth } from '../pages/Auth'
 import { Brand } from '../pages/Brand'
 import Cart from '../pages/Cart/Cart'
 import { Checkout } from '../pages/Checkout'
@@ -51,5 +52,9 @@ export const routes = createBrowserRouter([
         element: <SuccessPage />,
       },
     ],
+  },
+  {
+    path: ROUTER_PATHS.auth,
+    element: <Auth />,
   },
 ])
