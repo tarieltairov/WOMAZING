@@ -16,7 +16,11 @@ const initialState = {
 const globalSlice = createSlice({
   name: 'global',
   initialState,
-  reducers: {},
+  reducers: {
+    setUserState: (state, { payload }) => {
+      state.user = payload
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProducts.pending, (state) => {
       state.loading = true
@@ -53,6 +57,6 @@ const globalSlice = createSlice({
   },
 })
 
-export const {} = globalSlice.actions
+export const { setUserState } = globalSlice.actions
 
 export default globalSlice.reducer
