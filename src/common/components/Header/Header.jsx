@@ -1,4 +1,8 @@
+import logoutIcon from 'assets/icons/logout.png'
+import { setUserState } from 'store/globalSlise'
+
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { useCart } from '../../../../cartContext'
@@ -12,16 +16,25 @@ import styles from './Header.module.scss'
 import PhoneIcon from './PhoneIcon'
 
 export function Header() {
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.global.user)
   const { items } = useCart()
   const [isModalOpen, setModalOpen] = useState(false)
 
   const navigate = useNavigate()
 
+  const logout = () => {
+    dispatch(setUserState(null))
+    localStorage.removeItem('user-data')
+  }
+
   return (
     <AppContainer>
       <header className={styles.header}>
         <LogoNav />
-
+        <span>
+          {user.name} {user.lastName}
+        </span>
         <div className={styles.contact}>
           <div className={styles.phoneWrapper}>
             <button
@@ -39,6 +52,7 @@ export function Header() {
               </a>
             </div>
           </div>
+
           <button
             className={styles.cartContainer}
             onClick={() => navigate(ROUTER_PATHS.cart)}
@@ -51,6 +65,17 @@ export function Header() {
             {!!items.length && (
               <span className={styles.cartBadge}>{items.length}</span>
             )}
+          </button>
+
+          <button
+            className={styles.cartContainer}
+            onClick={logout}
+          >
+            <img
+              src={logoutIcon}
+              alt="logout"
+              className={styles.logoutIcon}
+            />
           </button>
         </div>
       </header>

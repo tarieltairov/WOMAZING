@@ -1,5 +1,7 @@
+import { setUserState } from 'store/globalSlise'
+
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { ROUTER_PATHS } from 'routes/routesPaths'
@@ -9,9 +11,17 @@ import { SignIn } from './components/SignIn'
 import { SignUp } from './components/SignUp'
 
 export function Auth() {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [hasAccount, setHasAccount] = useState(false)
+  const [hasAccount, setHasAccount] = useState(true)
   const user = useSelector((state) => state.global.user)
+  const userFromStorage = JSON.parse(localStorage.getItem('user-data'))
+
+  useEffect(() => {
+    if (!user && userFromStorage) {
+      dispatch(setUserState(userFromStorage))
+    }
+  }, [])
 
   useEffect(() => {
     if (user) {

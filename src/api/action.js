@@ -49,6 +49,9 @@ export const signUp = createAsyncThunk(
       }
 
       const resp = await axios.post(`${BASE_URL}/users`, userData)
+
+      localStorage.setItem('user-data', JSON.stringify(resp))
+
       return resp.data
     } catch (error) {
       return rejectWithValue(error)
@@ -69,6 +72,8 @@ export const signIn = createAsyncThunk(
       if (!findedUser) {
         throw new Error('Пользователь не найден')
       }
+
+      localStorage.setItem('user-data', JSON.stringify(findedUser))
 
       return findedUser
     } catch (error) {

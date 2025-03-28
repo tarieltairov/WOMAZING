@@ -16,6 +16,7 @@ export default defineConfig({
       routes: fileURLToPath(new URL('./src/routes', import.meta.url)),
       store: fileURLToPath(new URL('./src/store', import.meta.url)),
       api: fileURLToPath(new URL('./src/api', import.meta.url)),
+      layouts: fileURLToPath(new URL('./src/layouts', import.meta.url)),
     },
   },
 })

@@ -18,12 +18,13 @@ export function SignUp({ setHasAccount }) {
     const age = formData.get('age')
     const email = formData.get('email')
     const password = formData.get('password')
+    const phoneNumber = formData.get('phoneNumber')
 
-    if (!name || !lastName || !age || !email || !password) {
+    if (!name || !lastName || !age || !email || !password || !phoneNumber) {
       return { error: 'Все поля обязательны' }
     }
 
-    const userData = { name, lastName, age, email, password }
+    const userData = { name, lastName, age, email, password, phoneNumber }
 
     dispatch(signUp(userData))
     return { success: 'Регистрация успешна' }
@@ -49,6 +50,11 @@ export function SignUp({ setHasAccount }) {
         type="number"
         name="age"
         placeholder="age"
+      />
+      <input
+        type="text"
+        placeholder="phone number"
+        name="phoneNumber"
       />
       <input
         type="email"

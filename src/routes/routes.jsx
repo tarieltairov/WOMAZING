@@ -1,3 +1,5 @@
+import PrivateRoute from 'layouts/PrivateRoute'
+
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
@@ -17,39 +19,45 @@ import { ROUTER_PATHS } from './routesPaths'
 export const routes = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <PrivateRoute />,
     children: [
       {
-        path: ROUTER_PATHS.main,
-        element: <Main />,
-      },
-      {
-        path: ROUTER_PATHS.shop,
-        element: <Shop />,
-      },
-      {
-        path: ROUTER_PATHS.brand,
-        element: <Brand />,
-      },
-      {
-        path: ROUTER_PATHS.contacts,
-        element: <Contacts />,
-      },
-      {
-        path: ROUTER_PATHS.cart,
-        element: <Cart />,
-      },
-      {
-        path: ROUTER_PATHS.product,
-        element: <ProductDetail />,
-      },
-      {
-        path: ROUTER_PATHS.checkout,
-        element: <Checkout />,
-      },
-      {
-        path: ROUTER_PATHS.success,
-        element: <SuccessPage />,
+        path: '/',
+        element: <Layout />,
+        children: [
+          {
+            path: ROUTER_PATHS.main,
+            element: <Main />,
+          },
+          {
+            path: ROUTER_PATHS.shop,
+            element: <Shop />,
+          },
+          {
+            path: ROUTER_PATHS.brand,
+            element: <Brand />,
+          },
+          {
+            path: ROUTER_PATHS.contacts,
+            element: <Contacts />,
+          },
+          {
+            path: ROUTER_PATHS.cart,
+            element: <Cart />,
+          },
+          {
+            path: ROUTER_PATHS.product,
+            element: <ProductDetail />,
+          },
+          {
+            path: ROUTER_PATHS.checkout,
+            element: <Checkout />,
+          },
+          {
+            path: ROUTER_PATHS.success,
+            element: <SuccessPage />,
+          },
+        ],
       },
     ],
   },

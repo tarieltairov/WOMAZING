@@ -8,7 +8,8 @@
       "constants/*": ["./constants/*"],
       "routes/*": ["./routes/*"],
       "store/*": ["./store/*"],
-      "api/*": ["./api/*"]
+      "api/*": ["./api/*"],
+      "layouts/*": ["./layouts/*"]
     }
   },
   "exclude": ["node_modules"]
